@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'global_colours.dart';
@@ -20,7 +21,8 @@ class TextFormGlobal extends StatelessWidget {
       width: width,
       padding: const EdgeInsets.only(top: 3, left: 15, bottom: 30, right: 15),
       decoration: BoxDecoration(
-        color: Colors.white,
+        border: Border.all(width: 1, color: Colors.black),
+        color: GlobalColors.whiteTextColor,
         borderRadius: BorderRadius.circular(radius),
         boxShadow: [
           BoxShadow(
@@ -43,7 +45,9 @@ class TextFormGlobal extends StatelessWidget {
             color: GlobalColors.smallTextColorGrey,
           ),
           suffixIcon: icon != null ? Icon(icon, color: Colors.grey): null,
+          // icon: icon ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
         ),
+
       ),
     );
   }

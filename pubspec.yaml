@@ -61,12 +61,12 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-icons:
-     - assets/blush_icons/
+  #  icons:
+  #     - assets/blush_icons/
 
   # To add assets to your application, add an assets section, like this:
-assets:
-     - assets/blush_images/illustration.png
+  assets:
+      - assets/blush_images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -79,22 +79,20 @@ assets:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-fonts:
+
+   fonts:
      - family: Inter
        fonts:
          - asset: assets/blush_fonts/Inter/
-
      - family: Rubik
        fonts:
          - asset: assets/blush_fonts/Rubik/
-
      - family: Avenir
        fonts:
          - asset: assets/blush_fonts/Avenir/
-
      - family: SF Pro Text
        fonts:
-         - asset: assets/blush_fonts/SF Pro Text/
+         - asset: assets/blush_fonts/SF_Pro_Text/
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

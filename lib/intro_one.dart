@@ -33,12 +33,7 @@ class IntroOne extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Image.asset(
-                    'assets/blush_images/illustration(1).png',
-                    height: 264,
-                    width: 375,
-                    fit: BoxFit.contain,
-                  ),
+                  Image(image: AssetImage('assets/blush_images/illustration.png')),
                   const Text(
                     'Learn anytime and anywhere',
                     style: TextStyle(

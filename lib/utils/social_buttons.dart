@@ -60,7 +60,7 @@ class SocialLogins extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Image.asset(
-                    'assets/blush_image/Social Buttons.png',
+                    'assets/blush_image/social_buttons.png',
                     height: 40,
                     width: 40,
                   ),

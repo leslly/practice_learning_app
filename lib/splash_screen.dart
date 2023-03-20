@@ -5,15 +5,29 @@ import 'package:practice_learning_app/intro_one.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+
+class _SplashScreenState extends State<SplashScreen> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(const Duration(seconds: 2), () {
+     Navigator.push(context, MaterialPageRoute(builder: (context) => const IntroOne()));
+    });
+  }
+  @override
   Widget build(BuildContext context) {
-    Timer( const Duration(seconds: 2), () {
-      Get.to(IntroOne());
-    }
-      );
+    // Timer(  Duration(seconds: 2), () {
+    //   Get.to(IntroOne());
+    // });
     return Scaffold(
       body:SafeArea(
         child: Padding(
@@ -24,12 +38,8 @@ class SplashScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    'assets/blush_images/illustration.png',
-                    height: 264,
-                      width: 375,
-                    fit: BoxFit.contain,
-                  ),
+               const   Image(image: AssetImage('assets/blush_images/illustration.png'), height: 264, width: 375,),
+
                    Text(
                       'CodeFactory',
                     style: TextStyle(
@@ -45,21 +55,6 @@ class SplashScreen extends StatelessWidget {
           ),
         ),
       ),
-      // bottomNavigationBar: Container(
-      //   height: 50,
-      //   alignment: Alignment.center,
-      //   child: InkWell(
-      //     onTap: () {
-      //       Navigator.push(context, MaterialPageRoute(builder: (context) => const NewPage()));
-      //     },
-      //     child: const Text(
-      //       'CLICK ME',
-      //       style: TextStyle(
-      //         color: Colors.redAccent,
-      //       ),
-      //     ),
-      //   ),
-      // ),
     );
   }
 }
