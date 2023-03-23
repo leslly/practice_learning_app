@@ -63,7 +63,21 @@ flutter:
 
   #  icons:
   #     - assets/blush_icons/
-
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/blush_fonts/Inter/Inter-Black.ttf
+    - family: Rubik
+      fonts:
+        - asset: assets/blush_fonts/Rubik/Rubik-Black.ttf
+    - family: Avenir
+      fonts:
+        - asset: assets/blush_fonts/Avenir/AvenirLTStd-Black.otf
+        - asset: assets/blush_fonts/Avenir/AvenirLTStd-Book.otf
+        - asset: assets/blush_fonts/Avenir/AvenirLTStd-Roman.otf
+    - family: SF_Pro_Text
+      fonts:
+        - asset: assets/blush_fonts/SF_Pro_Text/SF-Pro-Text-Black.otf
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/blush_images/
@@ -81,19 +95,7 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
 
-  #fonts:
-   # - family: Inter
-   #   fonts:
-    #    - asset: assets/blush_fonts/Inter/
-   # - family: Rubik
-   #   fonts:
-    #    - asset: assets/blush_fonts/Rubik/
-    #- family: Avenir
-   #   fonts:
-    #    - asset: assets/blush_fonts/Avenir/
-   # - family: SF Pro Text
-    #  fonts:
-     #   - asset: assets/blush_fonts/SF_Pro_Text/
+
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
