@@ -6,5 +6,9 @@ class GlobalColors {
   static HexColor smallTextColorGrey = HexColor('78746D');
   static HexColor buttonColorOrange = HexColor('E3562A');
   static HexColor whiteTextColor = HexColor('FFFFFF');
+  static HexColor profileBackground = HexColor('F8F2EE');
+  static HexColor profileBorder = HexColor('65AAEA');
+  static HexColor buttonColorwhite = HexColor('FFFFFF');
+  static HexColor borderGrey = HexColor('BEBAB3');
 
 }

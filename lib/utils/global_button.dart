@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import 'global_colours.dart';
 
 class GlobalButton extends StatelessWidget {
-  const GlobalButton({Key? key, this.text = 'Next', required this.nextPage}) : super(key: key);
+  const GlobalButton({Key? key, this.fontSize = 16, required this.colorOfText, required this.colorOfButton, this.text = 'Next', required this.nextPage}) : super(key: key);
 
   final String text;
   final VoidCallback nextPage;
+  final Color colorOfButton;
+  final Color colorOfText;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -18,15 +21,16 @@ class GlobalButton extends StatelessWidget {
         width: 311,
         decoration:  BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          color: GlobalColors.buttonColorOrange,
+          color: colorOfButton,
+          border: Border.all(width: 1, color: GlobalColors.borderGrey),
         ),
         child:  Text(
           text,
           style: TextStyle(
-            fontSize: 16,
-            fontFamily: 'Rubik-Medium.ttf',
+            fontSize: fontSize,
+            fontFamily: 'assets/blush_images/Rubik/Rubik-Medium.ttf',
             fontWeight: FontWeight.bold,
-            color: GlobalColors.whiteTextColor,
+            color: colorOfText,
           ),
         ),
       ),

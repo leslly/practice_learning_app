@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'global_colours.dart';
@@ -21,21 +20,15 @@ class TextFormGlobal extends StatelessWidget {
       width: width,
       padding: const EdgeInsets.only(top: 3, left: 15, bottom: 30, right: 15),
       decoration: BoxDecoration(
-        border: Border.all(width: 1, color: Colors.black),
+        border: Border.all(width: 1, color: GlobalColors.borderGrey),
         color: GlobalColors.whiteTextColor,
         borderRadius: BorderRadius.circular(radius),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 7,
-          ),
-        ],
       ),
       child: TextFormField( // the child inside the container holds the text field for the email
         controller: controller,
         keyboardType: textInputType,
         obscureText: obscure,
-
+        autofocus: true,
         decoration: InputDecoration(
           hintText: text,
           border: InputBorder.none,
@@ -44,7 +37,7 @@ class TextFormGlobal extends StatelessWidget {
             height: 1,
             color: GlobalColors.smallTextColorGrey,
           ),
-          suffixIcon: icon != null ? Icon(icon, color: Colors.grey): null,
+          suffixIcon: icon != null ? Icon(icon, color: GlobalColors.bigTextColorBlack): null,
           // icon: icon ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
         ),
 

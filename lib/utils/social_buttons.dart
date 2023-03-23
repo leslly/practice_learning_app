@@ -8,6 +8,7 @@ class SocialLogins extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
          Text(
           'Login with social networks',
@@ -17,50 +18,54 @@ class SocialLogins extends StatelessWidget {
             color: GlobalColors.smallTextColorGrey,
           ),
         ),
-        const SizedBox(height: 15),
+        const SizedBox(height: 8),
         SizedBox(
+          height: 40,
+          width: 144,
           child: Row(
             children: [
               /////facebook
               Expanded(
                 child: Container(
-                  height: 55,
-                  width: 144,
+                  height: 40,
+                  width: 40,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Image.asset(
-                    'assets/blush_image/Social Buttons(2).png',
+                    'assets/blush_icons/social_buttons_one.png',
                     height: 40,
                     width: 40,
                   ),
                 ),
               ),
-              const SizedBox(width: 15),
+              const SizedBox(width: 12),
               /////instagram
               Expanded(
                 child: Container(
-                  height: 55,
+                  height: 40,
+                  width: 40,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Image.asset(
-                    'assets/blush_image/Social Buttons(1).png',
+                    'assets/blush_icons/social_buttons_one.png',
                     height: 40,
                     width: 40,
                   ),
                 ),
               ),
-              const SizedBox(width: 15),
+              const SizedBox(width: 12),
               /////google
               Expanded(
                 child: Container(
-                  height: 55,
+                  height: 40,
+                  width: 40,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Image.asset(
-                    'assets/blush_image/social_buttons.png',
+                    'assets/blush_icons/social_buttons.png',
                     height: 40,
                     width: 40,
                   ),

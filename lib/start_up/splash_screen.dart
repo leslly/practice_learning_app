@@ -1,9 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
-import 'package:practice_learning_app/intro_one.dart';
+import 'package:practice_learning_app/start_up/intro_one.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
-
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -12,23 +10,20 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-
 class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 5), () {
      Navigator.push(context, MaterialPageRoute(builder: (context) => const IntroOne()));
     });
   }
   @override
   Widget build(BuildContext context) {
-    // Timer(  Duration(seconds: 2), () {
-    //   Get.to(IntroOne());
-    // });
     return Scaffold(
+      backgroundColor: GlobalColors.buttonColorwhite,
       body:SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(10.0),

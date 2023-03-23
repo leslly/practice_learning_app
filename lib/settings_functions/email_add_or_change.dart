@@ -1,0 +1,103 @@
+import 'package:flutter/material.dart';
+import 'package:practice_learning_app/utils/global_button.dart';
+
+import '../utils/global_colours.dart';
+
+class EmailAddOrChange extends StatefulWidget {
+  const EmailAddOrChange({Key? key}) : super(key: key);
+
+  @override
+  State<EmailAddOrChange> createState() => _EmailAddOrChangeState();
+}
+
+class _EmailAddOrChangeState extends State<EmailAddOrChange> {
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Container(
+        color: Color(0xff757575),
+        child: Container(
+          decoration: BoxDecoration(
+            color: GlobalColors.buttonColorwhite,
+            borderRadius: const BorderRadius.only(
+              topRight: Radius.circular(20),
+              topLeft: Radius.circular(20),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(30),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                    'Email Settings',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: GlobalColors.bigTextColorBlack,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+                const SizedBox(height: 30),
+                Text(
+                  'Add Email',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: GlobalColors.bigTextColorBlack,
+                  ),
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: 'example@google.com',
+                  ),
+                //CupertinoIcons.chevron_up
+                  autofocus: true,
+                ),
+                const SizedBox(height: 15),
+                Text(
+                  'Change Email',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: GlobalColors.bigTextColorBlack,
+                  ),
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: 'example@google.com',
+                  ),
+                  //CupertinoIcons.chevron_up
+                  autofocus: true,
+                ),
+                const SizedBox(height: 15),
+                Text(
+                  'Confirm Email',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: GlobalColors.bigTextColorBlack,
+                  ),
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: 'example@google.com',
+                  ),
+                  //CupertinoIcons.chevron_up
+                  autofocus: true,
+                ),
+                SizedBox(height: 15),
+                GlobalButton(
+                  text: 'Submit',
+                    colorOfText: GlobalColors.whiteTextColor,
+                    colorOfButton: Colors.blueAccent,
+                    nextPage: () {}
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
