@@ -18,7 +18,7 @@ class TextFormGlobal extends StatelessWidget {
     return Container( // this is the container for the email
       height: height,
       width: width,
-      padding: const EdgeInsets.only(top: 3, left: 15, bottom: 30, right: 15),
+      padding: const EdgeInsets.only(top: 3, left: 15, bottom: 0, right: 15),
       decoration: BoxDecoration(
         border: Border.all(width: 1, color: GlobalColors.borderGrey),
         color: GlobalColors.whiteTextColor,
@@ -28,7 +28,7 @@ class TextFormGlobal extends StatelessWidget {
         controller: controller,
         keyboardType: textInputType,
         obscureText: obscure,
-        autofocus: true,
+        // autofocus: true,
         decoration: InputDecoration(
           hintText: text,
           border: InputBorder.none,

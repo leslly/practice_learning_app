@@ -28,7 +28,7 @@ class SignUpView extends StatelessWidget {
               child: Center(
                 child: Column(
                   children: [
-                    GestureDetector(
+                    InkWell(
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView()));
                       },
