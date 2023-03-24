@@ -78,6 +78,7 @@ flutter:
     - family: SF_Pro_Text
       fonts:
         - asset: assets/blush_fonts/SF_Pro_Text/SF-Pro-Text-Black.otf
+
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/blush_images/
