@@ -18,7 +18,7 @@ class IntroThree extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                GestureDetector(
+                InkWell(
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView() ));
                   },
@@ -37,7 +37,7 @@ class IntroThree extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Image(image: AssetImage('assets/blush_images/illustration_three.png')),
+                const Image(image: AssetImage('assets/blush_images/used_two.png')),
                 const SizedBox(height: 41),
                 const Text(
                   'Learn anytime \n and anywhere',

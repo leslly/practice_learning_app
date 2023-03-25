@@ -10,5 +10,7 @@ class GlobalColors {
   static HexColor profileBorder = HexColor('65AAEA');
   static HexColor buttonColorwhite = HexColor('FFFFFF');
   static HexColor borderGrey = HexColor('BEBAB3');
+  static HexColor lightGreen = HexColor('F2F2F2');
+  static HexColor newColor = HexColor('5BA092');
 
 }

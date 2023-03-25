@@ -24,7 +24,7 @@ class TextFormGlobal extends StatelessWidget {
         color: GlobalColors.whiteTextColor,
         borderRadius: BorderRadius.circular(radius),
       ),
-      child: TextFormField( // the child inside the container holds the text field for the email
+      child: TextFormField(// the child inside the container holds the text field for the email
         controller: controller,
         keyboardType: textInputType,
         obscureText: obscure,
@@ -38,9 +38,7 @@ class TextFormGlobal extends StatelessWidget {
             color: GlobalColors.smallTextColorGrey,
           ),
           suffixIcon: icon != null ? Icon(icon, color: GlobalColors.bigTextColorBlack): null,
-          // icon: icon ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
         ),
-
       ),
     );
   }

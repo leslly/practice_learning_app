@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:practice_learning_app/home_screen.dart';
 import 'package:practice_learning_app/profile_view.dart';
 import 'package:practice_learning_app/settings_view.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 
-import '../courses_view.dart';
+import '../your_courses.dart';
 
 class NavigationButtons extends StatefulWidget {
   const NavigationButtons({Key? key}) : super(key: key);
@@ -17,34 +18,6 @@ class _NavigationButtonsState extends State<NavigationButtons> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        /////COURSES
-        Expanded(
-          child: InkWell(
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => CoursesPage()));
-            },
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  'assets/blush_icons/courses.png',
-                  color: GlobalColors.borderGrey,
-                  height: 38,
-                  width: 30,
-                ),
-                Text(
-                  'Courses',
-                  style: TextStyle(
-                    color: GlobalColors.borderGrey,
-                    fontSize: 14,
-                    fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium',
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        const SizedBox(width: 12),
         /////PROFILE
         Expanded(
           child: InkWell(
@@ -73,23 +46,50 @@ class _NavigationButtonsState extends State<NavigationButtons> {
           ),
         ),
         const SizedBox(width: 12),
-        /////SETTINGS
+        /////HOME
         Expanded(
           child: InkWell(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.home_filled,
+                  color: GlobalColors.borderGrey,
+                  size: 30,
+                ),
+                Text(
+                  'Home',
+                  style: TextStyle(
+                    color: GlobalColors.borderGrey,
+                    fontSize: 14,
+                    fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium',
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(width: 12),
+        /////COURSES
+        Expanded(
+          child: InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => YourCourses()));
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/blush_icons/wheel.png',
+                  'assets/blush_icons/courses.png',
                   color: GlobalColors.borderGrey,
                   height: 38,
                   width: 30,
                 ),
                 Text(
-                  'Settings',
+                  'Courses',
                   style: TextStyle(
                     color: GlobalColors.borderGrey,
                     fontSize: 14,

@@ -33,7 +33,7 @@ class SocialLogins extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Image.asset(
-                    'assets/blush_icons/social_buttons_one.png',
+                    'assets/blush_images/facebook.png',
                     height: 40,
                     width: 40,
                   ),

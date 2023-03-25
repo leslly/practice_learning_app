@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/courses_view.dart';
+import 'package:practice_learning_app/home_screen.dart';
+import 'package:practice_learning_app/settings_view.dart';
+import 'package:practice_learning_app/your_courses.dart';
 import 'package:practice_learning_app/utils/navigation_buttons.dart';
-import 'package:practice_learning_app/start_up/sign_up_view.dart';
 import 'package:practice_learning_app/utils/global_button.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 
@@ -26,7 +27,7 @@ class ProfileView extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpView()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
                         },
                         child: Align(
                           alignment: Alignment.topLeft,
@@ -51,7 +52,7 @@ class ProfileView extends StatelessWidget {
                         style: TextStyle(
                           color: GlobalColors.bigTextColorBlack,
                           fontSize: 24,
-                          fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium',
+                          fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -74,7 +75,7 @@ class ProfileView extends StatelessWidget {
                 const SizedBox(height: 32),
                 GlobalButton(
                     nextPage: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => CoursesPage() ));;
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => YourCourses() ));;
                     },
                   fontSize: 24,
                   text: 'Your Courses',
@@ -84,7 +85,7 @@ class ProfileView extends StatelessWidget {
                 const SizedBox(height: 16),
                 GlobalButton(
                     nextPage: () {},
-                  text: 'Saved',
+                  text: 'Cart',
                   fontSize: 24,
                   colorOfButton: GlobalColors.buttonColorwhite,
                   colorOfText: Colors.black,
@@ -92,7 +93,17 @@ class ProfileView extends StatelessWidget {
                 const SizedBox(height: 16),
                 GlobalButton(
                     nextPage: () {},
-                  text: 'Payment',
+                  text: 'Payments',
+                  fontSize: 24,
+                  colorOfButton: GlobalColors.buttonColorwhite,
+                  colorOfText: Colors.black,
+                ),
+                const SizedBox(height: 16),
+                GlobalButton(
+                  nextPage: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsPage()));
+                  },
+                  text: 'Settings',
                   fontSize: 24,
                   colorOfButton: GlobalColors.buttonColorwhite,
                   colorOfText: Colors.black,

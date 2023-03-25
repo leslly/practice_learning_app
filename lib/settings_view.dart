@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/home_screen.dart';
+import 'package:practice_learning_app/profile_view.dart';
 import 'package:practice_learning_app/settings_functions/email_add_or_change.dart';
 import 'package:practice_learning_app/settings_functions/name_change.dart';
 import 'package:practice_learning_app/settings_functions/password_change.dart';
@@ -33,7 +34,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) =>  ProfileView()));
                         },
                         child: Align(
                           alignment: Alignment.topLeft,
@@ -222,7 +223,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             height: 40,
                             width: 40,
                             color: GlobalColors.buttonColorwhite,
-                              child: Icon(
+                              child: const Icon(
                                   CupertinoIcons.chevron_up
                               )
                           )
@@ -235,7 +236,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 const SizedBox(height: 16),
                 GestureDetector(
                   onTap: () {
-                    showModalBottomSheet(context: context, builder: (context) => EmailAddOrChange());
+                    showModalBottomSheet(context: context, builder: (context) => const EmailAddOrChange());
                   },
                   child: Container(
                     height: 82,
@@ -276,7 +277,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               height: 40,
                               width: 40,
                               color: GlobalColors.buttonColorwhite,
-                              child: Icon(
+                              child: const Icon(
                                   CupertinoIcons.chevron_up
                               )
                           )
@@ -289,7 +290,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 const SizedBox(height: 16),
                 GestureDetector(
                   onTap: () {
-                    showModalBottomSheet(context: context, builder: (context) => PasswordChange());
+                    showModalBottomSheet(context: context, builder: (context) => const PasswordChange());
                   },
                   child: Container(
                     height: 82,
@@ -330,7 +331,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               height: 40,
                               width: 40,
                               color: GlobalColors.buttonColorwhite,
-                              child: Icon(
+                              child: const Icon(
                                   CupertinoIcons.chevron_up
                               )
                           )

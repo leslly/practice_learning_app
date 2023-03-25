@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/home_screen.dart';
-import 'package:practice_learning_app/profile_view.dart';
 import 'package:practice_learning_app/start_up/sign_up_view.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 import 'package:practice_learning_app/utils/social_buttons.dart';
 import 'package:practice_learning_app/utils/text_form_global.dart';
-
 import '../utils/global_button.dart';
 
 class LoginView extends StatelessWidget {
@@ -61,7 +58,7 @@ class LoginView extends StatelessWidget {
                     text: 'Password',
                     textInputType: TextInputType.text,
                     obscure: true,
-                    icon: CupertinoIcons.eye,
+                    //icon: CupertinoIcons.eye,
                     radius: 12,
                     height: 53,
                     width: 343,

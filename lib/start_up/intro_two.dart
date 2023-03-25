@@ -18,7 +18,7 @@ class IntroTwo extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                GestureDetector(
+                InkWell(
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView() ));
                   },
@@ -37,7 +37,7 @@ class IntroTwo extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Image(image: AssetImage('assets/blush_images/illustration_two.png')),
+                const Image(image: AssetImage('assets/blush_images/used.png')),
                 const SizedBox(height: 16),
                 const Text(
                   'Find a course \n for you',

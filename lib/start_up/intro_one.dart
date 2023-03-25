@@ -18,7 +18,7 @@ class IntroOne extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                GestureDetector(
+                InkWell(
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView() ));
                   },
