@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:practice_learning_app/html_course.dart';
 import 'package:practice_learning_app/utils/course.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 import 'package:practice_learning_app/utils/navigation_buttons.dart';
@@ -60,28 +61,39 @@ class _YourCoursesState extends State<YourCourses> {
                     ),
                   ],
                 ),
-                SizedBox(height: 16),
-               YourCoursesDesign(
+                const SizedBox(height: 16),
+               const YourCoursesDesign(
                  backgroundColor: Colors.grey,
                  titleText: 'Swift',
                  descriptionText: 'Advanced IOS apps',
                  durationText: 'Left 1 month 3 days',
                  image: 'assets/blush_images/sittingtwo.png',
                ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 YourCoursesDesign(
                   backgroundColor: GlobalColors.newColor,
                   titleText: 'Flutter',
                   descriptionText: 'Advanced IOS apps',
                   durationText: 'Left 1 month 3 days',
                 ),
-                SizedBox(height: 16),
-                YourCoursesDesign(
+                const SizedBox(height: 16),
+                const YourCoursesDesign(
                   backgroundColor: Colors.grey,
                   titleText: 'FIGMA',
                   descriptionText: 'Advanced designing with various components',
                   durationText: 'Left 1 month',
                   image: 'assets/blush_images/cool_kids_performing.png',
+                ),
+                const SizedBox(height: 16),
+                 YourCoursesDesign(
+                   nextPage: (){
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => HtmlCourse()));
+                   },
+                  backgroundColor: GlobalColors.profileBackground,
+                  titleText: 'HTML',
+                  descriptionText: 'Advanced web applications',
+                  durationText: 'Left 1 month',
+                  image: 'assets/blush_images/cool_kids_long_distance_relationship_one.png',
                 ),
               ],
             ),

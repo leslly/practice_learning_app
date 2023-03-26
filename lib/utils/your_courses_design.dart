@@ -27,6 +27,7 @@ class YourCoursesDesign extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
+              width: 399,
               decoration: BoxDecoration(
                 color: backgroundColor,
                 borderRadius: const BorderRadius.only(
