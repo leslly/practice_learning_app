@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/html_course.dart';
-import 'package:practice_learning_app/utils/course.dart';
+import 'package:practice_learning_app/start_learning/html_course.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 import 'package:practice_learning_app/utils/navigation_buttons.dart';
 import 'package:practice_learning_app/utils/your_courses_design.dart';
-
 import 'home_screen.dart';
 
 class YourCourses extends StatefulWidget {

@@ -1,12 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/home_screen.dart';
-import 'package:practice_learning_app/profile_view.dart';
+import 'package:practice_learning_app/bottom_nav_bar/profile_view.dart';
 import 'package:practice_learning_app/settings_functions/email_add_or_change.dart';
 import 'package:practice_learning_app/settings_functions/name_change.dart';
 import 'package:practice_learning_app/settings_functions/password_change.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
-
 import 'utils/navigation_buttons.dart';
 
 class SettingsPage extends StatefulWidget {

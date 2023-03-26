@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/home_screen.dart';
-import 'package:practice_learning_app/profile_view.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
-import 'package:practice_learning_app/utils/social_buttons.dart';
 import 'package:practice_learning_app/utils/text_form_global.dart';
+import '../bottom_nav_bar/home_screen.dart';
 import 'login_view.dart';
 import '../utils/global_button.dart';
 
@@ -50,7 +48,7 @@ class SignUpView extends StatelessWidget {
                       ),
                     ),
                     Image.asset(
-                      'assets/blush_images/illustration_four.png',
+                      'assets/blush_images/sign_up.png',
                       height: 253,
                       width: 343,
                       fit: BoxFit.contain,

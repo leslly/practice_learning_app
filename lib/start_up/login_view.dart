@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/home_screen.dart';
 import 'package:practice_learning_app/start_up/sign_up_view.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 import 'package:practice_learning_app/utils/social_buttons.dart';
 import 'package:practice_learning_app/utils/text_form_global.dart';
+import '../bottom_nav_bar/home_screen.dart';
 import '../utils/global_button.dart';
 
 class LoginView extends StatelessWidget {

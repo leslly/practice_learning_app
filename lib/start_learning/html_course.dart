@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 import 'package:practice_learning_app/utils/html_list_view.dart';
-import 'package:practice_learning_app/your_courses.dart';
+import 'package:practice_learning_app/bottom_nav_bar/your_courses.dart';
 
 class HtmlCourse extends StatelessWidget {
   const HtmlCourse({Key? key}) : super(key: key);

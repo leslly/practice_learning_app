@@ -37,7 +37,7 @@ class IntroOne extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Image(image: AssetImage('assets/blush_images/illustration_one.png')),
+                const Image(image: AssetImage('assets/blush_images/long_distance_girls.png')),
                 const SizedBox(height: 41),
                 const Text(
                   'Learn anytime \n and anywhere',

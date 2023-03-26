@@ -1,30 +1,28 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/other_screens/course_saved.dart';
-import 'package:practice_learning_app/utils/global_button.dart';
-import '../bottom_nav_bar/home_screen.dart';
-import 'category_labels.dart';
-import 'global_colours.dart';
+import 'package:practice_learning_app/bottom_nav_bar/home_screen.dart';
+import 'package:practice_learning_app/utils/product_detail.dart';
+import '../utils/global_button.dart';
+import '../utils/global_colours.dart';
 
-class ProductDetail extends StatelessWidget {
-  const ProductDetail({Key? key}) : super(key: key);
+class CourseSaved extends StatelessWidget {
+  const CourseSaved({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: GlobalColors.buttonColorwhite,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 16, top: 24, bottom: 42),
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetail()));
                       },
                       child: Align(
                         alignment: Alignment.topLeft,
@@ -45,7 +43,7 @@ class ProductDetail extends StatelessWidget {
                     ),
                     const SizedBox(width: 92),
                     Text(
-                      'Flutter',
+                      'Saved',
                       style: TextStyle(
                         color: GlobalColors.bigTextColorBlack,
                         fontSize: 24,
@@ -55,70 +53,78 @@ class ProductDetail extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 16),
+                SizedBox(height: 127),
                 Container(
-                  height: 257,
                   width: 375,
+                  height: 253,
                   child: Image.asset(
-                    'assets/blush_images/product.png',
+                    'assets/blush_images/course_saved.png',
                     fit: BoxFit.contain,
                   ),
                 ),
                 SizedBox(height: 32),
-                Padding(
-                  padding: const EdgeInsets.only(left: 300, bottom: 24),
-                  child: CategoryLabels(
-                    text: "\$ 50",
-                  ),
-                ),
                 Text(
-                  'About the course',
+                  'Course was added to cart',
                   style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+                    color: GlobalColors.bigTextColorBlack,
                     fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
-                    color: GlobalColors.bigTextColorBlack
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
                   ),
                 ),
                 SizedBox(height: 10),
                 Text(
-                  "You can launch a new career in app development today by learning Flutter. You don't need a computer science degree or expensive software. All you need is a computer, a bit of time, a lot of determination, and a teacher you trust.",
+                  "You can find the course in",
+                  maxLines: 2,
                   style: TextStyle(
-                    fontSize: 14,
-                    color: GlobalColors.bigTextColorBlack,
-                    fontFamily: 'assets/blush_fonts/Rubik/Rubik-Regular.ttf'
-                  ),
-                  overflow: TextOverflow.fade,
-                  maxLines: 5,
-                ),
-                SizedBox(height: 24),
-                Text(
-                  'Duration',
-                  style: TextStyle(
-                    fontSize: 20,
+                    color: GlobalColors.smallTextColorGrey,
                     fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
-                    color: GlobalColors.bigTextColorBlack,
+                    fontWeight: FontWeight.normal,
+                    fontSize: 14,
                   ),
+                ),
+                SizedBox(height: 5),
+                Text(
+                  "your cart in profile",
+                  maxLines: 2,
+                  style: TextStyle(
+                    color: GlobalColors.smallTextColorGrey,
+                    fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
+                    fontWeight: FontWeight.normal,
+                    fontSize: 14,
+                  ),
+                ),
+                SizedBox(height: 32),
+                GlobalButton(
+                  colorOfText: GlobalColors.whiteTextColor,
+                  colorOfButton: GlobalColors.buttonColorOrange,
+                  nextPage: () {},
+                  text: 'Continue to cart'
                 ),
                 SizedBox(height: 16),
                 Text(
-                  '3 months',
+                  'Or',
                   style: TextStyle(
-                    fontSize: 16,
-                    fontFamily: 'assets/blush_fonts/Rubik/Rubik-Regular.ttf',
                     color: GlobalColors.bigTextColorBlack,
+                    fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
+                    fontWeight: FontWeight.normal,
+                    fontSize: 14,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 30, right: 17, top: 53),
-                  child: GlobalButton(
-                      colorOfText: GlobalColors.whiteTextColor,
-                      colorOfButton: GlobalColors.buttonColorOrange,
-                      nextPage: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => CourseSaved()));
-                      },
-                  text: 'Add to cart',),
-                )
+                SizedBox(height: 16),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                  },
+                  child: Text(
+                    'find more courses',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontFamily: 'Rubik-Medium.ttf',
+                      color: GlobalColors.smallTextColorGrey,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

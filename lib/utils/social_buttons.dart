@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 
 class SocialLogins extends StatelessWidget {
-  const SocialLogins({Key? key}) : super(key: key);
+  const SocialLogins({Key? key, this.text = 'Login with social networks'}) : super(key: key);
+
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class SocialLogins extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
          Text(
-          'Login with social networks',
+          text,
           style: TextStyle(
             fontFamily: 'Rubik-Regular',
             fontSize: 14,

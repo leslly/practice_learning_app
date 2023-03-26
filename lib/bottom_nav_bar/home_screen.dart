@@ -4,8 +4,6 @@ import 'package:practice_learning_app/utils/course.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 import 'package:practice_learning_app/utils/navigation_buttons.dart';
 import 'package:practice_learning_app/utils/product_detail.dart';
-import 'package:practice_learning_app/utils/text_form_global.dart';
-import 'package:practice_learning_app/your_courses.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);

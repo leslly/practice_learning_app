@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/home_screen.dart';
-import 'package:practice_learning_app/profile_view.dart';
-import 'package:practice_learning_app/settings_view.dart';
+import 'package:practice_learning_app/bottom_nav_bar/profile_view.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
-
-import '../your_courses.dart';
+import '../bottom_nav_bar/home_screen.dart';
+import '../bottom_nav_bar/your_courses.dart';
 
 class NavigationButtons extends StatefulWidget {
   const NavigationButtons({Key? key}) : super(key: key);

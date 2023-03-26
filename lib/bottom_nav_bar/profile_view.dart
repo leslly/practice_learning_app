@@ -1,11 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/home_screen.dart';
+import 'package:practice_learning_app/no_payment_method.dart';
+import 'package:practice_learning_app/other_screens/course_not_saved.dart';
+import 'package:practice_learning_app/other_screens/course_saved.dart';
+import 'package:practice_learning_app/other_screens/payment_method_added.dart';
+import 'package:practice_learning_app/other_screens/search_not_found.dart';
+import 'package:practice_learning_app/other_screens/test/result_fail.dart';
+import 'package:practice_learning_app/other_screens/test/result_pass.dart';
 import 'package:practice_learning_app/settings_view.dart';
-import 'package:practice_learning_app/your_courses.dart';
+import 'package:practice_learning_app/bottom_nav_bar/your_courses.dart';
 import 'package:practice_learning_app/utils/navigation_buttons.dart';
 import 'package:practice_learning_app/utils/global_button.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
+import '../other_screens/test/result_avg.dart';
+import 'home_screen.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -92,7 +100,9 @@ class ProfileView extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 GlobalButton(
-                    nextPage: () {},
+                    nextPage: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ResultAvg()));
+                    },
                   text: 'Payments',
                   fontSize: 24,
                   colorOfButton: GlobalColors.buttonColorwhite,
@@ -109,7 +119,7 @@ class ProfileView extends StatelessWidget {
                   colorOfText: Colors.black,
                 ),
                 const SizedBox(height: 16),
-                GestureDetector(
+                InkWell(
                   onTap: () {
                     //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView() ));
                   },
