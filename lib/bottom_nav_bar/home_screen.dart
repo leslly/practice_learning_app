@@ -194,7 +194,28 @@ class MySearchDelegate extends SearchDelegate {
   );
 
   @override
-  List? buildActions(BuildContext context) => [
+
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: const Icon(Icons.clear),
+        onPressed: () {
+          if (query.isEmpty) {
+            close(context, null);
+          } else {
+            query = '';
+            // call your search function here
+            // or
+            // update search results
+          }
+          query = '';
+        },
+      ),
+      const Icon(Icons.ac_unit),
+    ];
+  }
+
+  /*List? buildActions(BuildContext context) => [
   IconButton(
   onPressed: () {
     if (query.isEmpty) {
@@ -206,7 +227,7 @@ class MySearchDelegate extends SearchDelegate {
   },//clear search bar
   icon: const Icon(Icons.ac_unit)
   ),
-  ];
+  ];*/
 
   @override
   Widget buildResults(BuildContext context) => Center(

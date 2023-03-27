@@ -19,7 +19,6 @@ class HtmlListView extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             border: Border.all(color: GlobalColors.borderGrey,
                 width: 1,
-                strokeAlign: StrokeAlign.inside,
                 style: BorderStyle.solid
             ),
           ),
