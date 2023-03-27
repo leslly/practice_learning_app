@@ -5,9 +5,14 @@ import 'package:practice_learning_app/utils/global_colours.dart';
 import 'package:practice_learning_app/utils/navigation_buttons.dart';
 import 'package:practice_learning_app/utils/product_detail.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController searchController = TextEditingController();
 
   @override
@@ -89,9 +94,15 @@ class HomeScreen extends StatelessWidget {
                        fontSize: 14,
                        fontFamily: 'assets/blush_fonts/Rubik/Rubik-Regular.ttf',
                      ),
-                     suffixIcon: Image.asset(
-                       'assets/blush_icons/search_icon.png',
-                       alignment: Alignment.centerRight,
+                     suffixIcon: IconButton(
+                       icon: Image.asset(
+                         'assets/blush_icons/search_icon.png',
+                         alignment: Alignment.centerRight,
+                         height: 24,
+                         width: 24,
+                       ), onPressed: () {
+                         showSearch(context: context, delegate: MySearchDelegate());
+                     },
                      ),
                    ),
                  ),
@@ -161,6 +172,72 @@ class HomeScreen extends StatelessWidget {
         ),
         child: const NavigationButtons(),
       ),
+    );
+  }
+}
+
+class MySearchDelegate extends SearchDelegate {
+
+  List searchResults = [
+    'Flutter',
+    'Figma',
+    'UI',
+    'UX',
+    'Html',
+    'Swift',
+  ];
+
+  @override
+  Widget? buildLeading(BuildContext context) => IconButton(
+      onPressed: () => close(context, null),//close search bar
+      icon: const Icon(Icons.icecream)
+  );
+
+  @override
+  List? buildActions(BuildContext context) => [
+  IconButton(
+  onPressed: () {
+    if (query.isEmpty) {
+      close(context, null);
+    }else{
+      query = '';
+    }
+    query = '';
+  },//clear search bar
+  icon: const Icon(Icons.ac_unit)
+  ),
+  ];
+
+  @override
+  Widget buildResults(BuildContext context) => Center(
+    child: Text(
+      query,
+    ),
+  );
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    List suggestions = searchResults.where((searchResults) {
+      final result = searchResults.toLowerCase();
+      final input = query.toLowerCase();
+
+      return result.contains(input);
+    }).toList();
+
+    return ListView.builder(
+      itemCount: suggestions.length,
+        itemBuilder: (context, index) {
+        final suggestion = suggestions[index];
+
+        return ListTile(
+          title: Text(suggestion),
+          onTap: () {
+            query = suggestion;
+
+            showResults(context);
+          },
+        );
+        },
     );
   }
 }
