@@ -204,6 +204,7 @@ class MySearchDelegate extends SearchDelegate {
             close(context, null);
           } else {
             query = '';
+
             // call your search function here
             // or
             // update search results
