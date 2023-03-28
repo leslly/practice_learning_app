@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/utils/category_labels.dart';
 import 'package:practice_learning_app/utils/course.dart';
@@ -83,6 +84,10 @@ class _HomeScreenState extends State<HomeScreen> {
                    ),
                  ),
                  child: TextFormField(
+                   onTap: () {
+
+                     showSearch(context: context, delegate: MySearchDelegate());
+                   },
                    controller: searchController,
                    keyboardType: TextInputType.text,
                    decoration: InputDecoration(
@@ -94,15 +99,13 @@ class _HomeScreenState extends State<HomeScreen> {
                        fontSize: 14,
                        fontFamily: 'assets/blush_fonts/Rubik/Rubik-Regular.ttf',
                      ),
-                     suffixIcon: IconButton(
-                       icon: Image.asset(
-                         'assets/blush_icons/search_icon.png',
-                         alignment: Alignment.centerRight,
+                     suffixIcon: InkWell(
+                       child: Image.asset(
+                       'assets/blush_icons/search_icon.png',
                          height: 24,
                          width: 24,
-                       ), onPressed: () {
-                         showSearch(context: context, delegate: MySearchDelegate());
-                     },
+                         fit: BoxFit.contain,
+                       ),
                      ),
                    ),
                  ),
@@ -187,10 +190,12 @@ class MySearchDelegate extends SearchDelegate {
     'Swift',
   ];
 
+  static BuildContext? get context => null;
+
   @override
   Widget? buildLeading(BuildContext context) => IconButton(
       onPressed: () => close(context, null),//close search bar
-      icon: const Icon(Icons.icecream)
+      icon: const Icon(CupertinoIcons.back)
   );
 
   @override
@@ -208,23 +213,8 @@ class MySearchDelegate extends SearchDelegate {
           query = '';
         },
       ),
-      const Icon(Icons.ac_unit),
     ];
   }
-
-  /*List? buildActions(BuildContext context) => [
-  IconButton(
-  onPressed: () {
-    if (query.isEmpty) {
-      close(context, null);
-    }else{
-      query = '';
-    }
-    query = '';
-  },//clear search bar
-  icon: const Icon(Icons.ac_unit)
-  ),
-  ];*/
 
   @override
   Widget buildResults(BuildContext context) => Center(

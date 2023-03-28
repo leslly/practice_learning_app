@@ -4,7 +4,7 @@ import 'package:practice_learning_app/no_payment_method.dart';
 import 'package:practice_learning_app/other_screens/course_not_saved.dart';
 import 'package:practice_learning_app/other_screens/course_saved.dart';
 import 'package:practice_learning_app/other_screens/payment_method_added.dart';
-import 'package:practice_learning_app/other_screens/search_not_found.dart';
+import 'package:practice_learning_app/search/search_not_found.dart';
 import 'package:practice_learning_app/other_screens/test/result_fail.dart';
 import 'package:practice_learning_app/other_screens/test/result_pass.dart';
 import 'package:practice_learning_app/settings_view.dart';
