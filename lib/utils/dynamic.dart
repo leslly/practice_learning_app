@@ -5,9 +5,8 @@ import 'package:get/route_manager.dart';
 class Dimensions {
   static double screenHeight = Get.context!.height;
   static double screenWidth = Get.context!.width;
-  static double screenRadius = Get.context!.radius;
 
-  //height size - 840
+  //height size - 844
   static double height10 = screenHeight / 84.4;
   static double height80 = screenHeight / 10.5;
   static double height15 = screenHeight / 56.27;
@@ -18,18 +17,18 @@ class Dimensions {
   static double height48 = screenHeight / 17.5;
   static double height24 = screenHeight / 35.0;
 
-  //radius size - 840
+  //radius size - 844
   static double radius15 = screenHeight / 56.27;
   static double radius20 = screenHeight / 42.2;
 
-  //width size - 840
+  //width size - 844
   static double width10 = screenWidth  / 84.4;
   static double width15 = screenWidth  / 56.27;
   static double width20 = screenWidth  / 42.2;
   static double width48 = screenWidth /17.5;
   static double width24 = screenWidth  / 35.0;
 
-  //font size - 840
+  //font size - 844
   static double font20 = screenHeight / 42.2;
   static double font16 = screenHeight / 52.75;
   static double font13 = screenHeight / 64.9;

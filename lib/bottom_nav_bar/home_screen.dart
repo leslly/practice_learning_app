@@ -204,7 +204,6 @@ class MySearchDelegate extends SearchDelegate {
             close(context, null);
           } else {
             query = '';
-
           }
           query = '';
         },
