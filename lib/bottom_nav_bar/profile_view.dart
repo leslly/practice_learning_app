@@ -1,18 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/no_payment_method.dart';
-import 'package:practice_learning_app/other_screens/course_not_saved.dart';
-import 'package:practice_learning_app/other_screens/course_saved.dart';
-import 'package:practice_learning_app/other_screens/payment_method_added.dart';
-import 'package:practice_learning_app/search/search_not_found.dart';
-import 'package:practice_learning_app/other_screens/test/result_fail.dart';
-import 'package:practice_learning_app/other_screens/test/result_pass.dart';
+import 'package:practice_learning_app/other_screens/cart/cart_view.dart';
+import 'package:practice_learning_app/other_screens/Payment/no_payment_method.dart';
 import 'package:practice_learning_app/settings_view.dart';
 import 'package:practice_learning_app/bottom_nav_bar/your_courses.dart';
 import 'package:practice_learning_app/utils/navigation_buttons.dart';
 import 'package:practice_learning_app/utils/global_button.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
-import '../other_screens/test/result_avg.dart';
 import 'home_screen.dart';
 
 class ProfileView extends StatelessWidget {
@@ -33,7 +27,7 @@ class ProfileView extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 16, right: 16, top: 24, bottom: 0),
                   child: Row(
                     children: [
-                      GestureDetector(
+                      InkWell(
                         onTap: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
                         },
@@ -92,7 +86,9 @@ class ProfileView extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 GlobalButton(
-                    nextPage: () {},
+                    nextPage: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
+                    },
                   text: 'Cart',
                   fontSize: 24,
                   colorOfButton: GlobalColors.buttonColorwhite,
@@ -101,7 +97,7 @@ class ProfileView extends StatelessWidget {
                 const SizedBox(height: 16),
                 GlobalButton(
                     nextPage: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => ResultAvg()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => NoPayment()));
                     },
                   text: 'Payments',
                   fontSize: 24,

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/other_screens/course_saved.dart';
+import 'package:practice_learning_app/other_screens/Saved/course_saved.dart';
 import 'package:practice_learning_app/utils/global_button.dart';
 import '../bottom_nav_bar/home_screen.dart';
 import 'category_labels.dart';

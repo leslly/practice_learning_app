@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/bottom_nav_bar/home_screen.dart';
-import 'package:practice_learning_app/utils/product_detail.dart';
-import '../utils/global_button.dart';
-import '../utils/global_colours.dart';
 
-class CourseSaved extends StatelessWidget {
-  const CourseSaved({Key? key}) : super(key: key);
+import '../../utils/global_button.dart';
+import '../../utils/global_colours.dart';
+import '../../utils/product_detail.dart';
+
+class CourseNotSaved extends StatelessWidget {
+  const CourseNotSaved({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,13 +58,13 @@ class CourseSaved extends StatelessWidget {
                   width: 375,
                   height: 253,
                   child: Image.asset(
-                    'assets/blush_images/course_saved.png',
+                    'assets/blush_images/course_not_saved.png',
                     fit: BoxFit.contain,
                   ),
                 ),
                 SizedBox(height: 32),
                 Text(
-                  'Course was added to cart',
+                  'Course not saved',
                   style: TextStyle(
                     color: GlobalColors.bigTextColorBlack,
                     fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
@@ -74,7 +74,7 @@ class CourseSaved extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 Text(
-                  "You can find the course in",
+                  "Try saving the course",
                   maxLines: 2,
                   style: TextStyle(
                     color: GlobalColors.smallTextColorGrey,
@@ -96,34 +96,12 @@ class CourseSaved extends StatelessWidget {
                 ),
                 SizedBox(height: 32),
                 GlobalButton(
-                  colorOfText: GlobalColors.whiteTextColor,
-                  colorOfButton: GlobalColors.buttonColorOrange,
-                  nextPage: () {},
-                  text: 'Continue to cart'
-                ),
-                SizedBox(height: 16),
-                Text(
-                  'Or',
-                  style: TextStyle(
-                    color: GlobalColors.bigTextColorBlack,
-                    fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
-                    fontWeight: FontWeight.normal,
-                    fontSize: 14,
-                  ),
-                ),
-                SizedBox(height: 16),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
-                  },
-                  child: Text(
-                    'find more courses',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontFamily: 'Rubik-Medium.ttf',
-                      color: GlobalColors.smallTextColorGrey,
-                    ),
-                  ),
+                    colorOfText: GlobalColors.whiteTextColor,
+                    colorOfButton: GlobalColors.buttonColorOrange,
+                    nextPage: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetail()));
+                    },
+                    text: 'Continue'
                 ),
               ],
             ),

@@ -1,13 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:practice_learning_app/bottom_nav_bar/home_screen.dart';
 
-import '../utils/global_button.dart';
-import '../utils/global_colours.dart';
-import '../utils/product_detail.dart';
+import '../../utils/global_button.dart';
+import '../../utils/global_colours.dart';
 
-class CourseNotSaved extends StatelessWidget {
-  const CourseNotSaved({Key? key}) : super(key: key);
+class Payment extends StatefulWidget {
+  const Payment({Key? key}) : super(key: key);
 
+  @override
+  State<Payment> createState() => _PaymentState();
+}
+
+class _PaymentState extends State<Payment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +27,7 @@ class CourseNotSaved extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetail()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
                       },
                       child: Align(
                         alignment: Alignment.topLeft,
@@ -43,7 +48,7 @@ class CourseNotSaved extends StatelessWidget {
                     ),
                     const SizedBox(width: 92),
                     Text(
-                      'Saved',
+                      'Payment',
                       style: TextStyle(
                         color: GlobalColors.bigTextColorBlack,
                         fontSize: 24,
@@ -58,13 +63,13 @@ class CourseNotSaved extends StatelessWidget {
                   width: 375,
                   height: 253,
                   child: Image.asset(
-                    'assets/blush_images/course_not_saved.png',
+                    'assets/blush_images/payment_added.png',
                     fit: BoxFit.contain,
                   ),
                 ),
                 SizedBox(height: 32),
                 Text(
-                  'Course not saved',
+                  'Payment method added',
                   style: TextStyle(
                     color: GlobalColors.bigTextColorBlack,
                     fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
@@ -74,7 +79,7 @@ class CourseNotSaved extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 Text(
-                  "Try saving the course",
+                  "You can buy the course now",
                   maxLines: 2,
                   style: TextStyle(
                     color: GlobalColors.smallTextColorGrey,
@@ -85,7 +90,7 @@ class CourseNotSaved extends StatelessWidget {
                 ),
                 SizedBox(height: 5),
                 Text(
-                  "your cart in profile",
+                  "Continue to payment",
                   maxLines: 2,
                   style: TextStyle(
                     color: GlobalColors.smallTextColorGrey,
@@ -96,13 +101,10 @@ class CourseNotSaved extends StatelessWidget {
                 ),
                 SizedBox(height: 32),
                 GlobalButton(
-                    colorOfText: GlobalColors.whiteTextColor,
-                    colorOfButton: GlobalColors.buttonColorOrange,
-                    nextPage: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetail()));
-                    },
-                    text: 'Continue'
-                ),
+                  colorOfText: GlobalColors.whiteTextColor,
+                  colorOfButton: GlobalColors.buttonColorOrange,
+                  nextPage: () {},
+                  text: 'Continue',)
               ],
             ),
           ),

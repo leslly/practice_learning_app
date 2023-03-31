@@ -1,18 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/bottom_nav_bar/home_screen.dart';
+import 'package:practice_learning_app/utils/product_detail.dart';
+import '../../utils/global_button.dart';
+import '../../utils/global_colours.dart';
 
-import '../utils/global_button.dart';
-import '../utils/global_colours.dart';
+class CourseSaved extends StatelessWidget {
+  const CourseSaved({Key? key}) : super(key: key);
 
-class Payment extends StatefulWidget {
-  const Payment({Key? key}) : super(key: key);
-
-  @override
-  State<Payment> createState() => _PaymentState();
-}
-
-class _PaymentState extends State<Payment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,14 +15,14 @@ class _PaymentState extends State<Payment> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
             child: Column(
               children: [
                 Row(
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetail()));
                       },
                       child: Align(
                         alignment: Alignment.topLeft,
@@ -48,7 +43,7 @@ class _PaymentState extends State<Payment> {
                     ),
                     const SizedBox(width: 92),
                     Text(
-                      'Payment',
+                      'Saved',
                       style: TextStyle(
                         color: GlobalColors.bigTextColorBlack,
                         fontSize: 24,
@@ -58,18 +53,18 @@ class _PaymentState extends State<Payment> {
                     ),
                   ],
                 ),
-                SizedBox(height: 127),
-                Container(
+                const SizedBox(height: 127),
+                SizedBox(
                   width: 375,
                   height: 253,
                   child: Image.asset(
-                    'assets/blush_images/payment_added.png',
+                    'assets/blush_images/course_saved.png',
                     fit: BoxFit.contain,
                   ),
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 Text(
-                  'Payment method added',
+                  'Course was added to cart',
                   style: TextStyle(
                     color: GlobalColors.bigTextColorBlack,
                     fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
@@ -77,9 +72,9 @@ class _PaymentState extends State<Payment> {
                     fontSize: 24,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
-                  "You can buy the course now",
+                  "You can find the course in",
                   maxLines: 2,
                   style: TextStyle(
                     color: GlobalColors.smallTextColorGrey,
@@ -88,9 +83,9 @@ class _PaymentState extends State<Payment> {
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
-                  "Continue to payment",
+                  "your cart in profile",
                   maxLines: 2,
                   style: TextStyle(
                     color: GlobalColors.smallTextColorGrey,
@@ -99,12 +94,37 @@ class _PaymentState extends State<Payment> {
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 GlobalButton(
                   colorOfText: GlobalColors.whiteTextColor,
                   colorOfButton: GlobalColors.buttonColorOrange,
                   nextPage: () {},
-                  text: 'Continue',)
+                  text: 'Continue to cart'
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  'Or',
+                  style: TextStyle(
+                    color: GlobalColors.bigTextColorBlack,
+                    fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
+                    fontWeight: FontWeight.normal,
+                    fontSize: 14,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                  },
+                  child: Text(
+                    'find more courses',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontFamily: 'Rubik-Medium.ttf',
+                      color: GlobalColors.smallTextColorGrey,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
