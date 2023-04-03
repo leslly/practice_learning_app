@@ -25,8 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 8.0, right: 16.0, left: 16.0, bottom: 0),
+          child: Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               //mainAxisAlignment: MainAxisAlignment.center,
@@ -160,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
                //     );
                //   },
                // ),
-               // HomeScreenList(),
+               // const Expanded(child: HomeScreenList()),
                Courses(backgroundColor: GlobalColors.profileBackground),
                 const SizedBox(height: 16),
                 Courses(

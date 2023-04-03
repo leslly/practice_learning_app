@@ -55,7 +55,7 @@ class ProductDetail extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Container(
                   height: 257,
                   width: 375,
@@ -111,14 +111,16 @@ class ProductDetail extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 30, right: 17, top: 53),
-                  child: GlobalButton(
-                      colorOfText: GlobalColors.whiteTextColor,
-                      colorOfButton: GlobalColors.buttonColorOrange,
-                      nextPage: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => CourseSaved()));
-                      },
-                  text: 'Add to cart',),
-                )
+
+                    child: GlobalButton(
+                        colorOfText: GlobalColors.whiteTextColor,
+                        colorOfButton: GlobalColors.buttonColorOrange,
+                        nextPage: () {
+                          //Provider.of<CartModel>(context, listen: false).addItemToCart(index);
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => CourseSaved()));
+                        },
+                    text: 'Add to cart',),
+                  ),
               ],
             ),
           ),
