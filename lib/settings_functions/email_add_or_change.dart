@@ -15,7 +15,7 @@ class _EmailAddOrChangeState extends State<EmailAddOrChange> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        color: Color(0xff757575),
+        color: const Color(0xff757575),
         child: Container(
           decoration: BoxDecoration(
             color: GlobalColors.buttonColorwhite,
@@ -47,12 +47,12 @@ class _EmailAddOrChangeState extends State<EmailAddOrChange> {
                     color: GlobalColors.bigTextColorBlack,
                   ),
                 ),
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
                     hintText: 'example@google.com',
                   ),
                 //CupertinoIcons.chevron_up
-                  autofocus: true,
+                  //autofocus: true,
                 ),
                 const SizedBox(height: 15),
                 Text(
@@ -63,12 +63,12 @@ class _EmailAddOrChangeState extends State<EmailAddOrChange> {
                     color: GlobalColors.bigTextColorBlack,
                   ),
                 ),
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
                     hintText: 'example@google.com',
                   ),
                   //CupertinoIcons.chevron_up
-                  autofocus: true,
+                 // autofocus: true,
                 ),
                 const SizedBox(height: 15),
                 Text(
@@ -79,19 +79,21 @@ class _EmailAddOrChangeState extends State<EmailAddOrChange> {
                     color: GlobalColors.bigTextColorBlack,
                   ),
                 ),
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
                     hintText: 'example@google.com',
                   ),
                   //CupertinoIcons.chevron_up
-                  autofocus: true,
+                 // autofocus: true,
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 GlobalButton(
                   text: 'Submit',
                     colorOfText: GlobalColors.whiteTextColor,
                     colorOfButton: Colors.blueAccent,
-                    nextPage: () {}
+                    nextPage: () {
+                    Navigator.pop(context);
+                    }
                 ),
               ],
             ),

@@ -79,7 +79,9 @@ class _NameChangeState extends State<NameChange> {
                     text: 'Submit',
                     colorOfText: GlobalColors.whiteTextColor,
                     colorOfButton: Colors.blueAccent,
-                    nextPage: () {}
+                    nextPage: () {
+                      Navigator.pop(context);
+                    }
                 ),
               ],
             ),

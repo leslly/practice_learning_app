@@ -8,6 +8,8 @@ import 'package:practice_learning_app/utils/navigation_buttons.dart';
 import 'package:practice_learning_app/utils/product_detail.dart';
 import 'package:provider/provider.dart';
 
+import '../home_screen_list.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -138,28 +140,27 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-               // Expanded(
-               //   child: Consumer<CartModel>(
-               //       builder:(context, value, child) {
-               //         return ListView.builder(
-               //           itemCount: value.courseForSale.length,
-               //           itemBuilder: (BuildContext context, int index) {
-               //           return Courses(
-               //               backgroundColor: value.courseForSale[index][6],
-               //             descriptionText: value.courseForSale[index][5],
-               //             titleText:value.courseForSale[index][4],
-               //             image: value.courseForSale[index][1],
-               //             durationText: value.courseForSale[index][3],
-               //             priceText: value.courseForSale[index][2],
-               //             nextPage: () {
-               //                 Provider.of<CartModel>(context, listen: false).addItemToCart(index);
-               //             },
-               //           );
+               // Consumer<CartModel>(
+               //   builder:(context, value, child) {
+               //     return ListView.builder(
+               //       itemCount: value.courseForSale.length,
+               //       itemBuilder: (BuildContext context, int index) {
+               //         return Courses(
+               //           backgroundColor: value.courseForSale[index][6],
+               //           descriptionText: value.courseForSale[index][5],
+               //           titleText:value.courseForSale[index][4],
+               //           image: value.courseForSale[index][1],
+               //           durationText: value.courseForSale[index][3],
+               //           priceText: value.courseForSale[index][2],
+               //           nextPage: () {
+               //             Provider.of<CartModel>(context, listen: false).addItemToCart(index);
                //           },
                //         );
                //       },
-               //   ),
+               //     );
+               //   },
                // ),
+               // HomeScreenList(),
                Courses(backgroundColor: GlobalColors.profileBackground),
                 const SizedBox(height: 16),
                 Courses(
@@ -202,6 +203,8 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
 
 class MySearchDelegate extends SearchDelegate {
 

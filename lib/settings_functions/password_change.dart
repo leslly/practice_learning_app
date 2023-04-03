@@ -16,7 +16,7 @@ class _PasswordChangeState extends State<PasswordChange> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        color: Color(0xff757575),
+        color: const Color(0xff757575),
         child: Container(
           decoration: BoxDecoration(
             color: GlobalColors.buttonColorwhite,
@@ -49,8 +49,12 @@ class _PasswordChangeState extends State<PasswordChange> {
                   ),
                 ),
                 const TextField(
+                  keyboardType: TextInputType.text,
                   obscureText: true,
                   autofocus: true,
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.all(0),
+                  ),
                 ),
                 const SizedBox(height: 15),
                 Text(
@@ -62,8 +66,12 @@ class _PasswordChangeState extends State<PasswordChange> {
                   ),
                 ),
                 const TextField(
+                  keyboardType: TextInputType.text,
                   obscureText: true,
                   autofocus: true,
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.all(0),
+                  ),
                 ),
                 const SizedBox(height: 15),
                 Text(
@@ -75,15 +83,21 @@ class _PasswordChangeState extends State<PasswordChange> {
                   ),
                 ),
                 const TextField(
+                  keyboardType: TextInputType.text,
                   obscureText: true,
                   autofocus: true,
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.all(0),
+                  ),
                 ),
                 const SizedBox(height: 15),
                 GlobalButton(
                     text: 'Submit',
                     colorOfText: GlobalColors.whiteTextColor,
                     colorOfButton: Colors.blueAccent,
-                    nextPage: () {}
+                    nextPage: () {
+                      Navigator.pop(context);
+                    }
                 ),
               ],
             ),
