@@ -18,10 +18,13 @@ class CartModel extends ChangeNotifier {
 
   get courseForSale => _courseForSale;
 
+  var isSuccessful = false;
   // Add item to the cart
-  void addItemToCart(int index) {
+  Future addItemToCart(int index) {
     _cartItems.add(_courseForSale[index]);
-    notifyListeners();
+    //notifyListeners();
+    isSuccessful = true;
+    return Future(() => null);
   }
 
   // Remove item from cart

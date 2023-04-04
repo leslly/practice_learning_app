@@ -59,16 +59,15 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                 children: [
                   Image(image: AssetImage('assets/blush_images/illustration.png'), height: animationController.value),
                    //Tried animating the text and fail miserably https://pub.dev/packages/animated_text_kit
-                   AnimatedTextKit(
-                       animatedTexts: TypewriterAnimatedText('CodeFactory',
-                       textStyle: TextStyle(
+                   Text(
+                     'CodeFactory',
+                       style: TextStyle(
                          fontSize: 40,
                          fontFamily: 'Rubik-Bold.ttf',
                          fontWeight: FontWeight.bold,
                          color: GlobalColors.bigTextColorBlack,
                        ),
                    ),
-                  ),
                 ],
               ),
             ),

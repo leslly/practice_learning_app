@@ -56,6 +56,7 @@ class _CartState extends State<Cart> {
                     ),
                   ],
                 ),
+                SizedBox(height: 20),
 
               ],
             ),

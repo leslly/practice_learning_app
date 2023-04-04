@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/bottom_nav_bar/home_screen.dart';
+import 'package:practice_learning_app/other_screens/cart/cart_view.dart';
 import 'package:practice_learning_app/utils/product_detail.dart';
 import '../../utils/global_button.dart';
 import '../../utils/global_colours.dart';
@@ -98,7 +99,9 @@ class CourseSaved extends StatelessWidget {
                 GlobalButton(
                   colorOfText: GlobalColors.whiteTextColor,
                   colorOfButton: GlobalColors.buttonColorOrange,
-                  nextPage: () {},
+                  nextPage: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
+                  },
                   text: 'Continue to cart'
                 ),
                 const SizedBox(height: 16),

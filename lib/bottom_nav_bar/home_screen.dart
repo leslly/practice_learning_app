@@ -25,7 +25,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
-          child: Expanded(
+           child: Padding(
+             padding: EdgeInsets.only(top: 20, bottom: 0, left: 16, right: 16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               //mainAxisAlignment: MainAxisAlignment.center,
@@ -88,7 +89,6 @@ class _HomeScreenState extends State<HomeScreen> {
                  ),
                  child: TextFormField(
                    onTap: () {
-
                      showSearch(context: context, delegate: MySearchDelegate());
                    },
                    controller: searchController,
@@ -139,27 +139,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
-               // Consumer<CartModel>(
-               //   builder:(context, value, child) {
-               //     return ListView.builder(
-               //       itemCount: value.courseForSale.length,
-               //       itemBuilder: (BuildContext context, int index) {
-               //         return Courses(
-               //           backgroundColor: value.courseForSale[index][6],
-               //           descriptionText: value.courseForSale[index][5],
-               //           titleText:value.courseForSale[index][4],
-               //           image: value.courseForSale[index][1],
-               //           durationText: value.courseForSale[index][3],
-               //           priceText: value.courseForSale[index][2],
-               //           nextPage: () {
-               //             Provider.of<CartModel>(context, listen: false).addItemToCart(index);
-               //           },
-               //         );
-               //       },
-               //     );
-               //   },
-               // ),
-               // const Expanded(child: HomeScreenList()),
                Courses(backgroundColor: GlobalColors.profileBackground),
                 const SizedBox(height: 16),
                 Courses(
