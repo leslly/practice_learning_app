@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/bottom_nav_bar/profile_view.dart';
+import 'package:practice_learning_app/index/index_screen.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 import '../bottom_nav_bar/home_screen.dart';
 import '../bottom_nav_bar/your_courses.dart';
@@ -48,7 +49,7 @@ class _NavigationButtonsState extends State<NavigationButtons> {
         Expanded(
           child: InkWell(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const IndexScreen()));
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

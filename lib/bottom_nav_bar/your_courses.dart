@@ -98,7 +98,7 @@ class _YourCoursesState extends State<YourCourses> {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
+      /*bottomNavigationBar: Container(
         padding: const EdgeInsets.only(bottom: 32, top: 8),
         height: 98,
         decoration: BoxDecoration(
@@ -111,7 +111,7 @@ class _YourCoursesState extends State<YourCourses> {
           ),
         ),
         child: const NavigationButtons(),
-      ),
+      ),*/
     );
   }
 }
