@@ -145,7 +145,9 @@ class _IndexScreenState extends State<IndexScreen> {
                         final course = provider.courses[index];
                         return CourseScreen(course: course, callback: (course){
                           //Navigate to your next screen using the course object
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => CourseInfo(course: course)));
+                          if(mounted) {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => CourseInfo(course: course)));
+                          }
                         });
                       },
                       separatorBuilder: (context, index){

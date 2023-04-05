@@ -12,7 +12,9 @@ class CourseScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: callback(course),
+      onTap: (){
+        callback(course);
+      },
       child: Container(
         decoration: BoxDecoration(
           border: Border.all(color: GlobalColors.borderGrey),
