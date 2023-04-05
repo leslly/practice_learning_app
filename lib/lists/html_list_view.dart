@@ -15,8 +15,8 @@ class HtmlListView extends StatelessWidget {
     return InkWell(
       onTap: lessonPage,
       child: Container(
-        width: 370,
-        height: 200,
+        // width: 370,
+        // height: 200,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: GlobalColors.borderGrey,

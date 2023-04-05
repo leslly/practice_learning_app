@@ -20,6 +20,6 @@ class _CourseInfoState extends State<CourseInfo> {
           ],
         ),
       ),
-    )
+    );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:practice_learning_app/index/index_screen.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 import 'package:practice_learning_app/utils/text_form_global.dart';
 import '../bottom_nav_bar/home_screen.dart';
@@ -104,7 +105,7 @@ class SignUpView extends StatelessWidget {
                     const SizedBox(height: 16),
                     GlobalButton(
                         nextPage: () {
-                      Navigator.push(context, MaterialPageRoute(builder:(context) => HomeScreen()));
+                      Navigator.push(context, MaterialPageRoute(builder:(context) => IndexScreen()));
                     },
                       text: "Sign up",
                       colorOfText: GlobalColors.whiteTextColor,

@@ -57,8 +57,8 @@ class HtmlCourse extends StatelessWidget {
                   ),
                   SizedBox(height: 16),
                   Container(
-                    width: 399,
-                    height: 500,
+                    // width: 399,
+                    // height: 500,
                     decoration: BoxDecoration(
                       border: Border.all(color: GlobalColors.borderGrey),
                       borderRadius: BorderRadius.circular(8),
@@ -79,8 +79,8 @@ class HtmlCourse extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.only(bottom: 0, top: 16),
                                 child: Container(
-                                  width: 399,
-                                  height: 334,
+                                  // width: 399,
+                                  // height: 334,
                                   color: GlobalColors.profileBackground,
                                   child: Image.asset(
                                     'assets/blush_images/cool_kids_long_distance_relationship.png',
