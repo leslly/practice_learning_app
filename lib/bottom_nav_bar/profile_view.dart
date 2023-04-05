@@ -133,7 +133,7 @@ class ProfileView extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
+      /*bottomNavigationBar: Container(
         padding: const EdgeInsets.only(bottom: 32, top: 8),
         height: 98,
         decoration: BoxDecoration(
@@ -146,7 +146,7 @@ class ProfileView extends StatelessWidget {
           ),
         ),
         child: const NavigationButtons(),
-      ),
+      ),*/
     );
   }
 }

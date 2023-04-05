@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_learning_app/index/index_provider.dart';
 import 'package:practice_learning_app/start_up/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'other_screens/cart/cart_model.dart';
@@ -13,8 +14,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => CartModel(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => CartModel()),
+        ChangeNotifierProvider(create: (context) => IndexProvider()) 
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner : false,
         title: 'codeFactory',
