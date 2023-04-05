@@ -8,7 +8,7 @@ import 'package:practice_learning_app/utils/navigation_buttons.dart';
 import 'package:practice_learning_app/utils/product_detail.dart';
 import 'package:provider/provider.dart';
 
-import '../home_screen_list.dart';
+import '../lists/home_screen_list.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
