@@ -23,9 +23,7 @@ class HtmlListView extends StatelessWidget {
             ),
           ),
           child: ListTile(
-            leading: Row(
-              children: [
-                Container(
+            leading: Container(
                   height: 72,
                   width: 78,
                   child: Image.asset(
@@ -33,10 +31,8 @@ class HtmlListView extends StatelessWidget {
                     fit: BoxFit.contain,
                   ),
                 ),
-                SizedBox(width: 8),
-                Column(
-                  children: [
-                    Text(
+                //SizedBox(width: 8),
+              title: Text(
                       text,
                       style: TextStyle(
                         color: GlobalColors.bigTextColorBlack,
@@ -45,21 +41,17 @@ class HtmlListView extends StatelessWidget {
                         fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
                       ),
                     ),
-                    SizedBox(height: 16),
-                    Container(
+                   // SizedBox(height: 16),
+                    subtitle: Container(
                       width: 222,
                       height: 11,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         color: GlobalColors.profileBorder,
                       ),
-                    )
-                  ],
-                )
-              ],
-            ),
+                    ),
+                ),
           ),
-        ),
       ],
     );
   }

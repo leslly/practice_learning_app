@@ -57,7 +57,29 @@ class _CartState extends State<Cart> {
                   ],
                 ),
                 SizedBox(height: 20),
-
+                Container(
+                  width: 347,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Row(
+                    //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: 100,
+                        width: 100,
+                        child: Image.asset(
+                          'study.png',
+                          fit: BoxFit.contain,
+                          ),
+                      ),
+                      Text('Flutter'),
+                      Icon(Icons.clear)
+                    ],
+                  )
+                ),
               ],
             ),
           ),
