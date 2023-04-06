@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:practice_learning_app/index/index.dart';
 import 'package:practice_learning_app/other_screens/cart/cart_view.dart';
 import 'package:practice_learning_app/other_screens/Payment/no_payment_method.dart';
 import 'package:practice_learning_app/settings_view.dart';
 import 'package:practice_learning_app/bottom_nav_bar/your_courses.dart';
-import 'package:practice_learning_app/utils/navigation_buttons.dart';
 import 'package:practice_learning_app/utils/global_button.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
-import 'home_screen.dart';
+
 
 class ProfileView extends StatelessWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -29,7 +29,7 @@ class ProfileView extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                         },
                         child: Align(
                           alignment: Alignment.topLeft,

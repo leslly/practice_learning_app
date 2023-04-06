@@ -1,10 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/index/model/course_model.dart';
-
 import '../utils/global_colours.dart';
-
+/*
+* TypeDef allows you to utilize a functiion as a variable, field, or boundary.
+* Out typedef is MyCallBack, the function Course has been made the variable course
+*
+* The container wrapped in the inkwell below is the design for each course widget button that navigates to
+* the course_info*/
 typedef MyCallback = Function(Course course);
+
 class CourseScreen extends StatelessWidget {
   const CourseScreen({Key? key, required this.course, required this.callback}) : super(key: key);
   final Course course;
@@ -103,10 +107,6 @@ class CourseScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-
-                      const Icon(
-                          CupertinoIcons.arrow_right
-                      )
                     ],
                   ),
                 ],

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/bottom_nav_bar/home_screen.dart';
 import 'package:practice_learning_app/other_screens/cart/cart_view.dart';
-import 'package:practice_learning_app/utils/product_detail.dart';
+import 'package:practice_learning_app/old/product_detail.dart';
+import '../../index/index.dart';
 import '../../utils/global_button.dart';
 import '../../utils/global_colours.dart';
 
@@ -117,7 +117,7 @@ class CourseSaved extends StatelessWidget {
                 const SizedBox(height: 16),
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                   },
                   child: Text(
                     'find more courses',

@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:practice_learning_app/index/index.dart';
 import 'package:practice_learning_app/start_learning/html_course.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
-import 'package:practice_learning_app/utils/navigation_buttons.dart';
 import 'package:practice_learning_app/utils/your_courses_design.dart';
-import 'home_screen.dart';
 
 class YourCourses extends StatefulWidget {
   const YourCourses({Key? key}) : super(key: key);
@@ -28,7 +27,7 @@ class _YourCoursesState extends State<YourCourses> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                       },
                       child: Align(
                         alignment: Alignment.topLeft,
@@ -98,20 +97,6 @@ class _YourCoursesState extends State<YourCourses> {
           ),
         ),
       ),
-      /*bottomNavigationBar: Container(
-        padding: const EdgeInsets.only(bottom: 32, top: 8),
-        height: 98,
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(16),
-            topRight: Radius.circular(16),
-          ),
-          border: Border.all(
-            color: GlobalColors.borderGrey,
-          ),
-        ),
-        child: const NavigationButtons(),
-      ),*/
     );
   }
 }

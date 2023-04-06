@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../utils/global_button.dart';
 import '../../utils/global_colours.dart';
-import '../../utils/product_detail.dart';
+import '../../old/product_detail.dart';
 
 class CourseNotSaved extends StatelessWidget {
   const CourseNotSaved({Key? key}) : super(key: key);

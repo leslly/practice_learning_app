@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'category_labels.dart';
-import 'global_colours.dart';
+import '../utils/category_labels.dart';
+import '../utils/global_colours.dart';
 
 class Courses extends StatelessWidget {
   const Courses({Key? key, this.nextPage, this.image = 'assets/blush_images/cool_kids_discussion.png', this.descriptionText = 'Advanced mobile interface design', this.titleText = 'UI', this.durationText = '3 h 30 min', this.priceText = "\$ 50",required this.backgroundColor}) : super(key: key);

@@ -5,7 +5,7 @@ import 'package:practice_learning_app/settings_functions/email_add_or_change.dar
 import 'package:practice_learning_app/settings_functions/name_change.dart';
 import 'package:practice_learning_app/settings_functions/password_change.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
-import 'utils/navigation_buttons.dart';
+import 'old/navigation_buttons.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -15,6 +15,10 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+
+  bool notificationValue = true;
+  bool themeValue = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,12 +110,9 @@ class _SettingsPageState extends State<SettingsPage> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const SizedBox(width: 137),
-                        Container(
-                          height: 40,
-                          width: 40,
-                          color: Colors.redAccent,
-                        )
+                        const SizedBox(width: 110),
+                       // Widget buildSwitch() => Switch.adaptive
+                        notificationSwitch(),
                       ],
                     ),
                   ),
@@ -151,12 +152,8 @@ class _SettingsPageState extends State<SettingsPage> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const SizedBox(width: 150),
-                        Container(
-                          height: 40,
-                          width: 40,
-                          color: Colors.redAccent,
-                        )
+                        const SizedBox(width: 130),
+                        themeSwitch(),
                       ],
                     ),
                   ),
@@ -343,20 +340,32 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        padding: const EdgeInsets.only(bottom: 32, top: 8),
-        height: 98,
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(16),
-            topRight: Radius.circular(16),
-          ),
-          border: Border.all(
-            color: GlobalColors.borderGrey,
-          ),
-        ),
-        child: const NavigationButtons(),
-      ),
+      // bottomNavigationBar: Container(
+      //   padding: const EdgeInsets.only(bottom: 32, top: 8),
+      //   height: 98,
+      //   decoration: BoxDecoration(
+      //     borderRadius: const BorderRadius.only(
+      //       topLeft: Radius.circular(16),
+      //       topRight: Radius.circular(16),
+      //     ),
+      //     border: Border.all(
+      //       color: GlobalColors.borderGrey,
+      //     ),
+      //   ),
+      //   child: const NavigationButtons(),
+      // ),
     );
   }
+  Widget notificationSwitch() => Switch.adaptive(
+    activeColor: Colors.blueAccent,
+    activeTrackColor: Colors.blue.withOpacity(0.4),
+    value: notificationValue,
+    onChanged: (value) =>  setState(() => this.notificationValue = value),
+  );
+  Widget themeSwitch() => Switch.adaptive(
+    activeColor: Colors.blueAccent,
+    activeTrackColor: Colors.blue.withOpacity(0.4),
+    value: themeValue,
+    onChanged: (value) =>  setState(() => this.themeValue = value),
+  );
 }

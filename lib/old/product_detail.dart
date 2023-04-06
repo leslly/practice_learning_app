@@ -1,12 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:practice_learning_app/index/index.dart';
 import 'package:practice_learning_app/other_screens/Saved/course_saved.dart';
 import 'package:practice_learning_app/utils/global_button.dart';
-import 'package:provider/provider.dart';
-import '../bottom_nav_bar/home_screen.dart';
-import '../other_screens/cart/cart_model.dart';
-import 'category_labels.dart';
-import 'global_colours.dart';
+import '../utils/category_labels.dart';
+import '../utils/global_colours.dart';
 
 class ProductDetail extends StatelessWidget {
   const ProductDetail({Key? key}) : super(key: key);
@@ -26,7 +24,7 @@ class ProductDetail extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                       },
                       child: Align(
                         alignment: Alignment.topLeft,

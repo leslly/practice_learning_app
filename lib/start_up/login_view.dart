@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/index/index.dart';
-import 'package:practice_learning_app/index/index_screen.dart';
+import 'package:practice_learning_app/index/home_screen_two.dart';
 import 'package:practice_learning_app/start_up/sign_up_view.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 import 'package:practice_learning_app/utils/social_buttons.dart';
@@ -77,7 +77,7 @@ class LoginView extends StatelessWidget {
                   const SizedBox(height: 16),
                   GlobalButton(
                       nextPage: () {
-                    Navigator.push(context, MaterialPageRoute(builder:(context) => const IndexScreen() ));
+                    Navigator.push(context, MaterialPageRoute(builder:(context) => HomePage() ));
                     },
                     text: "Log in",
                     colorOfText: GlobalColors.whiteTextColor,

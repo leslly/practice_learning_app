@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/utils/course.dart';
+import 'package:practice_learning_app/old/course.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
-import 'package:practice_learning_app/utils/product_detail.dart';
+import 'package:practice_learning_app/old/product_detail.dart';
 
 class HomeScreenList extends StatefulWidget {
   const HomeScreenList({Key? key}) : super(key: key);

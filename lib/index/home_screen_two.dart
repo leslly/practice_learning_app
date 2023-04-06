@@ -3,19 +3,17 @@ import 'package:practice_learning_app/index/course_info.dart';
 import 'package:practice_learning_app/index/course_screen.dart';
 import 'package:practice_learning_app/index/index_provider.dart';
 import 'package:provider/provider.dart';
-
-import '../bottom_nav_bar/home_screen.dart';
 import '../utils/category_labels.dart';
 import '../utils/global_colours.dart';
 
-class IndexScreen extends StatefulWidget {
-  const IndexScreen({Key? key}) : super(key: key);
+class HomeScreenTwo extends StatefulWidget {
+  const HomeScreenTwo({Key? key}) : super(key: key);
 
   @override
-  State<IndexScreen> createState() => _IndexScreenState();
+  State<HomeScreenTwo> createState() => _HomeScreenTwoState();
 }
 
-class _IndexScreenState extends State<IndexScreen> {
+class _HomeScreenTwoState extends State<HomeScreenTwo> {
   final TextEditingController searchController = TextEditingController();
 
   @override
@@ -86,7 +84,7 @@ class _IndexScreenState extends State<IndexScreen> {
                   ),
                   child: TextFormField(
                     onTap: () {
-                      showSearch(context: context, delegate: MySearchDelegate());
+                     ///// Search for courses
                     },
                     controller: searchController,
                     keyboardType: TextInputType.text,

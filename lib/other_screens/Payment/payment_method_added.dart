@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/bottom_nav_bar/home_screen.dart';
-
+import 'package:practice_learning_app/index/index.dart';
 import '../../utils/global_button.dart';
 import '../../utils/global_colours.dart';
 
@@ -27,7 +26,7 @@ class _PaymentState extends State<Payment> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                       },
                       child: Align(
                         alignment: Alignment.topLeft,
