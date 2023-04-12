@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:practice_learning_app/course/course_info.dart';
 import 'package:practice_learning_app/course/course_screen.dart';
 import 'package:practice_learning_app/course/index_provider.dart';
+import 'package:practice_learning_app/course/model/course_model.dart';
 import 'package:provider/provider.dart';
 import '../utils/category_labels.dart';
 import '../utils/global_colours.dart';
@@ -15,6 +16,14 @@ class HomeScreenTwo extends StatefulWidget {
 
 class _HomeScreenTwoState extends State<HomeScreenTwo> {
   final TextEditingController searchController = TextEditingController();
+
+  // List<Course> _searchFound = [];
+  //
+  // @override
+  // void initState() {
+  //   _searchFound = courses[index];//this is supposed to be the list from the provider
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -182,4 +191,16 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
       );
     });
   }
+  // void _runfilter (String enteredKeyword) {
+  //   List<Course> results = [];
+  //   if(enteredKeyword.isEmpty) {
+  //     results = courses[index];//list from provider
+  //   }else{
+  //     results = courses.where((course) => course.title!.toLowerCase().contains(enteredKeyword.toLowerCase())).toList();
+  //   }
+  //
+  //   setState(() {
+  //     _searchFound = results;
+  //   });
+  // }
 }
