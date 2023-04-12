@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/index/index.dart';
-import 'package:practice_learning_app/index/model/course_model.dart';
+import 'package:practice_learning_app/course/index.dart';
+import 'package:practice_learning_app/course/model/course_model.dart';
 import '../other_screens/Saved/course_saved.dart';
 import '../utils/category_labels.dart';
 import '../utils/global_button.dart';

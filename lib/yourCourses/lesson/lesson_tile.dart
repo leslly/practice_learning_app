@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:practice_learning_app/yourCourses/model/lessons_model.dart';
+import '../../utils/global_colours.dart';
 
-import '../utils/global_colours.dart';
+typedef LessonCallBack = Function(Lesson lesson);
 
-class HtmlListView extends StatelessWidget {
- const HtmlListView({Key? key, this.lessonPage,this.progressBarWidth = 222, this.image = 'assets/blush_images/cool_kids_on_wheels_one.png', this.text = 'Main Tags'}) : super(key: key);
+class LessonTile extends StatelessWidget {
+ const LessonTile({Key? key, required this.lesson, required this.lessonCallBack}) : super(key: key);
 
-  final String image;
-  final String text;
-  final double progressBarWidth;
-  final VoidCallback? lessonPage;
+ final LessonCallBack lessonCallBack;
+ final Lesson lesson;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: lessonPage,
+      onTap: () {
+        lessonCallBack(lesson);
+      },
       child: Container(
         // width: 370,
-        // height: 200,
+        // height: 80,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: GlobalColors.borderGrey,
@@ -29,12 +31,12 @@ class HtmlListView extends StatelessWidget {
                 height: 72,
                 width: 78,
                 child: Image.asset(
-                  image,
+                  lesson.lessonImage,
                   fit: BoxFit.contain,
                 ),
               ),
             title: Text(
-                    text,
+                    lesson.lessonTitle,
                     style: TextStyle(
                       color: GlobalColors.bigTextColorBlack,
                       fontSize: 20,
@@ -50,7 +52,7 @@ class HtmlListView extends StatelessWidget {
                       color: Colors.grey,
                     ),
                     child: Container(
-                      width: 222,
+                      width: lesson.progressBarWidth,
                       height: 11,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),

@@ -5,7 +5,6 @@ import 'package:practice_learning_app/settings_functions/email_add_or_change.dar
 import 'package:practice_learning_app/settings_functions/name_change.dart';
 import 'package:practice_learning_app/settings_functions/password_change.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
-import 'old/navigation_buttons.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -340,20 +339,6 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
         ),
       ),
-      // bottomNavigationBar: Container(
-      //   padding: const EdgeInsets.only(bottom: 32, top: 8),
-      //   height: 98,
-      //   decoration: BoxDecoration(
-      //     borderRadius: const BorderRadius.only(
-      //       topLeft: Radius.circular(16),
-      //       topRight: Radius.circular(16),
-      //     ),
-      //     border: Border.all(
-      //       color: GlobalColors.borderGrey,
-      //     ),
-      //   ),
-      //   child: const NavigationButtons(),
-      // ),
     );
   }
   Widget notificationSwitch() => Switch.adaptive(

@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:practice_learning_app/utils/social_buttons.dart';
 
 import '../../utils/global_colours.dart';
-import '../../utils/social_buttons.dart';
-import 'html_course_test.dart';
 
-class ResultAvg extends StatelessWidget {
-  const ResultAvg({Key? key}) : super(key: key);
+class ResultPass extends StatelessWidget {
+  const ResultPass({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +21,7 @@ class ResultAvg extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => HtmlCourseTests()));
+                       // Navigator.push(context, MaterialPageRoute(builder: (context) => HtmlCourseTests()));
                       },
                       child: Align(
                         alignment: Alignment.topLeft,
@@ -58,13 +57,13 @@ class ResultAvg extends StatelessWidget {
                   width: 375,
                   height: 253,
                   child: Image.asset(
-                    'assets/blush_images/search_not_found.png',
+                    'assets/blush_images/result.png',
                     fit: BoxFit.contain,
                   ),
                 ),
                 SizedBox(height: 32),
                 Text(
-                  'Well Done',
+                  'Congratulations',
                   style: TextStyle(
                     color: GlobalColors.bigTextColorBlack,
                     fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
@@ -74,7 +73,18 @@ class ResultAvg extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 Text(
-                  "You scored above the average mark",
+                  "Congratulations for getting",
+                  maxLines: 2,
+                  style: TextStyle(
+                    color: GlobalColors.smallTextColorGrey,
+                    fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
+                    fontWeight: FontWeight.normal,
+                    fontSize: 14,
+                  ),
+                ),
+                SizedBox(height: 5),
+                Text(
+                  "all the answers correct",
                   maxLines: 2,
                   style: TextStyle(
                     color: GlobalColors.smallTextColorGrey,
@@ -92,6 +102,6 @@ class ResultAvg extends StatelessWidget {
           ),
         ),
       ),
-    );;
+    );
   }
 }

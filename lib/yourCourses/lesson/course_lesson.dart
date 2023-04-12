@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:practice_learning_app/bottom_nav_bar/your_courses.dart';
-import 'package:practice_learning_app/other_screens/test/html_test_questions.dart';
-import 'package:practice_learning_app/start_learning/html_course.dart';
-
-import '../utils/global_colours.dart';
+import 'package:practice_learning_app/yourCourses/test/test_view.dart';
+import 'package:practice_learning_app/yourCourses/lesson/lessons_view.dart';
+import 'package:practice_learning_app/yourCourses/model/lessons_model.dart';
+import 'package:practice_learning_app/yourCourses/model/your_course_model.dart';
+import '../../utils/global_colours.dart';
 
 class CourseLesson extends StatefulWidget {
-  const CourseLesson({Key? key}) : super(key: key);
+  const CourseLesson({Key? key, required this.lesson}) : super(key: key);
+
+  final Lesson lesson;
 
   @override
   State<CourseLesson> createState() => _CourseLessonState();
@@ -29,7 +30,7 @@ class _CourseLessonState extends State<CourseLesson> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => HtmlCourse()));
+                       // Navigator.push(context, MaterialPageRoute(builder: (context) => LessonsView()));
                       },
                       child: Align(
                         alignment: Alignment.topLeft,
@@ -50,7 +51,7 @@ class _CourseLessonState extends State<CourseLesson> {
                     ),
                     const SizedBox(width: 118),
                     Text(
-                      'HTML',
+                      widget.lesson.lessonTitle,//course tite
                       style: TextStyle(
                         color: GlobalColors.bigTextColorBlack,
                         fontSize: 24,
@@ -67,7 +68,7 @@ class _CourseLessonState extends State<CourseLesson> {
                   height: 127,
                  child: Column(
                    children: [
-                     Text('3 of 11 lessons',
+                     Text('3 of 11 lessons',//lesson index of lesson.length
                      style: TextStyle(
                      color: GlobalColors.smallTextColorGrey,
                        fontSize: 14,
@@ -76,7 +77,7 @@ class _CourseLessonState extends State<CourseLesson> {
                      ),
                      SizedBox(height: 8),
                      Text(
-                       'Tags For Headers',
+                       widget.lesson.lessonTitle,
                        style: TextStyle(
                          fontSize: 24,
                          color: GlobalColors.bigTextColorBlack,
@@ -92,10 +93,7 @@ class _CourseLessonState extends State<CourseLesson> {
                          children: [
                            InkWell(
                              onTap: () {
-                               Navigator.push(context, MaterialPageRoute(builder: (context) => CourseLesson()));
-                               // setState(() {
-                               //
-                               // });
+                              //  Navigator.push(context, MaterialPageRoute(builder: (context) => CourseLesson(lesson: lesson)));
                              },
                              child: Container(
                                width: 114,
@@ -122,7 +120,7 @@ class _CourseLessonState extends State<CourseLesson> {
                            SizedBox(width: 4),
                            InkWell(
                              onTap: () {
-                               Navigator.push(context, MaterialPageRoute(builder: (context) => CourseTests()));
+                              // Navigator.push(context, MaterialPageRoute(builder: (context) => TestView()));
                              },
                              child: Container(
                                width: 107,
@@ -187,8 +185,8 @@ class _CourseLessonState extends State<CourseLesson> {
                   child: Column(
                     children: [
                       Container(
-                        height: 150,
-                        width: 343,
+                        // height: 150,
+                        // width: 343,
                         decoration: BoxDecoration(
                           color: GlobalColors.newColor.withOpacity(0.0),
                           borderRadius: BorderRadius.only(
@@ -196,9 +194,12 @@ class _CourseLessonState extends State<CourseLesson> {
                             topLeft: Radius.circular(8),
                           ),
                         ),
-                        child: Image.asset(
-                          'assets/blush_images/cool_kids_long_distance_relationship.png',
-                          fit: BoxFit.contain,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: Image.asset(
+                            widget.lesson.lessonImage,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                       Padding(

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/index/index.dart';
+import 'package:practice_learning_app/course/index.dart';
 import 'package:practice_learning_app/other_screens/cart/cart_view.dart';
 import 'package:practice_learning_app/other_screens/Payment/no_payment_method.dart';
-import 'package:practice_learning_app/settings_view.dart';
+import 'package:practice_learning_app/settings_functions/settings_view.dart';
 import 'package:practice_learning_app/bottom_nav_bar/your_courses.dart';
 import 'package:practice_learning_app/utils/global_button.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';

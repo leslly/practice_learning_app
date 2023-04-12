@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/other_screens/cart/cart_view.dart';
-import 'package:practice_learning_app/old/product_detail.dart';
-import '../../index/index.dart';
+import '../../course/course_info.dart';
+import '../../course/index.dart';
 import '../../utils/global_button.dart';
 import '../../utils/global_colours.dart';
 
@@ -23,7 +23,7 @@ class CourseSaved extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetail()));
+                       // Navigator.push(context, MaterialPageRoute(builder: (context) => CourseInfo(course: course)));
                       },
                       child: Align(
                         alignment: Alignment.topLeft,

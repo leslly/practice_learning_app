@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/index/model/course_model.dart';
+import 'package:practice_learning_app/course/model/course_model.dart';
 import '../utils/global_colours.dart';
 /*
 * TypeDef allows you to utilize a functiion as a variable, field, or boundary.

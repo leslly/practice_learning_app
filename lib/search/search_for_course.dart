@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../index/index.dart';
+import '../course/index.dart';
 import '../utils/global_colours.dart';
 
 class SearchForCourse extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/index/course_info.dart';
-import 'package:practice_learning_app/index/course_screen.dart';
-import 'package:practice_learning_app/index/index_provider.dart';
+import 'package:practice_learning_app/course/course_info.dart';
+import 'package:practice_learning_app/course/course_screen.dart';
+import 'package:practice_learning_app/course/index_provider.dart';
 import 'package:provider/provider.dart';
 import '../utils/category_labels.dart';
 import '../utils/global_colours.dart';
@@ -83,9 +83,6 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                     ),
                   ),
                   child: TextFormField(
-                    onTap: () {
-                     ///// Search for courses
-                    },
                     controller: searchController,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
@@ -98,6 +95,9 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                         fontFamily: 'assets/blush_fonts/Rubik/Rubik-Regular.ttf',
                       ),
                       suffixIcon: InkWell(
+                        onTap: () {
+                          ////search for course
+                        },
                         child: Image.asset(
                           'assets/blush_icons/search_icon.png',
                           height: 24,
@@ -112,6 +112,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         'Category:',
@@ -131,10 +132,31 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                       const CategoryLabels(text: '#Flutter'),
                       const SizedBox(width: 12),
                       const CategoryLabels(text: '#UI'),
+                      const SizedBox(width: 12),
+                      const CategoryLabels(text: '#Python'),
+                      const SizedBox(width: 12),
+                      const CategoryLabels(text: '#SQL'),
+                      const SizedBox(width: 12),
+                      const CategoryLabels(text: '#Kotlin'),
+                      const SizedBox(width: 12),
+                      const CategoryLabels(text: '#CSS'),
+                      const SizedBox(width: 12),
+                      const CategoryLabels(text: '#JS'),
+                      const SizedBox(width: 12),
+                      const CategoryLabels(text: '#Java'),
+                      const SizedBox(width: 12),
+                      const CategoryLabels(text: '#C.programming'),
+                      const SizedBox(width: 12),
+                      const CategoryLabels(text: '#C++'),
+                      const SizedBox(width: 12),
+                      const CategoryLabels(text: '#React'),
+                      const SizedBox(width: 12),
+                      const CategoryLabels(text: '#Node.JS'),
+
                     ],
                   ),
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(height: 20),
                 Expanded(
                   child: ListView.separated(
                     physics: const BouncingScrollPhysics(),
