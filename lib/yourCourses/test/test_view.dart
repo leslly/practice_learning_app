@@ -2,12 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/yourCourses/test/course_test.dart';
 import 'package:practice_learning_app/yourCourses/providers/test_provider.dart';
+import 'package:practice_learning_app/yourCourses/test/test_question.dart';
 import 'package:provider/provider.dart';
 
 import '../../utils/global_colours.dart';
+import '../lesson/course_lesson.dart';
+import '../lesson/lessons_view.dart';
 import '../model/lessons_model.dart';
-import '../model/test_model.dart';
-import '../model/test_model.dart';
 import '../model/test_model.dart';
 
 class TestView extends StatefulWidget {
@@ -35,7 +36,7 @@ class _TestViewState extends State<TestView> {
                   children: [
                     InkWell(
                       onTap: () {
-                        // Navigator.push(context, MaterialPageRoute(builder: (context) => LessonsView(yourcourse: yourcourse)));
+                        Navigator.pop(context);
                       },
                       child: Container(
                         height: 40,
@@ -124,7 +125,7 @@ class _TestViewState extends State<TestView> {
                             SizedBox(width: 4),
                             InkWell(
                               onTap: () {
-                               // Navigator.push(context, MaterialPageRoute(builder: (context) => TestView()));
+                               //Navigator.push(context, MaterialPageRoute(builder: (context) => TestView(test: test, lesson: lesson,)));
                               },
                               child: Container(
                                 width: 107,
@@ -174,7 +175,7 @@ class _TestViewState extends State<TestView> {
                             ),
                           ],
                         ),
-                      ),
+                      ),// navigation between lesson, test and discuss
                     ],
                   ),
                 ),
@@ -186,7 +187,7 @@ class _TestViewState extends State<TestView> {
                         final test = provider.test[index];
                         return CourseTest( test: test,testCallBack: (test){
                           if(mounted) {
-                           // Navigator.push(context, MaterialPageRoute(builder: (context) => CourseTest(testCallBack: testCallBack, test: test)));
+                           Navigator.push(context, MaterialPageRoute(builder: (context) => TestQuestion()));
                           }
                         },);
                       },

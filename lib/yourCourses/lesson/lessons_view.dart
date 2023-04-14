@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/yourCourses/providers/lessons_provider.dart';
 import 'package:practice_learning_app/yourCourses/model/your_course_model.dart';
+import 'package:practice_learning_app/yourCourses/providers/your_course_provider.dart';
 import 'package:provider/provider.dart';
 import '../../bottom_nav_bar/your_courses.dart';
+import '../../course/index_provider.dart';
 import 'lesson_tile.dart';
 import 'course_lesson.dart';
 import '../../utils/global_colours.dart';
@@ -20,7 +22,10 @@ class LessonsView extends StatefulWidget {
 class _LessonsViewState extends State<LessonsView> {
   @override
   Widget build(BuildContext context) {
+    final yourCourseProvider = context.watch<YourCourseProvider>();
+    // help me solve the issue to have multiple provider in one file
     return Consumer<LessonProvider>(builder: (context, provider, child) {
+      final myLesson = provider.map[widget.yourcourse.courseId]!;
       return Scaffold(
         backgroundColor: GlobalColors.buttonColorwhite,
         body: SafeArea(
@@ -36,7 +41,7 @@ class _LessonsViewState extends State<LessonsView> {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => YourCourses()));
+                          Navigator.pop(context);
                         },
                         child: Container(
                           height: 40,
@@ -141,18 +146,17 @@ class _LessonsViewState extends State<LessonsView> {
                         padding: const EdgeInsets.symmetric(
                             vertical: 20, horizontal: 5),
                         itemBuilder: (context, index) {
-                          final lesson = provider.lesson[index];
-                          return LessonTile(lesson: lesson, lessonCallBack: (lessonCallBack) {
+                          final lesson = myLesson[index];
+                          return LessonTile(lesson: lesson, position: index+1, length: myLesson.length, lessonCallBack: (lessonCallBack, pos, length) {
                            if(mounted) {
-                             Navigator.push(context, MaterialPageRoute(builder: (context) => CourseLesson(lesson: lesson)));
+                             Navigator.push(context, MaterialPageRoute(builder: (context) => CourseLesson(lesson: lesson, yourcourse: widget.yourcourse, length: length, position: pos,)));
                            }
-                          }
-                          );
+                          },);
                         },
                         separatorBuilder: (context, index) {
                           return const SizedBox(height: 14);
                         },
-                        itemCount: provider.lesson.length
+                        itemCount: myLesson.length
                     ),
                   ),
                   SizedBox(height: 16),

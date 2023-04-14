@@ -15,73 +15,70 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: GlobalColors.buttonColorwhite,
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileView()));
-                      },
-                      child: Align(
-                        alignment: Alignment.topLeft,
-                        child: Container(
-                          height: 40,
-                          width: 40,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: GlobalColors.borderGrey,
-                            ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      child: Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: GlobalColors.borderGrey,
                           ),
-                          child: const Icon(
-                              CupertinoIcons.back
-                          ),
+                        ),
+                        child: const Icon(
+                            CupertinoIcons.back
                         ),
                       ),
                     ),
-                    const SizedBox(width: 92),
-                    Text(
-                      'My Cart',
-                      style: TextStyle(
-                        color: GlobalColors.bigTextColorBlack,
-                        fontSize: 24,
-                        fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 20),
-                Container(
-                  width: 347,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    borderRadius: BorderRadius.circular(8),
                   ),
-                  child: Row(
-                    //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        height: 100,
-                        width: 100,
-                        child: Image.asset(
-                          'study.png',
-                          fit: BoxFit.contain,
-                          ),
-                      ),
-                      Text('Flutter'),
-                      Icon(Icons.clear)
-                    ],
-                  )
-                ),
-              ],
-            ),
+                  const SizedBox(width: 230),
+                  Text(
+                    'My Cart',
+                    style: TextStyle(
+                      color: GlobalColors.bigTextColorBlack,
+                      fontSize: 24,
+                      fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+             Expanded(
+               child: ListView(
+                 children: [
+                   Container(
+                     width: 200,
+                     height: 75,
+                     decoration: BoxDecoration(
+                         border: Border.all(color: GlobalColors.borderGrey),
+                       borderRadius: BorderRadius.circular(8),
+                       color: GlobalColors.profileBackground
+                     ),
+                     child: Center(
+                       child: ListTile(
+                         leading: Image.asset('assets/blush_images/cool_plant.png'),
+                         title: Text('A course'),
+                         trailing: Icon(Icons.clear),
+                       ),
+                     ),
+                   ),
+                 ],
+               ),
+             )
+            ],
           ),
         ),
       ),

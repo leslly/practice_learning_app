@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:practice_learning_app/yourCourses/model/lessons_model.dart';
 import '../../utils/global_colours.dart';
 
-typedef LessonCallBack = Function(Lesson lesson);
+typedef LessonCallBack = Function(Lesson lesson, int pos, int length);
 
 class LessonTile extends StatelessWidget {
- const LessonTile({Key? key, required this.lesson, required this.lessonCallBack}) : super(key: key);
+ const LessonTile({Key? key, required this.lesson, required this.lessonCallBack, required this.length, required this.position }) : super(key: key);
 
  final LessonCallBack lessonCallBack;
  final Lesson lesson;
+ final int position;
+ final int length;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        lessonCallBack(lesson);
+        lessonCallBack(lesson, position, length);
       },
       child: Container(
         // width: 370,

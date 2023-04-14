@@ -7,19 +7,19 @@ class   TestProvider extends ChangeNotifier {
        testTitle: 'Tags For Headers',
        testDescription: "Let’s put your memory on this topic test. Solve tasks and check knowledge.",
        quiz: "Quiz 1",
-       testImage: 'assets/blush-images/cool_plant.png',
+       testImage: 'assets/blush_images/cool_plant.png',
    ),
     Test(
       testTitle: 'Main Tags',
       testDescription: "Let’s put your memory on this topic test. Solve tasks and check knowledge.",
       quiz: "Quiz 2",
-      testImage: 'assets/blush-images/cool_plant.png',
+      testImage: 'assets/blush_images/cool_plant.png',
     ),
     Test(
       testTitle: 'Style Tags',
       testDescription: "Let’s put your memory on this topic test. Solve tasks and check knowledge.",
       quiz: "Quiz 3",
-      testImage: 'assets/blush-images/cool_plant.png',
+      testImage: 'assets/blush_images/cool_plant.png',
     ),
   ];
   var index = 1;

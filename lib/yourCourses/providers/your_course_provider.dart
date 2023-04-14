@@ -6,6 +6,7 @@ import '../../utils/global_colours.dart';
 class YourCourseProvider extends ChangeNotifier{
   final yourCourses = [
     YourCourse(
+      courseId: 1,
         yourCourseBackgroundColor: Colors.grey,
         yourCourseimage: 'assets/blush_images/sittingtwo.png',
         yourCoursedurationText: 'Left 1 month 3 days',
@@ -18,6 +19,7 @@ class YourCourseProvider extends ChangeNotifier{
       yourCoursedurationText: 'Left 1 month 3 days',
       yourCoursetitleText:'Flutter',
       yourCoursedescriptionText: 'Advanced apps',
+      courseId: 2,
     ),
     YourCourse(
       yourCourseBackgroundColor: Colors.grey,
@@ -25,6 +27,7 @@ class YourCourseProvider extends ChangeNotifier{
       yourCoursedurationText: 'Left 1 month',
       yourCoursetitleText: 'Figma',
       yourCoursedescriptionText: 'Advanced designing with various components',
+      courseId: 3,
     ),
     YourCourse(
       yourCourseBackgroundColor: GlobalColors.profileBackground,
@@ -32,6 +35,7 @@ class YourCourseProvider extends ChangeNotifier{
       yourCoursedurationText: 'Left 1 month',
       yourCoursetitleText: 'Html',
       yourCoursedescriptionText: 'Advanced web applications',
+      courseId: 4,
     ),
   ];
 

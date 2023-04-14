@@ -13,10 +13,13 @@ class NameChange extends StatefulWidget {
 class _NameChangeState extends State<NameChange> {
   @override
   Widget build(BuildContext context) {
+    double keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
+    double maxHeight = MediaQuery.of(context).size.height - keyboardHeight;
     return SingleChildScrollView(
       child: Container(
         color: const Color(0xff757575),
         child: Container(
+          height: maxHeight,
           decoration: BoxDecoration(
             color: GlobalColors.buttonColorwhite,
             borderRadius: const BorderRadius.only(

@@ -26,7 +26,7 @@ class _NoPaymentState extends State<NoPayment> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileView()));
+                        Navigator.pop(context);
                       },
                       child: Align(
                         alignment: Alignment.topLeft,
@@ -45,7 +45,7 @@ class _NoPaymentState extends State<NoPayment> {
                         ),
                       ),
                     ),
-                    const SizedBox(width: 92),
+                    const SizedBox(width: 230),
                     Text(
                       'Payment',
                       style: TextStyle(

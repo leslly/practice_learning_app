@@ -26,7 +26,7 @@ class _PaymentState extends State<Payment> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                        Navigator.pop(context);
                       },
                       child: Align(
                         alignment: Alignment.topLeft,
@@ -45,7 +45,7 @@ class _PaymentState extends State<Payment> {
                         ),
                       ),
                     ),
-                    const SizedBox(width: 92),
+                    const SizedBox(width: 250),
                     Text(
                       'Payment',
                       style: TextStyle(

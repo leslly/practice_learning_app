@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:practice_learning_app/course/model/course_model.dart';
 import 'package:practice_learning_app/yourCourses/test/test_view.dart';
 import 'package:practice_learning_app/yourCourses/lesson/lessons_view.dart';
 import 'package:practice_learning_app/yourCourses/model/lessons_model.dart';
@@ -7,9 +8,12 @@ import 'package:practice_learning_app/yourCourses/model/your_course_model.dart';
 import '../../utils/global_colours.dart';
 
 class CourseLesson extends StatefulWidget {
-  const CourseLesson({Key? key, required this.lesson}) : super(key: key);
+  const CourseLesson({Key? key, required this.yourcourse, required this.lesson, required this.length, required this.position}) : super(key: key);
 
   final Lesson lesson;
+  final YourCourse yourcourse;
+  final int position;
+  final int length;
 
   @override
   State<CourseLesson> createState() => _CourseLessonState();
@@ -18,19 +22,62 @@ class CourseLesson extends StatefulWidget {
 class _CourseLessonState extends State<CourseLesson> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: GlobalColors.buttonColorwhite,
-      body: SingleChildScrollView(
-        child: SafeArea(
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        backgroundColor: GlobalColors.buttonColorwhite,
+        body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-            child: Column(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+            child:
+            // Column(
+            //   children: [
+            //     Container(
+            //       // width: 114,
+            //       height: 42,
+            //       decoration: BoxDecoration(
+            //         color: Colors.black,
+            //         borderRadius: BorderRadius.circular(16),
+            //       ),
+            //       child: TabBar(
+            //         indicator: BoxDecoration(
+            //           color: Colors.grey,
+            //           borderRadius: BorderRadius.circular(16),
+            //         ),
+            //         tabs: [
+            //           Tab(text: 'Lesson'),
+            //           Tab(text: 'Test'),
+            //           Tab(text: 'Discuss'),
+            //         ],
+            //       ),
+            //     ),
+            //     SizedBox(
+            //       height: MediaQuery.of(context).size.height,
+            //       child: TabBarView(
+            //         children: [
+            //           Container(
+            //             height: 200,
+            //             color: Colors.yellow,
+            //           ), Container(
+            //             height: 200,
+            //             color: Colors.pinkAccent,
+            //           ), Container(
+            //             height: 200,
+            //             color: Colors.redAccent,
+            //           ),
+            //         ],
+            //       ),
+            //     )
+            //   ],
+            // ),
+            // how the tab bar works
+            Column(
               children: [
                 Row(
                   children: [
                     InkWell(
                       onTap: () {
-                       // Navigator.push(context, MaterialPageRoute(builder: (context) => LessonsView()));
+                        Navigator.pop(context);// Navigator.push(context, MaterialPageRoute(builder: (context) => LessonsView()));
                       },
                       child: Align(
                         alignment: Alignment.topLeft,
@@ -49,9 +96,9 @@ class _CourseLessonState extends State<CourseLesson> {
                         ),
                       ),
                     ),
-                    const SizedBox(width: 118),
+                    const SizedBox(width: 210),
                     Text(
-                      widget.lesson.lessonTitle,//course tite
+                      widget.yourcourse.yourCoursetitleText,// Yourcourse tite
                       style: TextStyle(
                         color: GlobalColors.bigTextColorBlack,
                         fontSize: 24,
@@ -63,12 +110,11 @@ class _CourseLessonState extends State<CourseLesson> {
                 ),
                 SizedBox(height: 20),
                 Container(
-                 // margin: EdgeInsets.symmetric(vertical: 8, horizontal: 0),
                   width: 343,
                   height: 127,
                  child: Column(
                    children: [
-                     Text('3 of 11 lessons',//lesson index of lesson.length
+                     Text("${widget.position} of ${widget.length} lessons",//lesson index of lesson.length
                      style: TextStyle(
                      color: GlobalColors.smallTextColorGrey,
                        fontSize: 14,
@@ -93,7 +139,7 @@ class _CourseLessonState extends State<CourseLesson> {
                          children: [
                            InkWell(
                              onTap: () {
-                              //  Navigator.push(context, MaterialPageRoute(builder: (context) => CourseLesson(lesson: lesson)));
+                              // Navigator.push(context, MaterialPageRoute(builder: (context) => CourseLesson(lesson: lesson)));
                              },
                              child: Container(
                                width: 114,
@@ -120,7 +166,7 @@ class _CourseLessonState extends State<CourseLesson> {
                            SizedBox(width: 4),
                            InkWell(
                              onTap: () {
-                              // Navigator.push(context, MaterialPageRoute(builder: (context) => TestView()));
+                              //Navigator.push(context, MaterialPageRoute(builder: (context) => TestView(test: null, lesson: null,)));
                              },
                              child: Container(
                                width: 107,
@@ -173,7 +219,7 @@ class _CourseLessonState extends State<CourseLesson> {
                      ),
                    ],
                  ),
-                  ),
+                  ),// navigation between lesson, test and discuss
                 SizedBox(height: 16),
                 Container(
                   // width: 343,
@@ -197,7 +243,7 @@ class _CourseLessonState extends State<CourseLesson> {
                         child: Padding(
                           padding: const EdgeInsets.only(top: 20),
                           child: Image.asset(
-                            widget.lesson.lessonImage,
+                            widget.yourcourse.yourCourseimage,// Yourcourse image
                             fit: BoxFit.contain,
                           ),
                         ),

@@ -35,7 +35,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) =>  ProfileView()));
+                          Navigator.pop(context);
                         },
                         child: Align(
                           alignment: Alignment.topLeft,
@@ -54,7 +54,7 @@ class _SettingsPageState extends State<SettingsPage> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 92),
+                      const SizedBox(width: 250),
                       Text(
                         'Settings',
                         style: TextStyle(
@@ -176,7 +176,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 const SizedBox(height: 16),
                 GestureDetector(
                   onTap: () {
-                    showModalBottomSheet(context: context, builder: (context) => NameChange());
+                    showModalBottomSheet(context: context,isScrollControlled: true, builder: (context) => NameChange());
                   },
                   child: Container(
                     height: 82,
@@ -230,7 +230,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 const SizedBox(height: 16),
                 GestureDetector(
                   onTap: () {
-                    showModalBottomSheet(context: context, builder: (context) => const EmailAddOrChange());
+                    showModalBottomSheet(context: context, isScrollControlled: true, builder: (context) => const EmailAddOrChange());
                   },
                   child: Container(
                     height: 82,
@@ -284,7 +284,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 const SizedBox(height: 16),
                 GestureDetector(
                   onTap: () {
-                    showModalBottomSheet(context: context, builder: (context) => const PasswordChange());
+                    showModalBottomSheet(context: context, isScrollControlled: true, builder: (context) => const PasswordChange());
                   },
                   child: Container(
                     height: 82,

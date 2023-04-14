@@ -20,67 +20,43 @@ class _YourCoursesState extends State<YourCourses> {
     return Consumer<YourCourseProvider>(builder: (context, provider, child) {
       return Scaffold(
         backgroundColor: GlobalColors.buttonColorwhite,
-        body: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
-                    },
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: Container(
-                        height: 40,
-                        width: 40,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: GlobalColors.borderGrey,
-                          ),
-                        ),
-                        child: const Icon(
-                            CupertinoIcons.back
-                        ),
-                      ),
-                    ),
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              children: [
+                Text(
+                  'Your Courses',
+                  style: TextStyle(
+                    color: GlobalColors.bigTextColorBlack,
+                    fontSize: 24,
+                    fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
+                    fontWeight: FontWeight.bold,
                   ),
-                  const SizedBox(width: 92),
-                  Text(
-                    'Your Courses',
-                    style: TextStyle(
-                      color: GlobalColors.bigTextColorBlack,
-                      fontSize: 24,
-                      fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              Expanded(
-                child: ListView.separated(
-                    physics: const BouncingScrollPhysics(),
-                    padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
-                    itemBuilder: (context, index){
-                      final yourcourse = provider.yourCourses[index];
-                      return YourCoursesDesign( yourcourse: yourcourse, yourCourseCallback: (yourcourse) {
-                       // Navigate to the chosen course screen showing different lessons
-                        if(mounted) {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => LessonsView(yourcourse: yourcourse)));
-                        }
-                      },
-                      );
-                    },
-                    separatorBuilder: (context, index){
-                      return const SizedBox(height: 14);
-                    },
-                    itemCount: provider.yourCourses.length
                 ),
-              )
-            ],
+                const SizedBox(height: 20),
+                Expanded(
+                  child: ListView.separated(
+                      physics: const BouncingScrollPhysics(),
+                      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
+                      itemBuilder: (context, index){
+                        final yourcourse = provider.yourCourses[index];
+                        return YourCoursesDesign( yourcourse: yourcourse, yourCourseCallback: (yourcourse) {
+                         // Navigate to the chosen course screen showing different lessons
+                          if(mounted) {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => LessonsView(yourcourse: yourcourse)));
+                          }
+                        },
+                        );
+                      },
+                      separatorBuilder: (context, index){
+                        return const SizedBox(height: 14);
+                      },
+                      itemCount: provider.yourCourses.length
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       );
