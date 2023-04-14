@@ -49,82 +49,81 @@ class ProfileView extends StatelessWidget {
         elevation: 0,
       ),
       backgroundColor: GlobalColors.buttonColorwhite,
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const SizedBox(height: 48),
-                Container(
-                  height: 140,
-                  width: 140,
-                  decoration: BoxDecoration(
-                    color: GlobalColors.profileBackground,
-                    shape: BoxShape.circle,
-                    border:
-                        Border.all(width: 3, color: GlobalColors.profileBorder),
-                    image: const DecorationImage(
-                      image:
-                          AssetImage('assets/blush_images/cool_kids_bust.png'),
-                    ),
-                  ),
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(height: 48),
+            Container(
+              height: 140,
+              width: 140,
+              decoration: BoxDecoration(
+                color: GlobalColors.profileBackground,
+                shape: BoxShape.circle,
+                border: Border.all(width: 3, color: GlobalColors.profileBorder),
+                image: const DecorationImage(
+                  image: AssetImage('assets/blush_images/cool_kids_bust.png'),
                 ),
-                const SizedBox(height: 32),
-               SizedBox(height: 16),
-                GlobalButton(
-                  nextPage: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Cart()));
-                  },
-                  text: 'Cart',
-                  fontSize: 24,
-                  colorOfButton: GlobalColors.buttonColorwhite,
-                  colorOfText: Colors.black,
-                ),
-                const SizedBox(height: 16),
-                GlobalButton(
-                  nextPage: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => NoPayment()));
-                  },
-                  text: 'Payments',
-                  fontSize: 24,
-                  colorOfButton: GlobalColors.buttonColorwhite,
-                  colorOfText: Colors.black,
-                ),
-                const SizedBox(height: 16),
-                GlobalButton(
-                  nextPage: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SettingsPage()));
-                  },
-                  text: 'Settings',
-                  fontSize: 24,
-                  colorOfButton: GlobalColors.buttonColorwhite,
-                  colorOfText: Colors.black,
-                ),
-                const SizedBox(height: 16),
-                InkWell(
-                  onTap: () {
-                    //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView() ));
-                  },
-                  child: Text(
-                    'Log out',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontFamily: 'Rubik-Medium.ttf',
-                      color: GlobalColors.smallTextColorGrey,
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
-          ),
+            const SizedBox(height: 32),
+            // GlobalButton(
+            //     nextPage: () {
+            //       Navigator.push(context, MaterialPageRoute(builder: (context) => YourCourses() ));;
+            //     },
+            //   fontSize: 24,
+            //   text: 'Your Courses',
+            //   colorOfButton: GlobalColors.buttonColorwhite,
+            //   colorOfText: Colors.black,
+            // ),
+            // const SizedBox(height: 16),
+            GlobalButton(
+              nextPage: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Cart()));
+              },
+              text: 'Cart',
+              fontSize: 24,
+              colorOfButton: GlobalColors.buttonColorwhite,
+              colorOfText: Colors.black,
+            ),
+            const SizedBox(height: 16),
+            GlobalButton(
+              nextPage: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => NoPayment()));
+              },
+              text: 'Payments',
+              fontSize: 24,
+              colorOfButton: GlobalColors.buttonColorwhite,
+              colorOfText: Colors.black,
+            ),
+            const SizedBox(height: 16),
+            GlobalButton(
+              nextPage: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SettingsPage()));
+              },
+              text: 'Settings',
+              fontSize: 24,
+              colorOfButton: GlobalColors.buttonColorwhite,
+              colorOfText: Colors.black,
+            ),
+            const SizedBox(height: 16),
+            InkWell(
+              onTap: () {
+                //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView() ));
+              },
+              child: Text(
+                'Log out',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: 'Rubik-Medium.ttf',
+                  color: GlobalColors.smallTextColorGrey,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
       /*bottomNavigationBar: Container(
