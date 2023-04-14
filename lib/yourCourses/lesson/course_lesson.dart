@@ -26,6 +26,40 @@ class _CourseLessonState extends State<CourseLesson> {
       length: 3,
       child: Scaffold(
         backgroundColor: GlobalColors.buttonColorwhite,
+        appBar: AppBar(
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Center(
+              child: Container(
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: GlobalColors.borderGrey,
+                  ),
+                ),
+                child: const Icon(
+                  CupertinoIcons.back,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ),
+          title: Text(
+            widget.yourcourse.yourCoursetitleText,
+            style: TextStyle(
+              color: GlobalColors.bigTextColorBlack,
+              fontSize: 24,
+              fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium',
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          backgroundColor: GlobalColors.buttonColorwhite,
+          elevation: 0,
+        ),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
@@ -73,41 +107,6 @@ class _CourseLessonState extends State<CourseLesson> {
             // how the tab bar works
             Column(
               children: [
-                Row(
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.pop(context);// Navigator.push(context, MaterialPageRoute(builder: (context) => LessonsView()));
-                      },
-                      child: Align(
-                        alignment: Alignment.topLeft,
-                        child: Container(
-                          height: 40,
-                          width: 40,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: GlobalColors.borderGrey,
-                            ),
-                          ),
-                          child: const Icon(
-                              CupertinoIcons.back
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 210),
-                    Text(
-                      widget.yourcourse.yourCoursetitleText,// Yourcourse tite
-                      style: TextStyle(
-                        color: GlobalColors.bigTextColorBlack,
-                        fontSize: 24,
-                        fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
                 SizedBox(height: 20),
                 Container(
                   width: 343,
