@@ -8,7 +8,6 @@ import 'package:practice_learning_app/bottom_nav_bar/your_courses.dart';
 import 'package:practice_learning_app/utils/global_button.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 
-
 class ProfileView extends StatelessWidget {
   const ProfileView({Key? key}) : super(key: key);
 
@@ -24,12 +23,16 @@ class ProfileView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 16, top: 24, bottom: 0),
+                  padding: const EdgeInsets.only(
+                      left: 16, right: 16, top: 24, bottom: 0),
                   child: Row(
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage()));
                         },
                         child: Align(
                           alignment: Alignment.topLeft,
@@ -42,9 +45,7 @@ class ProfileView extends StatelessWidget {
                                 color: GlobalColors.borderGrey,
                               ),
                             ),
-                            child: const Icon(
-                                CupertinoIcons.back
-                            ),
+                            child: const Icon(CupertinoIcons.back),
                           ),
                         ),
                       ),
@@ -54,7 +55,8 @@ class ProfileView extends StatelessWidget {
                         style: TextStyle(
                           color: GlobalColors.bigTextColorBlack,
                           fontSize: 24,
-                          fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
+                          fontFamily:
+                              'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -68,27 +70,30 @@ class ProfileView extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: GlobalColors.profileBackground,
                     shape: BoxShape.circle,
-                    border: Border.all(width: 3, color: GlobalColors.profileBorder),
+                    border:
+                        Border.all(width: 3, color: GlobalColors.profileBorder),
                     image: const DecorationImage(
-                      image: AssetImage('assets/blush_images/cool_kids_bust.png'),
+                      image:
+                          AssetImage('assets/blush_images/cool_kids_bust.png'),
                     ),
                   ),
                 ),
                 const SizedBox(height: 32),
+                // GlobalButton(
+                //     nextPage: () {
+                //       Navigator.push(context, MaterialPageRoute(builder: (context) => YourCourses() ));;
+                //     },
+                //   fontSize: 24,
+                //   text: 'Your Courses',
+                //   colorOfButton: GlobalColors.buttonColorwhite,
+                //   colorOfText: Colors.black,
+                // ),
+                // const SizedBox(height: 16),
                 GlobalButton(
-                    nextPage: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => YourCourses() ));;
-                    },
-                  fontSize: 24,
-                  text: 'Your Courses',
-                  colorOfButton: GlobalColors.buttonColorwhite,
-                  colorOfText: Colors.black,
-                ),
-                const SizedBox(height: 16),
-                GlobalButton(
-                    nextPage: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
-                    },
+                  nextPage: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Cart()));
+                  },
                   text: 'Cart',
                   fontSize: 24,
                   colorOfButton: GlobalColors.buttonColorwhite,
@@ -96,9 +101,10 @@ class ProfileView extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 GlobalButton(
-                    nextPage: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => NoPayment()));
-                    },
+                  nextPage: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => NoPayment()));
+                  },
                   text: 'Payments',
                   fontSize: 24,
                   colorOfButton: GlobalColors.buttonColorwhite,
@@ -107,7 +113,10 @@ class ProfileView extends StatelessWidget {
                 const SizedBox(height: 16),
                 GlobalButton(
                   nextPage: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsPage()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SettingsPage()));
                   },
                   text: 'Settings',
                   fontSize: 24,

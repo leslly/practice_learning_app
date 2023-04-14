@@ -14,7 +14,6 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-
   bool notificationValue = true;
   bool themeValue = true;
 
@@ -22,6 +21,40 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: GlobalColors.buttonColorwhite,
+      appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Center(
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: GlobalColors.borderGrey,
+                ),
+              ),
+              child: const Icon(
+                CupertinoIcons.back,
+                color: Colors.black,
+              ),
+            ),
+          ),
+        ),
+        title: Text(
+          'Settings',
+          style: TextStyle(
+            color: GlobalColors.bigTextColorBlack,
+            fontSize: 24,
+            fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: GlobalColors.buttonColorwhite,
+        elevation: 0,
+      ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
@@ -29,44 +62,6 @@ class _SettingsPageState extends State<SettingsPage> {
             child: Column(
               //mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 16, top: 24, bottom: 0),
-                  child: Row(
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Align(
-                          alignment: Alignment.topLeft,
-                          child: Container(
-                            height: 40,
-                            width: 40,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: GlobalColors.borderGrey,
-                              ),
-                            ),
-                            child: const Icon(
-                                CupertinoIcons.back
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 250),
-                      Text(
-                        'Settings',
-                        style: TextStyle(
-                          color: GlobalColors.bigTextColorBlack,
-                          fontSize: 24,
-                          fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium',
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
                 const SizedBox(height: 24),
                 Image.asset(
                   'assets/blush_images/cool_kids_on_wheels.png',
@@ -79,11 +74,12 @@ class _SettingsPageState extends State<SettingsPage> {
                   height: 82,
                   width: 400,
                   decoration: BoxDecoration(
-                    border: Border.all( color: GlobalColors.borderGrey),
+                    border: Border.all(color: GlobalColors.borderGrey),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 8,bottom: 8, left: 16, right: 16),
+                    padding: const EdgeInsets.only(
+                        top: 8, bottom: 8, left: 16, right: 16),
                     child: Row(
                       children: [
                         Container(
@@ -93,9 +89,9 @@ class _SettingsPageState extends State<SettingsPage> {
                             borderRadius: BorderRadius.circular(56),
                             color: GlobalColors.profileBorder,
                           ),
-                          child:  Icon(
+                          child: Icon(
                             Icons.notifications,
-                          color: GlobalColors.buttonColorwhite,
+                            color: GlobalColors.buttonColorwhite,
                             size: 20,
                           ),
                         ),
@@ -105,12 +101,13 @@ class _SettingsPageState extends State<SettingsPage> {
                           style: TextStyle(
                             color: GlobalColors.bigTextColorBlack,
                             fontSize: 20,
-                            fontFamily: 'assets/blush_images/Rubik/Rubik-Medium',
+                            fontFamily:
+                                'assets/blush_images/Rubik/Rubik-Medium',
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         const SizedBox(width: 110),
-                       // Widget buildSwitch() => Switch.adaptive
+                        // Widget buildSwitch() => Switch.adaptive
                         notificationSwitch(),
                       ],
                     ),
@@ -121,11 +118,12 @@ class _SettingsPageState extends State<SettingsPage> {
                   height: 82,
                   width: 400,
                   decoration: BoxDecoration(
-                    border: Border.all( color: GlobalColors.borderGrey),
+                    border: Border.all(color: GlobalColors.borderGrey),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 8,bottom: 8, left: 16, right: 16),
+                    padding: const EdgeInsets.only(
+                        top: 8, bottom: 8, left: 16, right: 16),
                     child: Row(
                       children: [
                         Container(
@@ -135,7 +133,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             borderRadius: BorderRadius.circular(56),
                             color: GlobalColors.profileBorder,
                           ),
-                          child:  Icon(
+                          child: Icon(
                             Icons.brightness_4_sharp,
                             color: GlobalColors.buttonColorwhite,
                             size: 20,
@@ -147,7 +145,8 @@ class _SettingsPageState extends State<SettingsPage> {
                           style: TextStyle(
                             color: GlobalColors.bigTextColorBlack,
                             fontSize: 20,
-                            fontFamily: 'assets/blush_images/Rubik/Rubik-Medium',
+                            fontFamily:
+                                'assets/blush_images/Rubik/Rubik-Medium',
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -176,17 +175,21 @@ class _SettingsPageState extends State<SettingsPage> {
                 const SizedBox(height: 16),
                 GestureDetector(
                   onTap: () {
-                    showModalBottomSheet(context: context,isScrollControlled: true, builder: (context) => NameChange());
+                    showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        builder: (context) => NameChange());
                   },
                   child: Container(
                     height: 82,
                     width: 400,
                     decoration: BoxDecoration(
-                      border: Border.all( color: GlobalColors.borderGrey),
+                      border: Border.all(color: GlobalColors.borderGrey),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 8,bottom: 8, left: 16, right: 16),
+                      padding: const EdgeInsets.only(
+                          top: 8, bottom: 8, left: 16, right: 16),
                       child: Row(
                         children: [
                           Container(
@@ -196,7 +199,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               borderRadius: BorderRadius.circular(56),
                               color: GlobalColors.profileBorder,
                             ),
-                            child:  Icon(
+                            child: Icon(
                               Icons.person,
                               color: GlobalColors.buttonColorwhite,
                               size: 20,
@@ -208,19 +211,17 @@ class _SettingsPageState extends State<SettingsPage> {
                             style: TextStyle(
                               color: GlobalColors.bigTextColorBlack,
                               fontSize: 20,
-                              fontFamily: 'assets/blush_images/Rubik/Rubik-Medium',
+                              fontFamily:
+                                  'assets/blush_images/Rubik/Rubik-Medium',
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           const SizedBox(width: 200),
                           Container(
-                            height: 40,
-                            width: 40,
-                            color: GlobalColors.buttonColorwhite,
-                              child: const Icon(
-                                  CupertinoIcons.chevron_up
-                              )
-                          )
+                              height: 40,
+                              width: 40,
+                              color: GlobalColors.buttonColorwhite,
+                              child: const Icon(CupertinoIcons.chevron_up))
                         ],
                       ),
                     ),
@@ -230,17 +231,21 @@ class _SettingsPageState extends State<SettingsPage> {
                 const SizedBox(height: 16),
                 GestureDetector(
                   onTap: () {
-                    showModalBottomSheet(context: context, isScrollControlled: true, builder: (context) => const EmailAddOrChange());
+                    showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        builder: (context) => const EmailAddOrChange());
                   },
                   child: Container(
                     height: 82,
                     width: 400,
                     decoration: BoxDecoration(
-                      border: Border.all( color: GlobalColors.borderGrey),
+                      border: Border.all(color: GlobalColors.borderGrey),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 8,bottom: 8, left: 16, right: 16),
+                      padding: const EdgeInsets.only(
+                          top: 8, bottom: 8, left: 16, right: 16),
                       child: Row(
                         children: [
                           Container(
@@ -250,7 +255,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               borderRadius: BorderRadius.circular(56),
                               color: GlobalColors.profileBorder,
                             ),
-                            child:  Icon(
+                            child: Icon(
                               Icons.mail,
                               color: GlobalColors.buttonColorwhite,
                               size: 20,
@@ -262,7 +267,8 @@ class _SettingsPageState extends State<SettingsPage> {
                             style: TextStyle(
                               color: GlobalColors.bigTextColorBlack,
                               fontSize: 20,
-                              fontFamily: 'assets/blush_images/Rubik/Rubik-Medium',
+                              fontFamily:
+                                  'assets/blush_images/Rubik/Rubik-Medium',
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -271,10 +277,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               height: 40,
                               width: 40,
                               color: GlobalColors.buttonColorwhite,
-                              child: const Icon(
-                                  CupertinoIcons.chevron_up
-                              )
-                          )
+                              child: const Icon(CupertinoIcons.chevron_up))
                         ],
                       ),
                     ),
@@ -284,17 +287,21 @@ class _SettingsPageState extends State<SettingsPage> {
                 const SizedBox(height: 16),
                 GestureDetector(
                   onTap: () {
-                    showModalBottomSheet(context: context, isScrollControlled: true, builder: (context) => const PasswordChange());
+                    showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        builder: (context) => const PasswordChange());
                   },
                   child: Container(
                     height: 82,
                     width: 400,
                     decoration: BoxDecoration(
-                      border: Border.all( color: GlobalColors.borderGrey),
+                      border: Border.all(color: GlobalColors.borderGrey),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 8,bottom: 8, left: 16, right: 16),
+                      padding: const EdgeInsets.only(
+                          top: 8, bottom: 8, left: 16, right: 16),
                       child: Row(
                         children: [
                           Container(
@@ -304,7 +311,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               borderRadius: BorderRadius.circular(56),
                               color: GlobalColors.profileBorder,
                             ),
-                            child:  Icon(
+                            child: Icon(
                               Icons.lock_outline,
                               color: GlobalColors.buttonColorwhite,
                               size: 20,
@@ -316,7 +323,8 @@ class _SettingsPageState extends State<SettingsPage> {
                             style: TextStyle(
                               color: GlobalColors.bigTextColorBlack,
                               fontSize: 20,
-                              fontFamily: 'assets/blush_images/Rubik/Rubik-Medium',
+                              fontFamily:
+                                  'assets/blush_images/Rubik/Rubik-Medium',
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -325,10 +333,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               height: 40,
                               width: 40,
                               color: GlobalColors.buttonColorwhite,
-                              child: const Icon(
-                                  CupertinoIcons.chevron_up
-                              )
-                          )
+                              child: const Icon(CupertinoIcons.chevron_up))
                         ],
                       ),
                     ),
@@ -341,16 +346,17 @@ class _SettingsPageState extends State<SettingsPage> {
       ),
     );
   }
+
   Widget notificationSwitch() => Switch.adaptive(
-    activeColor: Colors.blueAccent,
-    activeTrackColor: Colors.blue.withOpacity(0.4),
-    value: notificationValue,
-    onChanged: (value) =>  setState(() => this.notificationValue = value),
-  );
+        activeColor: Colors.blueAccent,
+        activeTrackColor: Colors.blue.withOpacity(0.4),
+        value: notificationValue,
+        onChanged: (value) => setState(() => this.notificationValue = value),
+      );
   Widget themeSwitch() => Switch.adaptive(
-    activeColor: Colors.blueAccent,
-    activeTrackColor: Colors.blue.withOpacity(0.4),
-    value: themeValue,
-    onChanged: (value) =>  setState(() => this.themeValue = value),
-  );
+        activeColor: Colors.blueAccent,
+        activeTrackColor: Colors.blue.withOpacity(0.4),
+        value: themeValue,
+        onChanged: (value) => setState(() => this.themeValue = value),
+      );
 }
