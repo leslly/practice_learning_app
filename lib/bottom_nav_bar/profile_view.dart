@@ -14,6 +14,40 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Center(
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: GlobalColors.borderGrey,
+                ),
+              ),
+              child: const Icon(
+                CupertinoIcons.back,
+                color: Colors.black,
+              ),
+            ),
+          ),
+        ),
+        title: Text(
+          'Profile',
+          style: TextStyle(
+            color: GlobalColors.bigTextColorBlack,
+            fontSize: 24,
+            fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: GlobalColors.buttonColorwhite,
+        elevation: 0,
+      ),
       backgroundColor: GlobalColors.buttonColorwhite,
       body: SingleChildScrollView(
         child: SafeArea(
@@ -22,47 +56,6 @@ class ProfileView extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                      left: 16, right: 16, top: 24, bottom: 0),
-                  child: Row(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomePage()));
-                        },
-                        child: Align(
-                          alignment: Alignment.topLeft,
-                          child: Container(
-                            height: 40,
-                            width: 40,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: GlobalColors.borderGrey,
-                              ),
-                            ),
-                            child: const Icon(CupertinoIcons.back),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 92),
-                      Text(
-                        'Profile',
-                        style: TextStyle(
-                          color: GlobalColors.bigTextColorBlack,
-                          fontSize: 24,
-                          fontFamily:
-                              'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
                 const SizedBox(height: 48),
                 Container(
                   height: 140,
