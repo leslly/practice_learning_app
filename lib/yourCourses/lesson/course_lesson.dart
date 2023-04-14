@@ -89,13 +89,9 @@ class _CourseLessonState extends State<CourseLesson> {
             //       height: MediaQuery.of(context).size.height,
             //       child: TabBarView(
             //         children: [
+            //          CourseLesson(),
+            //           TestView()
             //           Container(
-            //             height: 200,
-            //             color: Colors.yellow,
-            //           ), Container(
-            //             height: 200,
-            //             color: Colors.pinkAccent,
-            //           ), Container(
             //             height: 200,
             //             color: Colors.redAccent,
             //           ),

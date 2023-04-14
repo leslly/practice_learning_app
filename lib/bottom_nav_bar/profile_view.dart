@@ -55,6 +55,7 @@ class ProfileView extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 48),
                 Container(
@@ -72,16 +73,7 @@ class ProfileView extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 32),
-                // GlobalButton(
-                //     nextPage: () {
-                //       Navigator.push(context, MaterialPageRoute(builder: (context) => YourCourses() ));;
-                //     },
-                //   fontSize: 24,
-                //   text: 'Your Courses',
-                //   colorOfButton: GlobalColors.buttonColorwhite,
-                //   colorOfText: Colors.black,
-                // ),
-                // const SizedBox(height: 16),
+               SizedBox(height: 16),
                 GlobalButton(
                   nextPage: () {
                     Navigator.push(context,
