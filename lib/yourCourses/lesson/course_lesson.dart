@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:practice_learning_app/course/model/course_model.dart';
+import 'package:practice_learning_app/yourCourses/providers/lessons_provider.dart';
+import 'package:practice_learning_app/yourCourses/providers/test_provider.dart';
 import 'package:practice_learning_app/yourCourses/test/test_view.dart';
 import 'package:practice_learning_app/yourCourses/lesson/lessons_view.dart';
 import 'package:practice_learning_app/yourCourses/model/lessons_model.dart';
@@ -22,6 +25,7 @@ class CourseLesson extends StatefulWidget {
 class _CourseLessonState extends State<CourseLesson> {
   @override
   Widget build(BuildContext context) {
+    final testProvider = context.watch<TestProvider>();
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -48,6 +52,7 @@ class _CourseLessonState extends State<CourseLesson> {
               ),
             ),
           ),
+          centerTitle: true,
           title: Text(
             widget.yourcourse.yourCoursetitleText,
             style: TextStyle(
@@ -161,7 +166,7 @@ class _CourseLessonState extends State<CourseLesson> {
                            SizedBox(width: 4),
                            InkWell(
                              onTap: () {
-                              //Navigator.push(context, MaterialPageRoute(builder: (context) => TestView(test: null, lesson: null,)));
+                             // Navigator.push(context, MaterialPageRoute(builder: (context) => TestView(test: testProvider.[index], lesson: lessonProvider.lesson[index])));
                              },
                              child: Container(
                                width: 107,

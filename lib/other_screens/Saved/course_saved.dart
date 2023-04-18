@@ -13,47 +13,47 @@ class CourseSaved extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: GlobalColors.buttonColorwhite,
+      appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Center(
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: GlobalColors.borderGrey,
+                ),
+              ),
+              child: const Icon(
+                CupertinoIcons.back,
+                color: Colors.black,
+              ),
+            ),
+          ),
+        ),
+        centerTitle: true,
+        title: Text(
+          'Saved',
+          style: TextStyle(
+            color: GlobalColors.bigTextColorBlack,
+            fontSize: 24,
+            fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: GlobalColors.buttonColorwhite,
+        elevation: 0,
+      ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
             child: Column(
               children: [
-                Row(
-                  children: [
-                    InkWell(
-                      onTap: () {
-                       // Navigator.push(context, MaterialPageRoute(builder: (context) => CourseInfo(course: course)));
-                      },
-                      child: Align(
-                        alignment: Alignment.topLeft,
-                        child: Container(
-                          height: 40,
-                          width: 40,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: GlobalColors.borderGrey,
-                            ),
-                          ),
-                          child: const Icon(
-                              CupertinoIcons.back
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 92),
-                    Text(
-                      'Saved',
-                      style: TextStyle(
-                        color: GlobalColors.bigTextColorBlack,
-                        fontSize: 24,
-                        fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
                 const SizedBox(height: 127),
                 SizedBox(
                   width: 375,

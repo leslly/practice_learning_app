@@ -36,6 +36,7 @@ class ProfileView extends StatelessWidget {
             ),
           ),
         ),
+        centerTitle: true,
         title: Text(
           'Profile',
           style: TextStyle(

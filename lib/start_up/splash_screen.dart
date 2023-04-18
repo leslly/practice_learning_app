@@ -1,7 +1,6 @@
 import 'dart:async';
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/start_up/intro_one.dart';
+import 'package:practice_learning_app/start_up/intro.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -34,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     });
 
     Future.delayed(const Duration(seconds: 5), () {
-     Navigator.push(context, MaterialPageRoute(builder: (context) => const IntroOne()));
+     Navigator.push(context, MaterialPageRoute(builder: (context) => const Intro()));
     });
   }
 

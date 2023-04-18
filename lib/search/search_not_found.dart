@@ -39,7 +39,7 @@ class SearchNotFound extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 16),
+                SizedBox(height: 16),//this should be a spacer
                 Container(
                   height: 56,
                   width: 399,

@@ -15,11 +15,11 @@ class _EmailAddOrChangeState extends State<EmailAddOrChange> {
   Widget build(BuildContext context) {
     double keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
     double maxHeight = MediaQuery.of(context).size.height - keyboardHeight;
-    return SingleChildScrollView(
-      child: Container(
-        color: const Color(0xff757575),
+    return Container(
+      color: const Color(0xff757575),
+      child: SingleChildScrollView(
         child: Container(
-          height: maxHeight,
+           //height: maxHeight,
           decoration: BoxDecoration(
             color: GlobalColors.buttonColorwhite,
             borderRadius: const BorderRadius.only(

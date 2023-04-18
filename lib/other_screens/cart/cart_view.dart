@@ -37,6 +37,7 @@ class _CartState extends State<Cart> {
             ),
           ),
         ),
+        centerTitle: true,
         title: Text(
           'Cart',
           style: TextStyle(

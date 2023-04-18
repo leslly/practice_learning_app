@@ -38,6 +38,7 @@ class _NoPaymentState extends State<NoPayment> {
             ),
           ),
         ),
+        centerTitle: true,
         title: Text(
           'Payments',
           style: TextStyle(

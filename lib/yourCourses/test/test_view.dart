@@ -25,6 +25,7 @@ class _TestViewState extends State<TestView> {
   @override
   Widget build(BuildContext context) {
     return Consumer<TestProvider>(builder: (context, provider, child) {
+      final myTest = provider.map[widget.test]!;
       return Scaffold(
           backgroundColor: GlobalColors.buttonColorwhite,
           body: Padding(
@@ -184,7 +185,7 @@ class _TestViewState extends State<TestView> {
                       physics: const BouncingScrollPhysics(),
                       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
                       itemBuilder: (context, index){
-                        final test = provider.test[index];
+                        final test = myTest[index];
                         return CourseTest( test: test,testCallBack: (test){
                           if(mounted) {
                            Navigator.push(context, MaterialPageRoute(builder: (context) => TestQuestion()));
@@ -194,7 +195,7 @@ class _TestViewState extends State<TestView> {
                       separatorBuilder: (context, index){
                         return const SizedBox(height: 14);
                       },
-                      itemCount: provider.test.length
+                      itemCount: myTest.length
                   ),
                 )
               ],

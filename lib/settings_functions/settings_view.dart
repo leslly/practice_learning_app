@@ -20,6 +20,7 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: GlobalColors.buttonColorwhite,
       appBar: AppBar(
         leading: GestureDetector(
@@ -43,6 +44,7 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
           ),
         ),
+        centerTitle: true,
         title: Text(
           'Settings',
           style: TextStyle(
@@ -178,7 +180,9 @@ class _SettingsPageState extends State<SettingsPage> {
                     showModalBottomSheet(
                         context: context,
                         isScrollControlled: true,
-                        builder: (context) => NameChange());
+                        builder: (context) => SingleChildScrollView(
+                          padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+                            child: NameChange()));
                   },
                   child: Container(
                     height: 82,

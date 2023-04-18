@@ -19,6 +19,7 @@ class _CourseInfoState extends State<CourseInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: GlobalColors.buttonColorwhite,
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
@@ -41,6 +42,7 @@ class _CourseInfoState extends State<CourseInfo> {
             ),
           ),
         ),
+        centerTitle: true,
         title: Text(
           widget.course.title,
           style: TextStyle(
