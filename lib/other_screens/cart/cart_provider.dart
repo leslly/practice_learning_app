@@ -1,26 +1,21 @@
 import 'package:flutter/material.dart';
 
-class CartModel extends ChangeNotifier {
+class CartProvider extends ChangeNotifier {
 
-
-
-  final List _courseForSale =[
-    //[image, priceText, duratiionText, titleText, decriptionText, backgroundColor]
-    ['assets/blush_images/cool_kids_discussion.png', '\$ 50', '3 hrs', 'A description', Colors.pink]
-  ];
-
+  int index = 0;
   // List of cart items
   List _cartItems = [];
 
   get cartItems => _cartItems;
 
-  get courseForSale => _courseForSale;
+  get courses => courses;
 
   var isSuccessful = false;
+
   // Add item to the cart
   Future addItemToCart(int index) {
-    _cartItems.add(_courseForSale[index]);
-    //notifyListeners();
+    _cartItems.add(courses[index]);
+    notifyListeners();
     isSuccessful = true;
     return Future(() => null);
   }

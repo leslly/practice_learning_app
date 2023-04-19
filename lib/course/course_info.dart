@@ -1,14 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/course/index.dart';
 import 'package:practice_learning_app/course/model/course_model.dart';
+import 'package:provider/provider.dart';
 import '../other_screens/Saved/course_saved.dart';
+import '../other_screens/cart/cart_provider.dart';
 import '../utils/category_labels.dart';
 import '../utils/global_button.dart';
 import '../utils/global_colours.dart';
 
 class CourseInfo extends StatefulWidget {
   const CourseInfo({Key? key, required this.course}) : super(key: key);
+
   final Course course;
 
   @override
@@ -16,6 +18,7 @@ class CourseInfo extends StatefulWidget {
 }
 
 class _CourseInfoState extends State<CourseInfo> {
+  int index = 0;// I don't really know if this is correct, very sure this is not correct. chould be course index
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,11 +125,8 @@ class _CourseInfoState extends State<CourseInfo> {
                     colorOfText: GlobalColors.whiteTextColor,
                     colorOfButton: GlobalColors.buttonColorOrange,
                     nextPage: () {
-                      //Provider.of<CartModel>(context, listen: false).addItemToCart(index);
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => CourseSaved()));
+                      Provider.of<CartProvider>(context, listen: false).addItemToCart(index);
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => CourseSaved()));
                     },
                     text: 'Add to cart',
                   ),

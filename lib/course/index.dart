@@ -4,8 +4,6 @@ import 'package:practice_learning_app/bottom_nav_bar/your_courses.dart';
 import 'package:practice_learning_app/course/index_provider.dart';
 import 'package:practice_learning_app/bottom_nav_bar/home_screen_two.dart';
 import 'package:provider/provider.dart';
-
-import '../settings_functions/settings_view.dart';
 import '../utils/global_colours.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,8 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
-  bool _colorOfButton = true;
 
   final screens = const [
     ProfileView(),

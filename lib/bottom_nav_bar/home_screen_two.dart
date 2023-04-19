@@ -16,8 +16,9 @@ class HomeScreenTwo extends StatefulWidget {
 
 class _HomeScreenTwoState extends State<HomeScreenTwo> {
   final TextEditingController searchController = TextEditingController();
-
+// This is supposed to work sha
   // List<Course> _searchFound = [];
+  // final courses = Course.courses();
   //
   // @override
   // void initState() {
