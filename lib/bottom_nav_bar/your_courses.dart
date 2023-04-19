@@ -9,9 +9,8 @@ import '../yourCourses/providers/your_course_provider.dart';
 import '../yourCourses/your_courses_design.dart';
 
 class YourCourses extends StatefulWidget {
-  const YourCourses({Key? key, required this.test}) : super(key: key);
+  const YourCourses({Key? key}) : super(key: key);
 
-  final Test test;
 
   @override
   State<YourCourses> createState() => _YourCoursesState();
@@ -74,7 +73,7 @@ class _YourCoursesState extends State<YourCourses> {
                         return YourCoursesDesign( yourcourse: yourcourse, yourCourseCallback: (yourcourse) {
                          // Navigate to the chosen course screen showing different lessons
                           if(mounted) {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => LessonsView(yourcourse: yourcourse, test: testProvider.test,)));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => LessonsView(yourcourse: yourcourse)));
                           }
                         },
                         );

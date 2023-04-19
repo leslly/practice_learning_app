@@ -1,23 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/yourCourses/lesson/the_lesson.dart';
-import 'package:practice_learning_app/yourCourses/model/test_model.dart';
 import 'package:practice_learning_app/yourCourses/providers/lessons_provider.dart';
 import 'package:practice_learning_app/yourCourses/model/your_course_model.dart';
-import 'package:practice_learning_app/yourCourses/providers/your_course_provider.dart';
 import 'package:provider/provider.dart';
-import '../../bottom_nav_bar/your_courses.dart';
-import '../../course/index_provider.dart';
 import '../providers/test_provider.dart';
 import 'lesson_tile.dart';
-import 'course_lesson.dart';
 import '../../utils/global_colours.dart';
 
 class LessonsView extends StatefulWidget {
-  const LessonsView({Key? key, required this.yourcourse, required this.test}) : super(key: key);
+  const LessonsView({Key? key, required this.yourcourse}) : super(key: key);
 
   final YourCourse yourcourse;
- final Test test;
 
   @override
   State<LessonsView> createState() => _LessonsViewState();
@@ -29,9 +23,9 @@ class _LessonsViewState extends State<LessonsView> {
     //final yourCourseProvider = context.watch<YourCourseProvider>();
     // help me solve the issue to have multiple provider in one file
     return Consumer<LessonProvider>(builder: (context, provider, child) {
-      final testProvider = context.watch<TestProvider>();
-      final myTest = testProvider.map[widget.test.id];
       final myLesson = provider.map[widget.yourcourse.courseId]!;
+      final myTest = Provider.of<TestProvider>(context, listen: false).map[widget.yourcourse.courseId]!;
+
       return Scaffold(
         backgroundColor: GlobalColors.buttonColorwhite,
         appBar: AppBar(
@@ -154,10 +148,11 @@ class _LessonsViewState extends State<LessonsView> {
                         itemBuilder: (context, index) {
                           final lesson = myLesson[index];
                           //final test = myTest![index];
+
                           return LessonTile(lesson: lesson, position: index+1, length: myLesson.length, lessonCallBack: (lessonCallBack, pos, length) {
                            if(mounted) {
                              // test: error
-                             Navigator.push(context, MaterialPageRoute(builder: (context) => TheLesson( yourcourse: widget.yourcourse, lesson: lesson, length: length, position: pos, test: widget.test)));
+                             Navigator.push(context, MaterialPageRoute(builder: (context) => TheLesson( yourcourse: widget.yourcourse, lesson: lesson, length: length, position: pos, test: myTest)));
                             // Navigator.push(context, MaterialPageRoute(builder: (context) => CourseLesson(lesson: lesson, yourcourse: widget.yourcourse, length: length, position: pos,)));
                            }
                           },);

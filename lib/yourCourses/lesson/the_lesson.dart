@@ -8,7 +8,6 @@ import '../model/your_course_model.dart';
 import '../providers/test_provider.dart';
 import '../test/course_test.dart';
 import '../test/test_question.dart';
-import '../test/test_view.dart';
 
 class TheLesson extends StatefulWidget {
   const TheLesson({Key? key, required this.test, required this.yourcourse, required this.lesson, required this.length, required this.position}) : super(key: key);
@@ -17,7 +16,7 @@ class TheLesson extends StatefulWidget {
   final YourCourse yourcourse;
   final int position;
   final int length;
-  final Test test;
+  final List<Test> test;
 
 
   @override
@@ -35,10 +34,10 @@ class _TheLessonState extends State<TheLesson> with  TickerProviderStateMixin{
   @override
   Widget build(BuildContext context) {
     return Consumer<TestProvider>(builder: (context, provider, child) {
-      final myTest = provider.map[widget.test]!;
       return Scaffold(
         backgroundColor: GlobalColors.buttonColorwhite,
         appBar: AppBar(
+          centerTitle: true,
           leading: GestureDetector(
             onTap: () {
               Navigator.pop(context);
@@ -73,7 +72,7 @@ class _TheLessonState extends State<TheLesson> with  TickerProviderStateMixin{
           elevation: 0,
         ),
         body: SingleChildScrollView(
-          physics: NeverScrollableScrollPhysics(),
+         // physics: NeverScrollableScrollPhysics(),
           child: SafeArea(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
@@ -124,7 +123,7 @@ class _TheLessonState extends State<TheLesson> with  TickerProviderStateMixin{
                 ),
                   SizedBox(
                     width: double.maxFinite,
-                    height: double.maxFinite,
+                    //height: double.maxFinite,
                     child: TabBarView(
                       controller: _controller,
                       children: [
@@ -203,7 +202,7 @@ class _TheLessonState extends State<TheLesson> with  TickerProviderStateMixin{
                               physics: const BouncingScrollPhysics(),
                               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
                               itemBuilder: (context, index){
-                                final test = myTest[index];
+                                final test = widget.test[index];
                                 return CourseTest( test: test,testCallBack: (test){
                                   if(mounted) {
                                     Navigator.push(context, MaterialPageRoute(builder: (context) => TestQuestion()));
@@ -213,7 +212,7 @@ class _TheLessonState extends State<TheLesson> with  TickerProviderStateMixin{
                               separatorBuilder: (context, index){
                                 return const SizedBox(height: 14);
                               },
-                              itemCount: myTest.length
+                              itemCount: widget.test.length
                           ),
                         ),
                         ///// FOR THE CHAT ROOM

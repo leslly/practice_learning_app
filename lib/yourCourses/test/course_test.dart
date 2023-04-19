@@ -21,9 +21,12 @@ class CourseTest extends StatelessWidget {
         padding: const EdgeInsets.only(left: 24, right: 24, top: 24, bottom: 32),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(
-             test.testImage,
+            Center(
+              child: Image.asset(
+               test.testImage,
+              ),
             ),
             SizedBox(height: 16),
             Text(
@@ -55,26 +58,29 @@ class CourseTest extends StatelessWidget {
               maxLines: 2,
             ),
             SizedBox(height: 8),
-            InkWell(
-              onTap: () {
-                testCallBack(test);
-                // Navigate to test questions
-              },
-              child: Container(
-                width: 295,
-                height: 56,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.deepOrange, width: 1),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 72),
-                  child: Text(
-                    'Begin',
-                    style: TextStyle(
-                      color: GlobalColors.bigTextColorBlack,
-                      fontFamily: 'Rubik-Regular',
-                      fontSize: 14,
+            Center(
+              child: InkWell(
+                onTap: () {
+                  testCallBack(test);
+                  // Navigate to test questions
+                },
+                child: Container(
+                  width: 295,
+                  height: 56,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.deepOrange, width: 1),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 72),
+                    child: Text(
+                      'Begin',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: GlobalColors.bigTextColorBlack,
+                        fontFamily: 'Rubik-Regular',
+                        fontSize: 14,
+                      ),
                     ),
                   ),
                 ),
