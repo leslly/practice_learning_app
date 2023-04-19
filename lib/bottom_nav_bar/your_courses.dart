@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/course/index.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 import 'package:provider/provider.dart';
 import '../yourCourses/lesson/lessons_view.dart';

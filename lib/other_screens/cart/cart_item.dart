@@ -19,8 +19,8 @@ class _CartItemState extends State<CartItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
-      height: 75,
+      // width: 200,
+      // height: 75,
       // these constrains will not be necessary but wait till can solve errors
       decoration: BoxDecoration(
           border: Border.all(color: GlobalColors.borderGrey),

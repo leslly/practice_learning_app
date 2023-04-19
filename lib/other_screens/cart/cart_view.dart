@@ -1,8 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/bottom_nav_bar/profile_view.dart';
-import 'package:practice_learning_app/course/course_info.dart';
-import 'package:practice_learning_app/other_screens/cart/cart_item.dart';
 import 'package:practice_learning_app/other_screens/cart/cart_provider.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 import 'package:provider/provider.dart';
@@ -64,24 +61,24 @@ class _CartState extends State<Cart> {
             child: Column(
               children: [
                 SizedBox(height: 20),
-                Expanded(
-                  child: ListView.separated(
-                    physics: BouncingScrollPhysics(),
-                    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 5),
-                    itemBuilder: (context, index) {
-                      final cart = provider.cartItems[index];
-                       //return CartItem(course: course){
-                      //   if(mounted) {
-                      //     Navigator.push(context, MaterialPageRoute(builder: (context) => YourCourse()));
-                      //   }
-                      // }
-                    },
-                    separatorBuilder: (context, index) {
-                      return const SizedBox(height: 14);
-                    },
-                    itemCount: provider.cartItems.length,
-                  ),
-                ),
+                // Expanded(
+                //   child: ListView.separated(
+                //     physics: BouncingScrollPhysics(),
+                //     padding: EdgeInsets.symmetric(vertical: 20, horizontal: 5),
+                //     itemBuilder: (context, index) {
+                //       final cart = provider.cartItems[index];
+                //        //return CartItem(course: course){
+                //       //   if(mounted) {
+                //       //     Navigator.push(context, MaterialPageRoute(builder: (context) => YourCourse()));
+                //       //   }
+                //       // }
+                //     },
+                //     separatorBuilder: (context, index) {
+                //       return const SizedBox(height: 14);
+                //     },
+                //     itemCount: provider.cartItems.length,
+                //   ),
+                // ),
                 ///// TOTAL + PAY NOW
                 Padding(
                   padding: const EdgeInsets.all(36.0),

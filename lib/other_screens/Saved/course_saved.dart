@@ -100,7 +100,7 @@ class CourseSaved extends StatelessWidget {
                   colorOfText: GlobalColors.whiteTextColor,
                   colorOfButton: GlobalColors.buttonColorOrange,
                   nextPage: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Cart(cart: cart,)));
+                   // Navigator.push(context, MaterialPageRoute(builder: (context) => Cart(cart: cart,)));
                   },
                   text: 'Continue to cart'
                 ),

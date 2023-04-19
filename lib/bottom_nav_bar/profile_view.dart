@@ -80,8 +80,7 @@ class ProfileView extends StatelessWidget {
             // const SizedBox(height: 16),
             GlobalButton(
               nextPage: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Cart()));
+              //  Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
               },
               text: 'Cart',
               fontSize: 24,
