@@ -14,6 +14,7 @@ class CategoryLabels extends StatelessWidget {
        // All courses with the keywords
       },
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Container(
             padding: const EdgeInsets.only(left: 11, right: 11, top: 3, bottom: 3),

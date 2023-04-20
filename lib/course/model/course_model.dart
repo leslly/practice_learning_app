@@ -3,11 +3,13 @@ class Course{
   final String description;
   final String courseInfo;
   final String duration;
-  final String price;
+  final double price;
   final int color;
   final String image;
+  final int courseId;
 
   Course({
+    required this.courseId,
     required this.color,
     required this.price,
     required this.title,

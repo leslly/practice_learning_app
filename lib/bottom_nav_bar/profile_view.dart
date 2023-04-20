@@ -1,18 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/course/index.dart';
+import 'package:practice_learning_app/course/index_provider.dart';
 import 'package:practice_learning_app/other_screens/cart/cart_view.dart';
 import 'package:practice_learning_app/other_screens/Payment/no_payment_method.dart';
 import 'package:practice_learning_app/settings_functions/settings_view.dart';
-import 'package:practice_learning_app/bottom_nav_bar/your_courses.dart';
 import 'package:practice_learning_app/utils/global_button.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
+import 'package:provider/provider.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    int index = 0;
+    final courseProvider = context.watch<IndexProvider>();
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
@@ -68,19 +70,9 @@ class ProfileView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 32),
-            // GlobalButton(
-            //     nextPage: () {
-            //       Navigator.push(context, MaterialPageRoute(builder: (context) => YourCourses() ));;
-            //     },
-            //   fontSize: 24,
-            //   text: 'Your Courses',
-            //   colorOfButton: GlobalColors.buttonColorwhite,
-            //   colorOfText: Colors.black,
-            // ),
-            // const SizedBox(height: 16),
             GlobalButton(
               nextPage: () {
-              //  Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
+               Navigator.push(context, MaterialPageRoute(builder: (context) => Cart(course: courseProvider.courses[index])));
               },
               text: 'Cart',
               fontSize: 24,
@@ -91,7 +83,7 @@ class ProfileView extends StatelessWidget {
             GlobalButton(
               nextPage: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => NoPayment()));
+                    MaterialPageRoute(builder: (context) => const NoPayment()));
               },
               text: 'Payments',
               fontSize: 24,
@@ -102,7 +94,7 @@ class ProfileView extends StatelessWidget {
             GlobalButton(
               nextPage: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SettingsPage()));
+                    MaterialPageRoute(builder: (context) => const SettingsPage()));
               },
               text: 'Settings',
               fontSize: 24,

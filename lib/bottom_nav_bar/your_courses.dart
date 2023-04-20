@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
 import 'package:provider/provider.dart';
 import '../yourCourses/lesson/lessons_view.dart';
-import '../yourCourses/model/test_model.dart';
-import '../yourCourses/providers/test_provider.dart';
 import '../yourCourses/providers/your_course_provider.dart';
 import '../yourCourses/your_courses_design.dart';
 
@@ -20,7 +18,6 @@ class _YourCoursesState extends State<YourCourses> {
   @override
   Widget build(BuildContext context) {
     return Consumer<YourCourseProvider>(builder: (context, provider, child) {
-      final testProvider = context.watch<TestProvider>();
       return Scaffold(
         backgroundColor: GlobalColors.buttonColorwhite,
         appBar: AppBar(

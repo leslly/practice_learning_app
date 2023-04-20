@@ -71,164 +71,152 @@ class _TheLessonState extends State<TheLesson> with  TickerProviderStateMixin{
           backgroundColor: GlobalColors.buttonColorwhite,
           elevation: 0,
         ),
-        body: SingleChildScrollView(
-         // physics: NeverScrollableScrollPhysics(),
-          child: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-              child: Column(
-                children: [
-                Column(
-                  children: [
-                    Text("${widget.position} of ${widget.length} lessons",//lesson index of lesson.length
-                      style: TextStyle(
-                          color: GlobalColors.smallTextColorGrey,
-                          fontSize: 14,
-                          fontFamily: 'Inter-Regular.ttf'
-                      ),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      widget.lesson.lessonTitle,
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: GlobalColors.bigTextColorBlack,
-                        fontFamily: 'Inter-SemiBold.ttf',
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(height: 16),
-                  Container(
-                          // width: 114,
-                          height: 42,
-                          decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          child: TabBar(
-                            controller: _controller,
-                            indicator: BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            tabs: const[
-                              // Tab(text: 'Lesson',),
-                              Text('Lessons'),
-                              Tab(text: 'Test'),
-                              Tab(text: 'Discuss'),
-                            ],
-                          ),
-                        ),
-                  ],
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+            child: Column(
+              children: [
+              Text("${widget.position} of ${widget.length} lessons",//lesson index of lesson.length
+                style: TextStyle(
+                    color: GlobalColors.smallTextColorGrey,
+                    fontSize: 14,
+                    fontFamily: 'Inter-Regular.ttf'
                 ),
-                  SizedBox(
-                    width: double.maxFinite,
-                    //height: double.maxFinite,
-                    child: TabBarView(
+              ),
+              SizedBox(height: 8),
+              Text(
+                widget.lesson.lessonTitle,
+                style: TextStyle(
+                  fontSize: 24,
+                  color: GlobalColors.bigTextColorBlack,
+                  fontFamily: 'Inter-SemiBold.ttf',
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 16),
+                Container(
+                    // width: 114,
+                    height: 42,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: TabBar(
                       controller: _controller,
-                      children: [
-                        ///// FOR COURSE LESSON
-                        Column(
-                          children: [
-                            const SizedBox(height: 30,),
-                            Container(
-                              // width: 343,
-                              // height: 139,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8),
-                                color: GlobalColors.newColor.withOpacity(0.2),
-                              ),
-                              child: Column(
-                                children: [
-                                  Container(
-                                    // height: 150,
-                                    // width: 343,
-                                    decoration: BoxDecoration(
-                                      color: GlobalColors.newColor.withOpacity(0.0),
-                                      borderRadius: const BorderRadius.only(
-                                        topRight: Radius.circular(8),
-                                        topLeft: Radius.circular(8),
-                                      ),
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(top: 20),
-                                      child: Image.asset(
-                                        widget.yourcourse.yourCourseimage,
-                                        // Yourcourse image
-                                        fit: BoxFit.contain,
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 287, top: 0, bottom: 8, right: 8),
-                                    child: Image.asset(
-                                        'assets/blush_icons/play_icon.png'
-                                    ),
-                                  ),
-                                ],
-                              ),
+                      indicator: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      tabs: const[
+                        // Tab(text: 'Lesson',),
+                        Text('Lessons'),
+                        Tab(text: 'Test'),
+                        Tab(text: 'Discuss'),
+                      ],
+                    ),
+                  ),
+                Expanded(
+                  child: TabBarView(
+                    controller: _controller,
+                    physics: BouncingScrollPhysics(),
+                    children: [
+                      ///// FOR COURSE LESSON
+                      Column(
+                        children: [
+                          const SizedBox(height: 30,),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: GlobalColors.newColor.withOpacity(0.2),
                             ),
-                            const SizedBox(height: 20),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                            child: Column(
                               children: [
-                                Text(
-                                  'Introduction',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      color: GlobalColors.bigTextColorBlack,
-                                      fontFamily: 'Rubik-Medium.ttf',
-                                      fontWeight: FontWeight.bold
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: GlobalColors.newColor.withOpacity(0.0),
+                                    borderRadius: const BorderRadius.only(
+                                      topRight: Radius.circular(8),
+                                      topLeft: Radius.circular(8),
+                                    ),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 20),
+                                    child: Image.asset(
+                                      widget.yourcourse.yourCourseimage,
+                                      // Yourcourse image
+                                      fit: BoxFit.contain,
+                                    ),
                                   ),
                                 ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  'You can launch a new career in web develop-ment today by learning HTML & CSS. You do not need a computer science degree or expensive software. All you need is a computer, a bit of time, a lot of determination, and a teacher you trust.Once the form data has been validated on the client-side, it is okay to submit the form. And, since we covered validation in the previous article, we are ready to submit! This article looks at what happens when a user submits a form — where does the data go, and how do we handle it when it gets there? We also look at some of the security concerns',
-                                  maxLines: 12,
-                                  style: TextStyle(
-                                      color: GlobalColors.smallTextColorGrey,
-                                      fontSize: 14,
-                                      fontFamily: 'Inter-Regular.ttf'
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 287, top: 0, bottom: 8, right: 8),
+                                  child: Image.asset(
+                                      'assets/blush_icons/play_icon.png'
                                   ),
                                 ),
                               ],
                             ),
-                          ],
-                        ),
-                        ///// FOR TESTS ASSOCIATED WITH LESSON
-                        Expanded(
-                          child: ListView.separated(
-                              physics: const BouncingScrollPhysics(),
-                              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
-                              itemBuilder: (context, index){
-                                final test = widget.test[index];
-                                return CourseTest( test: test,testCallBack: (test){
-                                  if(mounted) {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) => TestQuestion()));
-                                  }
-                                },);
-                              },
-                              separatorBuilder: (context, index){
-                                return const SizedBox(height: 14);
-                              },
-                              itemCount: widget.test.length
                           ),
+                          const SizedBox(height: 20),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Introduction',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    color: GlobalColors.bigTextColorBlack,
+                                    fontFamily: 'Rubik-Medium.ttf',
+                                    fontWeight: FontWeight.bold
+                                ),
+                              ),
+                              const SizedBox(height: 8),
+                              Text(
+                                'You can launch a new career in web develop-ment today by learning HTML & CSS. You do not need a computer science degree or expensive software. All you need is a computer, a bit of time, a lot of determination, and a teacher you trust.Once the form data has been validated on the client-side, it is okay to submit the form. And, since we covered validation in the previous article, we are ready to submit! This article looks at what happens when a user submits a form — where does the data go, and how do we handle it when it gets there? We also look at some of the security concerns',
+                                maxLines: 12,
+                                style: TextStyle(
+                                    color: GlobalColors.smallTextColorGrey,
+                                    fontSize: 14,
+                                    fontFamily: 'Inter-Regular.ttf'
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      ///// FOR TESTS ASSOCIATED WITH LESSON
+                      Expanded(
+                        child: ListView.separated(
+                            physics: const BouncingScrollPhysics(),
+                            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
+                            itemBuilder: (context, index){
+                              final test = widget.test[index];
+                              return CourseTest( test: test,testCallBack: (test){
+                                if(mounted) {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const TestQuestion()));
+                                }
+                              },);
+                            },
+                            separatorBuilder: (context, index){
+                              return const SizedBox(height: 14);
+                            },
+                            itemCount: widget.test.length
                         ),
-                        ///// FOR THE CHAT ROOM
-                        Column(
-                          children: [
-                            Container(
-                              height: 200,
-                              color: Colors.pink,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                      ),
+                      ///// FOR THE CHAT ROOM
+                      Column(
+                        children: [
+                          Container(
+                            height: 200,
+                            color: Colors.pink,
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),

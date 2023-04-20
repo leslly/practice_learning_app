@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:practice_learning_app/course/model/course_model.dart';
 
 class CartProvider extends ChangeNotifier {
 
-  int index = 0;
   // List of cart items
-  List _cartItems = [];
+  final List<Course> _cartItems = [];
 
-  get cartItems => _cartItems;
+  List<Course> get cartItems => _cartItems;
 
-  get courses => courses;
+  List<Course> get courses => _cartItems;
 
-  var isSuccessful = false;
+ // var isSuccessful = false;
 
   // Add item to the cart
-  Future addItemToCart(int index) {
-    _cartItems.add(courses[index]);
+  void addItemToCart(Course course) {
+    _cartItems.add(course);
     notifyListeners();
-    isSuccessful = true;
-    return Future(() => null);
+   // isSuccessful = true;
   }
 
   // Remove item from cart
@@ -30,7 +29,7 @@ class CartProvider extends ChangeNotifier {
   String calculateTotal() {
     double totalPrice = 0;
     for (int i = 0; i < _cartItems.length; i++) {
-      totalPrice += double.parse(_cartItems[i][1]);
+      totalPrice += _cartItems[i].price;
     }
     return totalPrice.toStringAsFixed(2);
   }

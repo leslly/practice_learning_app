@@ -57,7 +57,7 @@ class CourseScreen extends StatelessWidget {
                           color:GlobalColors.profileBorder,
                         ),
                         child: Text(
-                          course.price,
+                          '\u20a6${course.price.toStringAsFixed(2)}',
                           style: TextStyle(
                             fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
                             fontSize: 14,

@@ -102,8 +102,7 @@ class _LessonsViewState extends State<LessonsView> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(
-                                    bottom: 8, left: 302, right: 8, top: 0),
+                                padding: const EdgeInsets.only(bottom: 8, left: 302, right: 8, top: 0),
                                 child: Image.asset(
                                   'assets/blush_icons/play_icon.png',
                                   fit: BoxFit.contain,

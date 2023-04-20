@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:practice_learning_app/course/course_info.dart';
 import 'package:practice_learning_app/course/course_screen.dart';
 import 'package:practice_learning_app/course/index_provider.dart';
-import 'package:practice_learning_app/course/model/course_model.dart';
 import 'package:provider/provider.dart';
 import '../utils/category_labels.dart';
 import '../utils/global_colours.dart';
