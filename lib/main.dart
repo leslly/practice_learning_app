@@ -5,11 +5,16 @@ import 'package:practice_learning_app/yourCourses/providers/lessons_provider.dar
 import 'package:practice_learning_app/yourCourses/providers/test_provider.dart';
 import 'package:practice_learning_app/yourCourses/providers/your_course_provider.dart';
 import 'package:provider/provider.dart';
-
 import 'other_screens/cart/cart_provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
-  runApp(const MyApp());
+
+// once dependencies are imported, use one below
+ void main() async {
+     WidgetsFlutterBinding.ensureInitialized();
+      await Firebase.initializeApp();
+
+      runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "832607314558",
+    "project_id": "codefactory-4f72b",
+    "storage_bucket": "codefactory-4f72b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832607314558:android:8e7ca24ae7497e2446ee2f",
+        "android_client_info": {
+          "package_name": "com.example.practice_learning_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnaiHON77Vrov9-SERBz4qius4k-8-A-w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
