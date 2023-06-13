@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:practice_learning_app/authentication/auth_repo.dart';
 import 'package:practice_learning_app/course/index_provider.dart';
 import 'package:practice_learning_app/start_up/splash_screen.dart';
 import 'package:practice_learning_app/yourCourses/providers/lessons_provider.dart';
@@ -12,7 +15,8 @@ import 'package:firebase_core/firebase_core.dart';
 // once dependencies are imported, use one below
  void main() async {
      WidgetsFlutterBinding.ensureInitialized();
-      await Firebase.initializeApp();
+      await Firebase.initializeApp()
+          .then((value) => Get.put(AuthenticationRepository()));
 
       runApp(MyApp());
 }

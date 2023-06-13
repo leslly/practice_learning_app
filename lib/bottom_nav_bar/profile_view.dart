@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:practice_learning_app/authentication/auth_repo.dart';
 import 'package:practice_learning_app/course/index_provider.dart';
 import 'package:practice_learning_app/other_screens/cart/cart_view.dart';
 import 'package:practice_learning_app/other_screens/Payment/no_payment_method.dart';
@@ -104,7 +105,7 @@ class ProfileView extends StatelessWidget {
             const SizedBox(height: 16),
             InkWell(
               onTap: () {
-                //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView() ));
+              AuthenticationRepository.instance.logout();
               },
               child: Text(
                 'Log out',
@@ -118,20 +119,6 @@ class ProfileView extends StatelessWidget {
           ],
         ),
       ),
-      /*bottomNavigationBar: Container(
-        padding: const EdgeInsets.only(bottom: 32, top: 8),
-        height: 98,
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(16),
-              topRight: Radius.circular(16),
-          ),
-          border: Border.all(
-            color: GlobalColors.borderGrey,
-          ),
-        ),
-        child: const NavigationButtons(),
-      ),*/
     );
   }
 }
