@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:practice_learning_app/authentication/Exceptions/signup_email_password_failure.dart';
-import 'package:practice_learning_app/bottom_nav_bar/home_screen_two.dart';
 import 'package:practice_learning_app/course/index.dart';
 import 'package:practice_learning_app/start_up/login_view.dart';
 
@@ -12,8 +11,7 @@ class AuthenticationRepository extends GetxController {
   final _auth = FirebaseAuth.instance;
   late final Rx<User?> firebaseUser;
 
-  @override
-  void onReadt() {
+  void onRead() {
     firebaseUser = Rx<User?>(_auth.currentUser);
     firebaseUser.bindStream(_auth.userChanges());
     ever(firebaseUser, _setInitialScreen);

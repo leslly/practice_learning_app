@@ -81,7 +81,11 @@ class _IntroState extends State<Intro> {
                 const SizedBox(height: 54),
                 GlobalButton(
                   nextPage: () {
-                    Navigator.push(context, MaterialPageRoute(builder:(context) => LoginView()));
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => LoginView()),
+                            (route) => false);
                   },
                   colorOfText: GlobalColors.whiteTextColor,
                   colorOfButton: GlobalColors.buttonColorOrange,
@@ -118,7 +122,11 @@ class _IntroState extends State<Intro> {
                 const SizedBox(height: 54),
                 GlobalButton(
                   nextPage: () {
-                    Navigator.push(context, MaterialPageRoute(builder:(context) => LoginView()));
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => LoginView()),
+                            (route) => false);
                   },
                   colorOfText: GlobalColors.whiteTextColor,
                   colorOfButton: GlobalColors.buttonColorOrange,
@@ -155,7 +163,11 @@ class _IntroState extends State<Intro> {
                 const SizedBox(height: 54),
                 GlobalButton(
                   nextPage: () {
-                  Navigator.push(context, MaterialPageRoute(builder:(context) => LoginView()));
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => LoginView()),
+                            (route) => false);
                 },
                   colorOfText: GlobalColors.whiteTextColor,
                   colorOfButton: GlobalColors.buttonColorOrange,

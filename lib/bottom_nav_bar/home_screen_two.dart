@@ -51,7 +51,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                           ),
                           const SizedBox(height: 10),
                           Text(
-                            'Leslie Akinrinde',
+                            'User',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 32,

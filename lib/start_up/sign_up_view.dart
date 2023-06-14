@@ -116,6 +116,7 @@ class SignUpView extends StatelessWidget {
                           nextPage: () {
                        if(_formKey.currentState!.validate()){
                          SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
+                         // Actually signs up but does not re route to home page
                        }
                       },
                         text: "Sign up",

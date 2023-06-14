@@ -3,7 +3,20 @@ import 'package:flutter/material.dart';
 import 'global_colours.dart';
 
 class TextFormGlobal extends StatelessWidget {
-  const TextFormGlobal({Key? key, this.height = 55,this.icon,required this.controller, required this.text, required this.textInputType, required this.obscure, this.radius = 100, this.width = 339,}) : super(key: key);
+   TextFormGlobal({Key? key,
+    this.height = 55,
+    this.icon,
+    required this.controller,
+    required this.text,
+    required this.textInputType,
+    required this.obscure,
+    this.radius = 100,
+    this.width = 339,
+    this.autovalidatemode = AutovalidateMode.onUserInteraction,
+    this.textinputaction = TextInputAction.done,
+    this.validator,
+  }) : super(key: key);
+
   final TextEditingController controller;
   final String text;
   final TextInputType textInputType;
@@ -12,6 +25,10 @@ class TextFormGlobal extends StatelessWidget {
   final double width;//width
   final IconData? icon;
   final double height;
+   var validator;
+   var autovalidatemode;
+   var textinputaction;
+
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +46,9 @@ class TextFormGlobal extends StatelessWidget {
         keyboardType: textInputType,
         obscureText: obscure,
         // autofocus: true,
+        validator: validator,
+        textInputAction: textinputaction,
+        autovalidateMode: autovalidatemode,
         decoration: InputDecoration(
           hintText: text,
           border: InputBorder.none,

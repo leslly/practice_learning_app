@@ -21,7 +21,7 @@ class SearchForCourse extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
                   },
                   child: Align(
                     alignment: Alignment.topLeft,
@@ -40,7 +40,7 @@ class SearchForCourse extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Container(
                   height: 56,
                   width: 399,

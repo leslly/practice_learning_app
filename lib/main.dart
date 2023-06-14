@@ -17,9 +17,10 @@ import 'package:firebase_core/firebase_core.dart';
      WidgetsFlutterBinding.ensureInitialized();
       await Firebase.initializeApp()
           .then((value) => Get.put(AuthenticationRepository()));
-
       runApp(MyApp());
 }
+
+final navigatorKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
