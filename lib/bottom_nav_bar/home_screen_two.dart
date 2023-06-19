@@ -1,8 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/course/course_info.dart';
 import 'package:practice_learning_app/course/course_screen.dart';
 import 'package:practice_learning_app/course/index_provider.dart';
+import 'package:practice_learning_app/search/search_not_found.dart';
 import 'package:provider/provider.dart';
+import '../course/model/course_model.dart';
 import '../utils/category_labels.dart';
 import '../utils/global_colours.dart';
 
@@ -14,17 +17,49 @@ class HomeScreenTwo extends StatefulWidget {
 }
 
 class _HomeScreenTwoState extends State<HomeScreenTwo> {
-  final TextEditingController searchController = TextEditingController();
-// This is supposed to work sha
-  // List<Course> _searchFound = [];
-  // final courses = Course.courses();
-  //
-  // @override
-  // void initState() {
-  //   _searchFound = courses[index];//this is supposed to be the list from the provider
-  //   super.initState();
-  // }
 
+  List<IndexProvider> displayList = List.from(mainCourseList);
+
+  static List<IndexProvider> mainCourseList = IndexProvider() as List<IndexProvider>;
+  // this brought out an error that index provider cannot belong to index provider list which
+  // now looking at was dumb
+  // so i then initialised it to a copy of th actual list but it said the course inside cannot belong to index provider list
+  // try to change the name from index provider to index provider model low key abandoning the original index provider but that didn't work either
+  // try ussing course class but all elements of it is rewuired so they all came ou
+
+  void updateList(String value) {
+
+    setState(() {
+      displayList = mainCourseList.where((element) => element.courses.contains(value.toLowerCase())).toList();
+      // how do i element.courses.tile here ?
+    });
+  }
+
+// go to bottom where our fake list builder should be
+  /*
+  // Creating the list to display and filter
+  List<CourseModel> display_list = List.from(main_course_list);
+
+  creating a dummy list of courses
+  *
+  * static List<CourseModel> main_course_list = [
+
+  * // mine is in another file
+
+  * // what he puts in here is actually the provider class
+  *
+  * ]
+  *
+  * void updateList(String value {
+  * // this is the function to filter the list
+    // Now let's write our search function
+    setState(() {
+    display_list = main_course_list.where((element) => element.course_title!.toLowerCase().contains(value.toLowerCase())).toList();
+    }); // setState
+
+  * })
+  */
+  final TextEditingController searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Consumer<IndexProvider>(builder: (context, provider, child){
@@ -80,6 +115,14 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                   ],
                 ),
                 const SizedBox(height: 15),
+
+                // FAKE SEARCH BAR
+                /* TextFiled(
+                onChanged:(value) => updateList(value),
+                )
+                * */
+
+                // SEARCH BAR
                 Container(
                   height: 56,
                   width: 399,
@@ -92,6 +135,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                     ),
                   ),
                   child: TextFormField(
+                    onChanged:(value) => updateList(value),
                     controller: searchController,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
@@ -123,6 +167,8 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+
+                      // ROW OF CATEGORY
                       Text(
                         'Category:',
                         style: TextStyle(
@@ -166,8 +212,10 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                   ),
                 ),
                 const SizedBox(height: 20),
+
+                //LIST OF COURSES
                 Expanded(
-                  child: ListView.separated(
+                  child: displayList.isEmpty ? SearchNotFound() : ListView.separated(
                     physics: const BouncingScrollPhysics(),
                       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
                       itemBuilder: (context, index){
@@ -185,22 +233,27 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                       itemCount: provider.courses.length
                   ),
                 )
+
+                // FAKE LIST BUILDER
+                /* Expanded(
+
+                // now lets create a function to display in case we don't get results
+
+                child: display_list.length == 0 ? Center(child: Text("Tet display when there is no result")), : ListView.builder(
+                itemCount: display_list.length,
+                itembuilder: (context, index) => ListTile(
+                title: Text(display_list[index].course_title,
+                style: TextStyle(color: Colors.white),
+                ), // Text
+                ), // listTile
+                ), // listviewBuilder
+                ), // expanded
+                */
               ]
           ),
         ),
       );
     });
   }
-  // void _runfilter (String enteredKeyword) {
-  //   List<Course> results = [];
-  //   if(enteredKeyword.isEmpty) {
-  //     results = courses[index];//list from provider
-  //   }else{
-  //     results = courses.where((course) => course.title!.toLowerCase().contains(enteredKeyword.toLowerCase())).toList();
-  //   }
-  //
-  //   setState(() {
-  //     _searchFound = results;
-  //   });
-  // }
+
 }

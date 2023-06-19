@@ -20,7 +20,7 @@ class SearchNotFound extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
                   },
                   child: Align(
                     alignment: Alignment.topLeft,
@@ -39,39 +39,39 @@ class SearchNotFound extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 16),//this should be a spacer
-                Container(
-                  height: 56,
-                  width: 399,
-                  padding: const EdgeInsets.only(top: 16, left: 16, bottom: 16, right: 16),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
-                      color: GlobalColors.borderGrey,
-                      width: 1,
-                    ),
-                  ),
-                  child: TextFormField(
-                    controller: searchController,
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Search course',
-                      hintStyle: TextStyle(
-                        height: 1,
-                        color: GlobalColors.smallTextColorGrey,
-                        fontSize: 14,
-                        fontFamily: 'assets/blush_fonts/Rubik/Rubik-Regular.ttf',
-                      ),
-                      suffixIcon: Image.asset(
-                        'assets/blush_icons/search_icon.png',
-                        alignment: Alignment.centerRight,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 31),
-                Container(
+                // const SizedBox(height: 16),//this should be a spacer
+                // // Container(
+                // //   height: 56,
+                // //   width: 399,
+                // //   padding: const EdgeInsets.only(top: 16, left: 16, bottom: 16, right: 16),
+                // //   decoration: BoxDecoration(
+                // //     borderRadius: BorderRadius.circular(12),
+                // //     border: Border.all(
+                // //       color: GlobalColors.borderGrey,
+                // //       width: 1,
+                // //     ),
+                // //   ),
+                // //   child: TextFormField(
+                // //     controller: searchController,
+                // //     keyboardType: TextInputType.text,
+                // //     decoration: InputDecoration(
+                // //       border: InputBorder.none,
+                // //       hintText: 'Search course',
+                // //       hintStyle: TextStyle(
+                // //         height: 1,
+                // //         color: GlobalColors.smallTextColorGrey,
+                // //         fontSize: 14,
+                // //         fontFamily: 'assets/blush_fonts/Rubik/Rubik-Regular.ttf',
+                // //       ),
+                // //       suffixIcon: Image.asset(
+                // //         'assets/blush_icons/search_icon.png',
+                // //         alignment: Alignment.centerRight,
+                // //       ),
+                // //     ),
+                // //   ),
+                // // ),
+                const SizedBox(height: 47),
+                SizedBox(
                   width: 370,
                   height: 253,
                   child: Image.asset(
@@ -79,7 +79,7 @@ class SearchNotFound extends StatelessWidget {
                     fit: BoxFit.contain,
                   ),
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 Text(
                   'Course not found',
                   style: TextStyle(
@@ -89,7 +89,7 @@ class SearchNotFound extends StatelessWidget {
                     fontSize: 24,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
                   "Try searching the course with",
                   maxLines: 2,
@@ -100,7 +100,7 @@ class SearchNotFound extends StatelessWidget {
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
                   "a different keyword",
                   maxLines: 2,
