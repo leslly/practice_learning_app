@@ -18,22 +18,42 @@ class HomeScreenTwo extends StatefulWidget {
 
 class _HomeScreenTwoState extends State<HomeScreenTwo> {
 
-  List<IndexProvider> displayList = List.from(mainCourseList);
+  /*
+  * class _InviteUserViewState extends State<InviteUserView> {
+    final TextEditingController _searchTextController = TextEditingController();
+    String _searchText = '';
 
-  static List<IndexProvider> mainCourseList = IndexProvider() as List<IndexProvider>;
-  // this brought out an error that index provider cannot belong to index provider list which
-  // now looking at was dumb
-  // so i then initialised it to a copy of th actual list but it said the course inside cannot belong to index provider list
-  // try to change the name from index provider to index provider model low key abandoning the original index provider but that didn't work either
-  // try ussing course class but all elements of it is rewuired so they all came ou
-
-  void updateList(String value) {
-
-    setState(() {
-      displayList = mainCourseList.where((element) => element.courses.contains(value.toLowerCase())).toList();
-      // how do i element.courses.tile here ?
-    });
+    @override
+    void initState() {
+      _searchTextController.addListener(() {
+        setState(() {
+          _searchText = _searchTextController.text.trim();
+        });
+      });
+      super.initState();
   }
+  * */
+
+
+  // List<IndexProvider> displayList = List.from(mainCourseList);
+  //
+  // // static List<IndexProvider> mainCourseList = IndexProvider() as List<IndexProvider>;
+  //
+  // //static List<IndexProvider> mainCourseList = IndexProvider() as List<IndexProvider>;
+  //
+  // // this brought out an error that index provider cannot belong to index provider list which
+  // // now looking at was dumb
+  // // so i then initialised it to a copy of th actual list but it said the course inside cannot belong to index provider list
+  // // try to change the name from index provider to index provider model low key abandoning the original index provider but that didn't work either
+  // // try ussing course class but all elements of it is rewuired so they all came ou
+  //
+  // void updateList(String value) {
+  //
+  //   setState(() {
+  //     displayList = mainCourseList.where((element) => element.courses.contains(value.toLowerCase())).toList();
+  //     // how do i element.courses.tile here ?
+  //   });
+  // }
 
 // go to bottom where our fake list builder should be
   /*
@@ -59,10 +79,28 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
 
   * })
   */
+
+  @override
+  void initState() {
+    searchController.addListener(() {
+      setState(() {
+        _searchText = searchController.text.trim();
+      });
+    });
+    super.initState();
+  }
+
+  String _searchText = '';
+
   final TextEditingController searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+
     return Consumer<IndexProvider>(builder: (context, provider, child){
+
+      final courses = _searchText.isEmpty ? provider.courses : provider.courses.isEmpty
+          ? [] : provider.courses.where((e) => e.title.toLowerCase().contains(_searchText.toLowerCase())).toList();
       return Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(20),
@@ -135,7 +173,8 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                     ),
                   ),
                   child: TextFormField(
-                    onChanged:(value) => updateList(value),
+                    // onChanged:(value) => provider.search(value),
+
                     controller: searchController,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
@@ -161,6 +200,24 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                     ),
                   ),
                 ),
+                /*
+                InputField(
+                            prefix: Row(
+                              children: [
+                                SvgPicture.asset(
+                                  AppAssets.search,
+                                  // ignore: deprecated_member_use
+                                  color: AppColors.stroke,
+                                ),
+                                const Gap(22),
+                              ],
+                            ),
+
+                       // IMPORTANT PART
+                            controller: _searchTextController,
+                            placeholder: 'Search friends..',
+                          ),
+                          */
                 const SizedBox(height: 20,),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -215,11 +272,11 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
 
                 //LIST OF COURSES
                 Expanded(
-                  child: displayList.isEmpty ? SearchNotFound() : ListView.separated(
+                  child: ListView.separated(
                     physics: const BouncingScrollPhysics(),
                       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
                       itemBuilder: (context, index){
-                        final course = provider.courses[index];
+                        final course = courses[index];
                         return CourseScreen(course: course, callback: (course){
                           //Navigate to your next screen using the course object
                           if(mounted) {
@@ -230,11 +287,22 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                       separatorBuilder: (context, index){
                         return const SizedBox(height: 14);
                       },
-                      itemCount: provider.courses.length
+                      itemCount: courses.length
                   ),
                 )
 
-                // FAKE LIST BUILDER
+            /**
+             * child: SingleChildScrollView(
+                child: ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: _followingList.length,
+                itemBuilder: (context, int index) {
+                final FollowingModel item =
+                _followingList[index];
+             */
+
+            // FAKE LIST BUILDER
                 /* Expanded(
 
                 // now lets create a function to display in case we don't get results

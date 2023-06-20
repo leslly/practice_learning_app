@@ -4,6 +4,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:practice_learning_app/authentication/auth_repo.dart';
 import 'package:practice_learning_app/course/index_provider.dart';
 import 'package:practice_learning_app/start_up/splash_screen.dart';
+import 'package:practice_learning_app/theme/dark_theme.dart';
+import 'package:practice_learning_app/theme/light_theme.dart';
 import 'package:practice_learning_app/yourCourses/providers/lessons_provider.dart';
 import 'package:practice_learning_app/yourCourses/providers/test_provider.dart';
 import 'package:practice_learning_app/yourCourses/providers/your_course_provider.dart';
@@ -17,7 +19,7 @@ import 'package:firebase_core/firebase_core.dart';
      WidgetsFlutterBinding.ensureInitialized();
       await Firebase.initializeApp()
           .then((value) => Get.put(AuthenticationRepository()));
-      runApp(MyApp());
+      runApp(const MyApp());
 }
 
 final navigatorKey = GlobalKey<NavigatorState>();
@@ -39,9 +41,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner : false,
         title: 'codeFactory',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        theme: lightTheme,
+        darkTheme: darkTheme,
         home: const SplashScreen(),
       ),
     );
