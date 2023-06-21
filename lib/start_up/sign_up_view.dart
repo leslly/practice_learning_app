@@ -18,7 +18,7 @@ class SignUpView extends StatelessWidget {
     final _formKey = GlobalKey<FormState>();
 
     return Scaffold(
-      backgroundColor: GlobalColors.buttonColorwhite,
+      backgroundColor: Theme.of(context).colorScheme.background,
       body:SingleChildScrollView(
         child: SafeArea(
           child: Padding(

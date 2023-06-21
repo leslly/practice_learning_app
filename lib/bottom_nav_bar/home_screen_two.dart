@@ -1,11 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/course/course_info.dart';
 import 'package:practice_learning_app/course/course_screen.dart';
 import 'package:practice_learning_app/course/index_provider.dart';
 import 'package:practice_learning_app/search/search_not_found.dart';
 import 'package:provider/provider.dart';
-import '../course/model/course_model.dart';
 import '../utils/category_labels.dart';
 import '../utils/global_colours.dart';
 
@@ -102,6 +100,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
       final courses = _searchText.isEmpty ? provider.courses : provider.courses.isEmpty
           ? [] : provider.courses.where((e) => e.title.toLowerCase().contains(_searchText.toLowerCase())).toList();
       return Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.surface,
         body: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
@@ -113,22 +112,20 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                        children: const [
                           Text(
                             'Hello,',
                             style: TextStyle(
-                              color: GlobalColors.smallTextColorGrey,
                               fontSize: 16,
                               fontFamily: 'assets/blush_fonts/Rubik/Rubik-Regular.ttf',
                             ),
                           ),
-                          const SizedBox(height: 10),
+                          SizedBox(height: 10),
                           Text(
                             'User',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 32,
-                              color: GlobalColors.bigTextColorBlack,
                               fontFamily: 'assets/blush_fonts/Rubik/Rubik-Bold.ttf',
                             ),
                           ),
@@ -136,6 +133,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                       ),
 
                     ),
+                    // NOTIFICATION
                     Container(
                       alignment: Alignment.center,
                       height: 48,
@@ -146,6 +144,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                       ),
                       child: Image.asset(
                         'assets/blush_icons/Notification.png',
+                        color: Theme.of(context).colorScheme.secondary,
                         height: 24,
                         width: 24,
                       ),
@@ -166,6 +165,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                   width: 399,
                   padding: const EdgeInsets.only(top: 16, left: 16, bottom: 16, right: 16),
                   decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.primary,
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
                       color: GlobalColors.borderGrey,
@@ -180,9 +180,9 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Search course',
-                      hintStyle: TextStyle(
+                      hintStyle: const TextStyle(
                         height: 1,
-                        color: GlobalColors.smallTextColorGrey,
+                        //color: GlobalColors.smallTextColorGrey,
                         fontSize: 14,
                         fontFamily: 'assets/blush_fonts/Rubik/Rubik-Regular.ttf',
                       ),
@@ -192,6 +192,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                         },
                         child: Image.asset(
                           'assets/blush_icons/search_icon.png',
+                          color: Theme.of(context).colorScheme.secondary,
                           height: 24,
                           width: 24,
                           fit: BoxFit.contain,
@@ -223,7 +224,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                    children: const [
 
                       // ROW OF CATEGORY
                       Text(
@@ -231,48 +232,51 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                         style: TextStyle(
                           fontFamily: 'assets/blush_fonts/Rubik/Rubik-Regular.ttf',
                           fontSize: 14,
-                          color: GlobalColors.bigTextColorBlack,
                         ),
                       ),
-                      const SizedBox(width: 12),
-                      const CategoryLabels(text: '#CSS'),
-                      const SizedBox(width: 12),
-                      const CategoryLabels(text: '#UX'),
-                      const SizedBox(width: 12),
-                      const CategoryLabels(text: '#Swift'),
-                      const SizedBox(width: 12),
-                      const CategoryLabels(text: '#Flutter'),
-                      const SizedBox(width: 12),
-                      const CategoryLabels(text: '#UI'),
-                      const SizedBox(width: 12),
-                      const CategoryLabels(text: '#Python'),
-                      const SizedBox(width: 12),
-                      const CategoryLabels(text: '#SQL'),
-                      const SizedBox(width: 12),
-                      const CategoryLabels(text: '#Kotlin'),
-                      const SizedBox(width: 12),
-                      const CategoryLabels(text: '#CSS'),
-                      const SizedBox(width: 12),
-                      const CategoryLabels(text: '#JS'),
-                      const SizedBox(width: 12),
-                      const CategoryLabels(text: '#Java'),
-                      const SizedBox(width: 12),
-                      const CategoryLabels(text: '#C.programming'),
-                      const SizedBox(width: 12),
-                      const CategoryLabels(text: '#C++'),
-                      const SizedBox(width: 12),
-                      const CategoryLabels(text: '#React'),
-                      const SizedBox(width: 12),
-                      const CategoryLabels(text: '#Node.JS'),
+                      SizedBox(width: 12),
+                      CategoryLabels(text: '#CSS'),
+                      SizedBox(width: 12),
+                      CategoryLabels(text: '#UX'),
+                      SizedBox(width: 12),
+                      CategoryLabels(text: '#Swift'),
+                      SizedBox(width: 12),
+                      CategoryLabels(text: '#Flutter'),
+                      SizedBox(width: 12),
+                      CategoryLabels(text: '#UI'),
+                       SizedBox(width: 12),
+                      CategoryLabels(text: '#Python'),
+                      SizedBox(width: 12),
+                      CategoryLabels(text: '#SQL'),
+                      SizedBox(width: 12),
+                      CategoryLabels(text: '#Kotlin'),
+                      SizedBox(width: 12),
+                      CategoryLabels(text: '#CSS'),
+                      SizedBox(width: 12),
+                      CategoryLabels(text: '#JS'),
+                      SizedBox(width: 12),
+                      CategoryLabels(text: '#Java'),
+                      SizedBox(width: 12),
+                      CategoryLabels(text: '#C.programming'),
+                      SizedBox(width: 12),
+                      CategoryLabels(text: '#C++'),
+                      SizedBox(width: 12),
+                      CategoryLabels(text: '#React'),
+                      SizedBox(width: 12),
+                      CategoryLabels(text: '#Node.JS'),
 
                     ],
                   ),
                 ),
                 const SizedBox(height: 20),
 
+                if(courses.isEmpty)
+                 const SearchNotFound()
+                else
+
                 //LIST OF COURSES
                 Expanded(
-                  child: ListView.separated(
+                  child:  ListView.separated(
                     physics: const BouncingScrollPhysics(),
                       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
                       itemBuilder: (context, index){

@@ -29,7 +29,7 @@ class CategoryLabels extends StatelessWidget {
                   fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
                   fontSize: 14,
                   fontWeight: FontWeight.normal,
-                  color: GlobalColors.whiteTextColor,
+                 // color: GlobalColors.whiteTextColor,
               ),
             ),
           ),

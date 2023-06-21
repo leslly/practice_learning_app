@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:practice_learning_app/course/model/course_model.dart';
 import '../utils/global_colours.dart';
 /*
-* TypeDef allows you to utilize a functiion as a variable, field, or boundary.
+* TypeDef allows you to utilize a function as a variable, field, or boundary.
 * Out typedef is MyCallBack, the function Course has been made the variable course
 *
 * The container wrapped in the inkwell below is the design for each course widget button that navigates to
@@ -58,11 +58,11 @@ class CourseScreen extends StatelessWidget {
                         ),
                         child: Text(
                           '\u20a6${course.price.toStringAsFixed(2)}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
-                            color: GlobalColors.whiteTextColor,
+                            //color: GlobalColors.whiteTextColor,
                           ),
                         ),
                       ),
@@ -87,8 +87,8 @@ class CourseScreen extends StatelessWidget {
                   const SizedBox(height: 5),
                   Text(
                     course.title,
-                    style: TextStyle(
-                      color: GlobalColors.bigTextColorBlack,
+                    style: const TextStyle(
+                     // color: Theme.of(context).colorScheme.secondary,
                       fontSize: 24,
                       fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
                     ),
@@ -100,8 +100,8 @@ class CourseScreen extends StatelessWidget {
                         child: Text(
                           course.description,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            color: GlobalColors.bigTextColorBlack,
+                          style: const TextStyle(
+                           // color: Theme.of(context).colorScheme.secondary,
                             fontSize: 14,
                             fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
                           ),

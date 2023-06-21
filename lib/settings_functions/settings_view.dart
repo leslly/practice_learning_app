@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/bottom_nav_bar/profile_view.dart';
 import 'package:practice_learning_app/settings_functions/email_add_or_change.dart';
 import 'package:practice_learning_app/settings_functions/name_change.dart';
 import 'package:practice_learning_app/settings_functions/password_change.dart';
 import 'package:practice_learning_app/utils/global_colours.dart';
+import '../theme/theme_switch.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -15,14 +15,14 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   bool notificationValue = true;
-  bool themeValue = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: GlobalColors.buttonColorwhite,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.surface,
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context);
@@ -37,24 +37,23 @@ class _SettingsPageState extends State<SettingsPage> {
                   color: GlobalColors.borderGrey,
                 ),
               ),
-              child: const Icon(
+              child: Icon(
                 CupertinoIcons.back,
-                color: Colors.black,
+                color: Theme.of(context).iconTheme.color,
               ),
             ),
           ),
         ),
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'Settings',
           style: TextStyle(
-            color: GlobalColors.bigTextColorBlack,
+            //color: GlobalColors.bigTextColorBlack,
             fontSize: 24,
             fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium',
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: GlobalColors.buttonColorwhite,
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -98,10 +97,9 @@ class _SettingsPageState extends State<SettingsPage> {
                           ),
                         ),
                         const SizedBox(width: 12),
-                        Text(
+                        const Text(
                           'Notifications',
                           style: TextStyle(
-                            color: GlobalColors.bigTextColorBlack,
                             fontSize: 20,
                             fontFamily:
                                 'assets/blush_images/Rubik/Rubik-Medium',
@@ -142,10 +140,9 @@ class _SettingsPageState extends State<SettingsPage> {
                           ),
                         ),
                         const SizedBox(width: 12),
-                        Text(
+                        const Text(
                           'App Theme',
                           style: TextStyle(
-                            color: GlobalColors.bigTextColorBlack,
                             fontSize: 20,
                             fontFamily:
                                 'assets/blush_images/Rubik/Rubik-Medium',
@@ -153,18 +150,17 @@ class _SettingsPageState extends State<SettingsPage> {
                           ),
                         ),
                         const SizedBox(width: 130),
-                        themeSwitch(),
+                        ThemeSwitch(),
                       ],
                     ),
                   ),
                 ),
                 const SizedBox(height: 16),
-                Align(
+                const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Account information',
                     style: TextStyle(
-                      color: GlobalColors.bigTextColorBlack,
                       fontSize: 20,
                       fontFamily: 'assets/blush_images/Rubik/Rubik-Medium',
                       fontWeight: FontWeight.bold,
@@ -182,7 +178,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         isScrollControlled: true,
                         builder: (context) => SingleChildScrollView(
                           padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-                            child: NameChange()));
+                            child: const NameChange()));
                   },
                   child: Container(
                     height: 82,
@@ -210,10 +206,9 @@ class _SettingsPageState extends State<SettingsPage> {
                             ),
                           ),
                           const SizedBox(width: 12),
-                          Text(
+                          const Text(
                             'Name',
                             style: TextStyle(
-                              color: GlobalColors.bigTextColorBlack,
                               fontSize: 20,
                               fontFamily:
                                   'assets/blush_images/Rubik/Rubik-Medium',
@@ -224,7 +219,7 @@ class _SettingsPageState extends State<SettingsPage> {
                           Container(
                               height: 40,
                               width: 40,
-                              color: GlobalColors.buttonColorwhite,
+                              color: Theme.of(context).colorScheme.surface,
                               child: const Icon(CupertinoIcons.chevron_up))
                         ],
                       ),
@@ -266,10 +261,9 @@ class _SettingsPageState extends State<SettingsPage> {
                             ),
                           ),
                           const SizedBox(width: 12),
-                          Text(
+                          const Text(
                             'Email',
                             style: TextStyle(
-                              color: GlobalColors.bigTextColorBlack,
                               fontSize: 20,
                               fontFamily:
                                   'assets/blush_images/Rubik/Rubik-Medium',
@@ -280,7 +274,7 @@ class _SettingsPageState extends State<SettingsPage> {
                           Container(
                               height: 40,
                               width: 40,
-                              color: GlobalColors.buttonColorwhite,
+                              color: Theme.of(context).colorScheme.surface,
                               child: const Icon(CupertinoIcons.chevron_up))
                         ],
                       ),
@@ -322,10 +316,9 @@ class _SettingsPageState extends State<SettingsPage> {
                             ),
                           ),
                           const SizedBox(width: 12),
-                          Text(
+                          const Text(
                             'Password',
                             style: TextStyle(
-                              color: GlobalColors.bigTextColorBlack,
                               fontSize: 20,
                               fontFamily:
                                   'assets/blush_images/Rubik/Rubik-Medium',
@@ -336,8 +329,9 @@ class _SettingsPageState extends State<SettingsPage> {
                           Container(
                               height: 40,
                               width: 40,
-                              color: GlobalColors.buttonColorwhite,
-                              child: const Icon(CupertinoIcons.chevron_up))
+                              color: Theme.of(context).colorScheme.surface,
+                              child: const Icon(CupertinoIcons.chevron_up)),
+                          const Spacer(),
                         ],
                       ),
                     ),
@@ -349,18 +343,19 @@ class _SettingsPageState extends State<SettingsPage> {
         ),
       ),
     );
+
   }
 
   Widget notificationSwitch() => Switch.adaptive(
         activeColor: Colors.blueAccent,
         activeTrackColor: Colors.blue.withOpacity(0.4),
         value: notificationValue,
-        onChanged: (value) => setState(() => this.notificationValue = value),
+        onChanged: (value) => setState(() => notificationValue = value),
       );
-  Widget themeSwitch() => Switch.adaptive(
-        activeColor: Colors.blueAccent,
-        activeTrackColor: Colors.blue.withOpacity(0.4),
-        value: themeValue,
-        onChanged: (value) => setState(() => this.themeValue = value),
-      );
+  // Widget themeSwitch() => Switch.adaptive(
+  //       activeColor: Colors.blueAccent,
+  //       activeTrackColor: Colors.blue.withOpacity(0.4),
+  //       value: themeValue,
+  //       onChanged: (value) => setState(() => themeValue = value),
+  //     );
 }

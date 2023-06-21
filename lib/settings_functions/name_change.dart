@@ -20,7 +20,7 @@ class _NameChangeState extends State<NameChange> {
       child: Container(
         height: maxHeight,
         decoration: BoxDecoration(
-          color: GlobalColors.buttonColorwhite,
+          color: Theme.of(context).bottomSheetTheme.backgroundColor,
           borderRadius: const BorderRadius.only(
             topRight: Radius.circular(20),
             topLeft: Radius.circular(20),

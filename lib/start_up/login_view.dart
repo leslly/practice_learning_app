@@ -25,7 +25,7 @@ class LoginView extends StatelessWidget {
     // final formKey = GlobalKey<FormState>();
 
     return Scaffold(
-      backgroundColor: GlobalColors.buttonColorwhite,
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(

@@ -4,8 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:practice_learning_app/authentication/auth_repo.dart';
 import 'package:practice_learning_app/course/index_provider.dart';
 import 'package:practice_learning_app/start_up/splash_screen.dart';
-import 'package:practice_learning_app/theme/dark_theme.dart';
-import 'package:practice_learning_app/theme/light_theme.dart';
+import 'package:practice_learning_app/theme/provider/theme_provider.dart';
 import 'package:practice_learning_app/yourCourses/providers/lessons_provider.dart';
 import 'package:practice_learning_app/yourCourses/providers/test_provider.dart';
 import 'package:practice_learning_app/yourCourses/providers/your_course_provider.dart';
@@ -37,14 +36,19 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => YourCourseProvider()),
         ChangeNotifierProvider(create: (context) => LessonProvider()),
         ChangeNotifierProvider(create: (context) => TestProvider()),
+        ChangeNotifierProvider(create: (context) => ThemeProvider()),
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner : false,
-        title: 'codeFactory',
-        theme: lightTheme,
-        darkTheme: darkTheme,
-        home: const SplashScreen(),
-      ),
+      builder: (context, child) {
+        final provider = Provider.of<ThemeProvider>(context);
+        return MaterialApp(
+          debugShowCheckedModeBanner : false,
+          title: 'codeFactory',
+          theme: provider.theme,
+          //theme: lightTheme,
+          //darkTheme: darkTheme,
+          home: const SplashScreen(),
+        );
+      },
     );
   }
 }

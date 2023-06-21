@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../utils/global_button.dart';
 import '../utils/global_colours.dart';
 
@@ -22,7 +20,7 @@ class _PasswordChangeState extends State<PasswordChange> {
         child: Container(
           height: maxHeight,
           decoration: BoxDecoration(
-            color: GlobalColors.buttonColorwhite,
+            color: Theme.of(context).bottomSheetTheme.backgroundColor,
             borderRadius: const BorderRadius.only(
               topRight: Radius.circular(20),
               topLeft: Radius.circular(20),
@@ -54,7 +52,6 @@ class _PasswordChangeState extends State<PasswordChange> {
                 const TextField(
                   keyboardType: TextInputType.text,
                   obscureText: true,
-                  autofocus: true,
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.all(0),
                   ),
@@ -71,7 +68,6 @@ class _PasswordChangeState extends State<PasswordChange> {
                 const TextField(
                   keyboardType: TextInputType.text,
                   obscureText: true,
-                  autofocus: true,
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.all(0),
                   ),

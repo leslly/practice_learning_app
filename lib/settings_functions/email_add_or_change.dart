@@ -19,9 +19,9 @@ class _EmailAddOrChangeState extends State<EmailAddOrChange> {
       color: const Color(0xff757575),
       child: SingleChildScrollView(
         child: Container(
-           //height: maxHeight,
+           height: maxHeight,
           decoration: BoxDecoration(
-            color: GlobalColors.buttonColorwhite,
+            color: Theme.of(context).bottomSheetTheme.backgroundColor,
             borderRadius: const BorderRadius.only(
               topRight: Radius.circular(20),
               topLeft: Radius.circular(20),
