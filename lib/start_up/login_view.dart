@@ -21,11 +21,8 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final controller = Get.put(SignUpController());
-    // final formKey = GlobalKey<FormState>();
-
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: GlobalColors.buttonColorwhite,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(

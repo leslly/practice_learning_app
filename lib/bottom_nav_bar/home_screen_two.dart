@@ -4,6 +4,7 @@ import 'package:practice_learning_app/course/course_screen.dart';
 import 'package:practice_learning_app/course/index_provider.dart';
 import 'package:practice_learning_app/search/search_not_found.dart';
 import 'package:provider/provider.dart';
+import '../config/config.dart';
 import '../utils/category_labels.dart';
 import '../utils/global_colours.dart';
 
@@ -103,225 +104,228 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
         backgroundColor: Theme.of(context).colorScheme.surface,
         body: Padding(
           padding: const EdgeInsets.all(20),
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Hello,',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'assets/blush_fonts/Rubik/Rubik-Regular.ttf',
+          child: SingleChildScrollView(
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children:  [
+                            Text(
+                              'Hello,',
+                              style: TextStyle(
+                                color: GlobalColors.bigTextColorBlack,
+                                fontSize: 16,
+                                fontFamily: 'assets/blush_fonts/Rubik/Rubik-Regular.ttf',
+                              ),
                             ),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            'User',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 32,
-                              fontFamily: 'assets/blush_fonts/Rubik/Rubik-Bold.ttf',
+                            const SizedBox(height: 10),
+                            Text(
+                              username,
+                              style: TextStyle(
+                                color: GlobalColors.bigTextColorBlack,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 32,
+                                fontFamily: 'assets/blush_fonts/Rubik/Rubik-Bold.ttf',
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
+                          ],
+                        ),
 
-                    ),
-                    // NOTIFICATION
-                    Container(
-                      alignment: Alignment.center,
-                      height: 48,
-                      width: 48,
-                      decoration:  BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all( color: GlobalColors.borderGrey),
                       ),
-                      child: Image.asset(
-                        'assets/blush_icons/Notification.png',
-                        color: Theme.of(context).colorScheme.secondary,
-                        height: 24,
-                        width: 24,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 15),
-
-                // FAKE SEARCH BAR
-                /* TextFiled(
-                onChanged:(value) => updateList(value),
-                )
-                * */
-
-                // SEARCH BAR
-                Container(
-                  height: 56,
-                  width: 399,
-                  padding: const EdgeInsets.only(top: 16, left: 16, bottom: 16, right: 16),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary,
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
-                      color: GlobalColors.borderGrey,
-                      width: 1,
-                    ),
-                  ),
-                  child: TextFormField(
-                    // onChanged:(value) => provider.search(value),
-
-                    controller: searchController,
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Search course',
-                      hintStyle: const TextStyle(
-                        height: 1,
-                        //color: GlobalColors.smallTextColorGrey,
-                        fontSize: 14,
-                        fontFamily: 'assets/blush_fonts/Rubik/Rubik-Regular.ttf',
-                      ),
-                      suffixIcon: InkWell(
-                        onTap: () {
-                          ////search for course
-                        },
+                      // NOTIFICATION
+                      Container(
+                        alignment: Alignment.center,
+                        height: 48,
+                        width: 48,
+                        decoration:  BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all( color: GlobalColors.borderGrey),
+                        ),
                         child: Image.asset(
-                          'assets/blush_icons/search_icon.png',
-                          color: Theme.of(context).colorScheme.secondary,
+                          'assets/blush_icons/Notification.png',
+                          color: GlobalColors.bigTextColorBlack,
                           height: 24,
                           width: 24,
-                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 15),
+
+                  // FAKE SEARCH BAR
+                  /* TextFiled(
+                  onChanged:(value) => updateList(value),
+                  )
+                  * */
+
+                  // SEARCH BAR
+                  Container(
+                    height: 56,
+                    width: 399,
+                    padding: const EdgeInsets.only(top: 16, left: 16, bottom: 16, right: 16),
+                    decoration: BoxDecoration(
+                      color: GlobalColors.profileBackground,
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: GlobalColors.borderGrey,
+                        width: 1,
+                      ),
+                    ),
+                    child: TextFormField(
+                      controller: searchController,
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Search course',
+                        hintStyle: const TextStyle(
+                          height: 1,
+                          fontSize: 14,
+                          fontFamily: 'assets/blush_fonts/Rubik/Rubik-Regular.ttf',
+                        ),
+                        suffixIcon: InkWell(
+                          onTap: () {
+                            ////search for course
+                          },
+                          child: Image.asset(
+                            'assets/blush_icons/search_icon.png',
+                            color: GlobalColors.bigTextColorBlack,
+                            height: 24,
+                            width: 24,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                /*
-                InputField(
-                            prefix: Row(
-                              children: [
-                                SvgPicture.asset(
-                                  AppAssets.search,
-                                  // ignore: deprecated_member_use
-                                  color: AppColors.stroke,
-                                ),
-                                const Gap(22),
-                              ],
+                  /*
+                  InputField(
+                              prefix: Row(
+                                children: [
+                                  SvgPicture.asset(
+                                    AppAssets.search,
+                                    // ignore: deprecated_member_use
+                                    color: AppColors.stroke,
+                                  ),
+                                  const Gap(22),
+                                ],
+                              ),
+
+                         // IMPORTANT PART
+                              controller: _searchTextController,
+                              placeholder: 'Search friends..',
                             ),
+                            */
+                  const SizedBox(height: 20,),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
 
-                       // IMPORTANT PART
-                            controller: _searchTextController,
-                            placeholder: 'Search friends..',
+                        // ROW OF CATEGORY
+                        Text(
+                          'Category:',
+                          style: TextStyle(
+                            fontFamily: 'assets/blush_fonts/Rubik/Rubik-Regular.ttf',
+                            fontSize: 14,
+                            color: GlobalColors.bigTextColorBlack
                           ),
-                          */
-                const SizedBox(height: 20,),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-
-                      // ROW OF CATEGORY
-                      Text(
-                        'Category:',
-                        style: TextStyle(
-                          fontFamily: 'assets/blush_fonts/Rubik/Rubik-Regular.ttf',
-                          fontSize: 14,
                         ),
-                      ),
-                      SizedBox(width: 12),
-                      CategoryLabels(text: '#CSS'),
-                      SizedBox(width: 12),
-                      CategoryLabels(text: '#UX'),
-                      SizedBox(width: 12),
-                      CategoryLabels(text: '#Swift'),
-                      SizedBox(width: 12),
-                      CategoryLabels(text: '#Flutter'),
-                      SizedBox(width: 12),
-                      CategoryLabels(text: '#UI'),
-                       SizedBox(width: 12),
-                      CategoryLabels(text: '#Python'),
-                      SizedBox(width: 12),
-                      CategoryLabels(text: '#SQL'),
-                      SizedBox(width: 12),
-                      CategoryLabels(text: '#Kotlin'),
-                      SizedBox(width: 12),
-                      CategoryLabels(text: '#CSS'),
-                      SizedBox(width: 12),
-                      CategoryLabels(text: '#JS'),
-                      SizedBox(width: 12),
-                      CategoryLabels(text: '#Java'),
-                      SizedBox(width: 12),
-                      CategoryLabels(text: '#C.programming'),
-                      SizedBox(width: 12),
-                      CategoryLabels(text: '#C++'),
-                      SizedBox(width: 12),
-                      CategoryLabels(text: '#React'),
-                      SizedBox(width: 12),
-                      CategoryLabels(text: '#Node.JS'),
+                        const SizedBox(width: 12),
+                        const CategoryLabels(text: '#CSS'),
+                        const SizedBox(width: 12),
+                        const CategoryLabels(text: '#UX'),
+                        const SizedBox(width: 12),
+                        const CategoryLabels(text: '#Swift'),
+                        const SizedBox(width: 12),
+                        const CategoryLabels(text: '#Flutter'),
+                        const SizedBox(width: 12),
+                        const CategoryLabels(text: '#UI'),
+                         const SizedBox(width: 12),
+                        const CategoryLabels(text: '#Python'),
+                        const SizedBox(width: 12),
+                        const CategoryLabels(text: '#SQL'),
+                        const SizedBox(width: 12),
+                        const CategoryLabels(text: '#Kotlin'),
+                        const SizedBox(width: 12),
+                        const CategoryLabels(text: '#CSS'),
+                        const SizedBox(width: 12),
+                        const CategoryLabels(text: '#JS'),
+                        const SizedBox(width: 12),
+                        const CategoryLabels(text: '#Java'),
+                        const SizedBox(width: 12),
+                        const CategoryLabels(text: '#C.programming'),
+                        const SizedBox(width: 12),
+                        const CategoryLabels(text: '#C++'),
+                        const SizedBox(width: 12),
+                        const CategoryLabels(text: '#React'),
+                        const SizedBox(width: 12),
+                        const CategoryLabels(text: '#Node.JS'),
 
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                const SizedBox(height: 20),
+                 
+                        const SizedBox(height: 20),
 
-                if(courses.isEmpty)
-                 const SearchNotFound()
-                else
+                        if(courses.isEmpty)
+                          SearchNotFound()
+                        else
 
-                //LIST OF COURSES
-                Expanded(
-                  child:  ListView.separated(
-                    physics: const BouncingScrollPhysics(),
-                      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
-                      itemBuilder: (context, index){
-                        final course = courses[index];
-                        return CourseScreen(course: course, callback: (course){
-                          //Navigate to your next screen using the course object
-                          if(mounted) {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => CourseInfo(course: course)));
-                          }
-                        });
-                      },
-                      separatorBuilder: (context, index){
-                        return const SizedBox(height: 14);
-                      },
-                      itemCount: courses.length
-                  ),
-                )
+                        //LIST OF COURSES
+                          ListView.separated(
+                            shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
+                              itemBuilder: (context, index){
+                                final course = courses[index];
+                                return CourseScreen(course: course, callback: (course){
+                                  //Navigate to your next screen using the course object
+                                  if(mounted) {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => CourseInfo(course: course)));
+                                  }
+                                });
+                              },
+                              separatorBuilder: (context, index){
+                                return const SizedBox(height: 14);
+                              },
+                              itemCount: courses.length
+                          )
+                
 
-            /**
-             * child: SingleChildScrollView(
-                child: ListView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: _followingList.length,
-                itemBuilder: (context, int index) {
-                final FollowingModel item =
-                _followingList[index];
-             */
+              /**
+               * child: SingleChildScrollView(
+                  child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: _followingList.length,
+                  itemBuilder: (context, int index) {
+                  final FollowingModel item =
+                  _followingList[index];
+               */
 
-            // FAKE LIST BUILDER
-                /* Expanded(
+              // FAKE LIST BUILDER
+                  /* Expanded(
 
-                // now lets create a function to display in case we don't get results
+                  // now lets create a function to display in case we don't get results
 
-                child: display_list.length == 0 ? Center(child: Text("Tet display when there is no result")), : ListView.builder(
-                itemCount: display_list.length,
-                itembuilder: (context, index) => ListTile(
-                title: Text(display_list[index].course_title,
-                style: TextStyle(color: Colors.white),
-                ), // Text
-                ), // listTile
-                ), // listviewBuilder
-                ), // expanded
-                */
-              ]
+                  child: display_list.length == 0 ? Center(child: Text("Tet display when there is no result")), : ListView.builder(
+                  itemCount: display_list.length,
+                  itembuilder: (context, index) => ListTile(
+                  title: Text(display_list[index].course_title,
+                  style: TextStyle(color: Colors.white),
+                  ), // Text
+                  ), // listTile
+                  ), // listviewBuilder
+                  ), // expanded
+                  */
+                ]
+            ),
           ),
         ),
       );

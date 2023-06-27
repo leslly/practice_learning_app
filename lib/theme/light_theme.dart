@@ -4,12 +4,9 @@ import '../utils/global_colours.dart';
 
 ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
-    // appBarTheme: AppBarTheme(
-    //   backgroundColor: Colors.
-    //   transparent,
-    // )
+
   iconTheme: IconThemeData(
-    color: GlobalColors.borderGrey,
+    color: Colors.grey,
   ),
 
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -21,16 +18,19 @@ ThemeData lightTheme = ThemeData(
     ),
 
     appBarTheme: AppBarTheme(
+      titleTextStyle: TextStyle(
+        color: GlobalColors.bigTextColorBlack,
+      ),
       color: GlobalColors.buttonColorwhite,
       iconTheme: IconThemeData(
-        color: GlobalColors.borderGrey,
+        color: Colors.black,
       ),
 
     ),
 
     colorScheme: ColorScheme.light(
       background: GlobalColors.buttonColorwhite,
-      primary: Colors.transparent, // search box
+      primary: Colors.white, // search box
       secondary: GlobalColors.bigTextColorBlack,
       surface: GlobalColors.buttonColorwhite// search and notification
     )

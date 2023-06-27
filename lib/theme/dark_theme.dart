@@ -13,23 +13,28 @@ ThemeData darkTheme = ThemeData(
       backgroundColor: GlobalColors.borderGrey,
     ),
 
-  bottomSheetTheme: BottomSheetThemeData(
-    backgroundColor: GlobalColors.borderGrey
+  bottomSheetTheme: const BottomSheetThemeData(
+    backgroundColor: Colors.black,
   ),
 
     appBarTheme: AppBarTheme(
-      backgroundColor: GlobalColors.borderGrey,
-        foregroundColor: GlobalColors.borderGrey,
+     titleTextStyle: TextStyle(
+       color: GlobalColors.buttonColorwhite,
+     ),
         color: GlobalColors.borderGrey,
       iconTheme: IconThemeData(
         color: GlobalColors.whiteTextColor,
       )
     ),
 
-  colorScheme: ColorScheme.dark(
-  background: const Color(0xFF424242),
+  // textTheme: TextTheme(
+  //   bodySmall: TextStyle(color: Colors.cyanAccent, fontSize: )
+  // ),
+
+  colorScheme: const ColorScheme.dark(
+  background: Color(0xFF424242),
     surface: Colors.black,
-    primary: GlobalColors.borderGrey, // search box
+    primary: Color(0xFF424242), // search box
     secondary: Colors.white, // search and notification
   )
 );

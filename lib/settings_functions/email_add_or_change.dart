@@ -21,7 +21,7 @@ class _EmailAddOrChangeState extends State<EmailAddOrChange> {
         child: Container(
            height: maxHeight,
           decoration: BoxDecoration(
-            color: Theme.of(context).bottomSheetTheme.backgroundColor,
+            color: GlobalColors.buttonColorwhite,
             borderRadius: const BorderRadius.only(
               topRight: Radius.circular(20),
               topLeft: Radius.circular(20),
@@ -36,26 +36,25 @@ class _EmailAddOrChangeState extends State<EmailAddOrChange> {
                     'Email Settings',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: GlobalColors.bigTextColorBlack,
                     fontSize: 20,
-                    fontWeight: FontWeight.bold
+                    fontWeight: FontWeight.bold,
+                    color: GlobalColors.bigTextColorBlack
                   ),
                 ),
                 const SizedBox(height: 30),
-                Text(
+                 Text(
                   'Add Email',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 16,
-                    color: GlobalColors.bigTextColorBlack,
+                    color: GlobalColors.bigTextColorBlack
                   ),
                 ),
                 const TextField(
+                  autofocus: true,
                   decoration: InputDecoration(
                     hintText: 'example@google.com',
                   ),
-                //CupertinoIcons.chevron_up
-                  //autofocus: true,
                 ),
                 const SizedBox(height: 15),
                 Text(
@@ -70,8 +69,7 @@ class _EmailAddOrChangeState extends State<EmailAddOrChange> {
                   decoration: InputDecoration(
                     hintText: 'example@google.com',
                   ),
-                  //CupertinoIcons.chevron_up
-                 // autofocus: true,
+                  autofocus: true,
                 ),
                 const SizedBox(height: 15),
                 Text(
@@ -86,8 +84,7 @@ class _EmailAddOrChangeState extends State<EmailAddOrChange> {
                   decoration: InputDecoration(
                     hintText: 'example@google.com',
                   ),
-                  //CupertinoIcons.chevron_up
-                 // autofocus: true,
+                  autofocus: true,
                 ),
                 const SizedBox(height: 15),
                 GlobalButton(

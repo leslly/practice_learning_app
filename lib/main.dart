@@ -36,16 +36,16 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => YourCourseProvider()),
         ChangeNotifierProvider(create: (context) => LessonProvider()),
         ChangeNotifierProvider(create: (context) => TestProvider()),
-        ChangeNotifierProvider(create: (context) => ThemeProvider()),
+       // ChangeNotifierProvider(create: (context) => ThemeProvider()),
       ],
       builder: (context, child) {
-        final provider = Provider.of<ThemeProvider>(context);
+       // final provider = Provider.of<ThemeProvider>(context);
         return MaterialApp(
           debugShowCheckedModeBanner : false,
           title: 'codeFactory',
-          theme: provider.theme,
-          //theme: lightTheme,
-          //darkTheme: darkTheme,
+          theme:ThemeData(
+            primarySwatch: Colors.blue
+          ),
           home: const SplashScreen(),
         );
       },

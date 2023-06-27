@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
               child: screens[provider.index]
           ),
           bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+            backgroundColor: GlobalColors.buttonColorwhite,
             currentIndex: provider.index,
             selectedItemColor: GlobalColors.buttonColorOrange,
             onTap: provider.changeIndex,
@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
               BottomNavigationBarItem(
                   icon: Image.asset(
                       'assets/blush_icons/profile.png',
-                       color: Theme.of(context).iconTheme.color,
+                       color: GlobalColors.borderGrey,
                       height: 38,
                       width: 30,
                   ),
@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.home_filled,
-                    color: Theme.of(context).iconTheme.color,
+                    color: GlobalColors.borderGrey,
                     size: 30,
                   ),
                   label: 'Home'
@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
               BottomNavigationBarItem(
                   icon: Image.asset(
                     'assets/blush_icons/courses.png',
-                    color: Theme.of(context).iconTheme.color,
+                    color: GlobalColors.borderGrey,
                     height: 38,
                     width: 30,
                   ),

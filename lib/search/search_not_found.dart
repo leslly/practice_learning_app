@@ -7,8 +7,7 @@ class SearchNotFound extends StatelessWidget {
    
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: GlobalColors.buttonColorwhite,
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
       child: Column(
         children: [

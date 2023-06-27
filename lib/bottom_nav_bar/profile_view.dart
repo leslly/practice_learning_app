@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/authentication/auth_repo.dart';
@@ -19,7 +18,10 @@ class ProfileView extends StatelessWidget {
     int index = 0;
     final courseProvider = context.watch<IndexProvider>();
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: GlobalColors.buttonColorwhite,
       appBar: AppBar(
+        backgroundColor: GlobalColors.buttonColorwhite,
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context);
@@ -34,7 +36,7 @@ class ProfileView extends StatelessWidget {
                   color: GlobalColors.borderGrey,
                 ),
               ),
-              child: const Icon(
+              child: Icon(
                 CupertinoIcons.back,
                 color: Colors.black,
               ),
@@ -42,7 +44,7 @@ class ProfileView extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        title: Text(
+        title:  Text(
           'Profile',
           style: TextStyle(
             color: GlobalColors.bigTextColorBlack,
@@ -51,10 +53,9 @@ class ProfileView extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: GlobalColors.buttonColorwhite,
         elevation: 0,
+        toolbarHeight: 84,
       ),
-      backgroundColor: GlobalColors.buttonColorwhite,
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -121,12 +122,12 @@ class ProfileView extends StatelessWidget {
                   }), (route) => false);
                   // it does sign ou but does not redirect back to login page
                 },
-                child: Text(
+                child:  Text(
                   'Log out',
                   style: TextStyle(
+                    color: Colors.grey[600],
                     fontSize: 14,
                     fontFamily: 'Rubik-Medium.ttf',
-                    color: GlobalColors.smallTextColorGrey,
                   ),
                 ),
               ),

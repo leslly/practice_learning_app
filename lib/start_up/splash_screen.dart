@@ -46,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: GlobalColors.buttonColorwhite,
       body:SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(10.0),

@@ -58,11 +58,11 @@ class CourseScreen extends StatelessWidget {
                         ),
                         child: Text(
                           '\u20a6${course.price.toStringAsFixed(2)}',
-                          style: const TextStyle(
+                          style:  TextStyle(
                             fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
-                            //color: GlobalColors.whiteTextColor,
+                            color: GlobalColors.whiteTextColor,
                           ),
                         ),
                       ),
@@ -87,8 +87,8 @@ class CourseScreen extends StatelessWidget {
                   const SizedBox(height: 5),
                   Text(
                     course.title,
-                    style: const TextStyle(
-                     // color: Theme.of(context).colorScheme.secondary,
+                    style:  TextStyle(
+                     color: GlobalColors.bigTextColorBlack,
                       fontSize: 24,
                       fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
                     ),
@@ -100,8 +100,8 @@ class CourseScreen extends StatelessWidget {
                         child: Text(
                           course.description,
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                           // color: Theme.of(context).colorScheme.secondary,
+                          style: TextStyle(
+                            color: GlobalColors.bigTextColorBlack,
                             fontSize: 14,
                             fontFamily: 'assets/blush_fonts/Rubik/Rubik-Medium.ttf',
                           ),
