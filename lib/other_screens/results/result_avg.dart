@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_learning_app/yourCourses/test/course_test.dart';
 import '../../utils/global_colours.dart';
 import '../../utils/social_buttons.dart';
 
@@ -50,10 +49,10 @@ class ResultAvg extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
             child: Column(
               children: [
-                SizedBox(height: 127),
+                const SizedBox(height: 127),
                 Container(
                   width: 375,
                   height: 253,
@@ -72,7 +71,7 @@ class ResultAvg extends StatelessWidget {
                     fontSize: 24,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
                   "You scored above the average mark",
                   maxLines: 2,
@@ -83,8 +82,8 @@ class ResultAvg extends StatelessWidget {
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(height: 130),
-                SocialLogins(
+                const SizedBox(height: 130),
+                const SocialLogins(
                   text: 'Share your progress',
                 ),
               ],
@@ -92,6 +91,6 @@ class ResultAvg extends StatelessWidget {
           ),
         ),
       ),
-    );;
+    );
   }
 }

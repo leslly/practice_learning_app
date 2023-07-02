@@ -8,7 +8,6 @@ import 'package:practice_learning_app/utils/global_colours.dart';
 import 'package:practice_learning_app/utils/social_buttons.dart';
 import 'package:practice_learning_app/utils/text_form_global.dart';
 import '../controllers/sign_up_controller.dart';
-import '../main.dart';
 import '../utils/global_button.dart';
 import '../widgets/forgot_pwd.dart';
 import '../widgets/utils.dart';

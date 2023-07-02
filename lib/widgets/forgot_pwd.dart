@@ -3,8 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:practice_learning_app/authentication/auth_repo.dart';
-import 'package:practice_learning_app/widgets/utils.dart';
 import '../controllers/sign_up_controller.dart';
 import '../utils/global_colours.dart';
 import '../utils/text_form_global.dart';

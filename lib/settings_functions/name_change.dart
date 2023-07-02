@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import '../config/config.dart';
-import '../utils/global_button.dart';
 import '../utils/global_colours.dart';
 
 class NameChange extends StatefulWidget {
