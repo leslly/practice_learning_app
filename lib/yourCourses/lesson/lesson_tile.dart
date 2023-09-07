@@ -29,7 +29,7 @@ class LessonTile extends StatelessWidget {
           ),
         ),
         child: ListTile(
-          leading: Container(
+          leading: SizedBox(
                 height: 72,
                 width: 78,
                 child: Image.asset(

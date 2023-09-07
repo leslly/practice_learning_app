@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_learning_app/theme/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
@@ -6,7 +5,7 @@ import 'package:provider/provider.dart';
 class ThemeSwitch extends StatefulWidget {
 
 
-   ThemeSwitch({Key? key}) : super(key: key);
+   const ThemeSwitch({Key? key}) : super(key: key);
 
   @override
   State<ThemeSwitch> createState() => _ThemeSwitchState();

@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     super.initState();
 
     animationController = AnimationController(
-        duration: Duration(seconds: 2),
+        duration: const Duration(seconds: 2),
         vsync: this, upperBound: 300.0
     );
     
@@ -56,7 +56,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image(image: AssetImage('assets/blush_images/illustration.png'), height: animationController.value),
+                  Image(image: const AssetImage('assets/blush_images/illustration.png'), height: animationController.value),
                    //Tried animating the text and fail miserably https://pub.dev/packages/animated_text_kit
                    Text(
                      'CodeFactory',

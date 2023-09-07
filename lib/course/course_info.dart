@@ -126,7 +126,7 @@ class _CourseInfoState extends State<CourseInfo> {
                       colorOfButton: GlobalColors.buttonColorOrange,
                        nextPage: () {
                         Provider.of<CartProvider>(context, listen: false).addItemToCart(widget.course);
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => CourseSaved()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const CourseSaved()));
                       },
                       text: 'Add to cart',
                     ),

@@ -131,8 +131,8 @@ class _CartState extends State<Cart> {
                             borderRadius: BorderRadius.circular(12),
                           ),
                           padding: const EdgeInsets.all(12),
-                          child: Row(
-                            children: const [
+                          child: const Row(
+                            children: [
                               Text(
                                 'Pay Now',
                                 style: TextStyle(

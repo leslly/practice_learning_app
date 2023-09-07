@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:practice_learning_app/authentication/auth_repo.dart';
 import 'package:practice_learning_app/course/index_provider.dart';
 import 'package:practice_learning_app/start_up/splash_screen.dart';

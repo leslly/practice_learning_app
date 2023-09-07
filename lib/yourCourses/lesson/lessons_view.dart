@@ -71,7 +71,7 @@ class _LessonsViewState extends State<LessonsView> {
               height: MediaQuery.of(context).size.height,
               child: Column(
                 children: [
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Container(
                     decoration: BoxDecoration(
                       border: Border.all(color: GlobalColors.borderGrey),
@@ -162,7 +162,7 @@ class _LessonsViewState extends State<LessonsView> {
                         itemCount: myLesson.length
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                 ],
               ),
             ),

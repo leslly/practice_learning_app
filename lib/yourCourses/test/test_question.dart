@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../utils/global_colours.dart';
 
@@ -14,7 +13,7 @@ class _TestQuestionState extends State<TestQuestion> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: GlobalColors.buttonColorwhite,
-      body: SafeArea(
+      body: const SafeArea(
         child: Padding(
           padding: EdgeInsets.all(20),
           child: Column(

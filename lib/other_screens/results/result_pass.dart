@@ -49,11 +49,11 @@ class ResultPass extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
             child: Column(
               children: [
-                SizedBox(height: 127),
-                Container(
+                const SizedBox(height: 127),
+                SizedBox(
                   width: 375,
                   height: 253,
                   child: Image.asset(
@@ -61,7 +61,7 @@ class ResultPass extends StatelessWidget {
                     fit: BoxFit.contain,
                   ),
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 Text(
                   'Congratulations',
                   style: TextStyle(
@@ -71,7 +71,7 @@ class ResultPass extends StatelessWidget {
                     fontSize: 24,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
                   "Congratulations for getting",
                   maxLines: 2,
@@ -82,7 +82,7 @@ class ResultPass extends StatelessWidget {
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
                   "all the answers correct",
                   maxLines: 2,
@@ -93,8 +93,8 @@ class ResultPass extends StatelessWidget {
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(height: 130),
-                SocialLogins(
+                const SizedBox(height: 130),
+                const SocialLogins(
                   text: 'Share your progress',
                 ),
               ],

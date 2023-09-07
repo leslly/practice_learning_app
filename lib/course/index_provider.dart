@@ -13,6 +13,7 @@ class IndexProvider extends ChangeNotifier {
         image: 'assets/blush_images/cool_kids_discussion.png',
       courseInfo: "You can launch a new career in web development today by learning HTML & CSS. You don't need a computer science degree or expensive software. All you need is a computer, a bit of time, a lot of determination, and a teacher you trust."
     ),
+  
     Course(
       courseId: 2,
         color: 0XFFF2F2F2,

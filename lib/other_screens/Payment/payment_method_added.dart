@@ -53,11 +53,11 @@ class _PaymentState extends State<Payment> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
             child: Column(
               children: [
-                SizedBox(height: 127),
-                Container(
+                const SizedBox(height: 127),
+                SizedBox(
                   width: 375,
                   height: 253,
                   child: Image.asset(
@@ -65,7 +65,7 @@ class _PaymentState extends State<Payment> {
                     fit: BoxFit.contain,
                   ),
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 Text(
                   'Payment method added',
                   style: TextStyle(
@@ -75,7 +75,7 @@ class _PaymentState extends State<Payment> {
                     fontSize: 24,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
                   "You can buy the course now",
                   maxLines: 2,
@@ -86,7 +86,7 @@ class _PaymentState extends State<Payment> {
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
                   "Continue to payment",
                   maxLines: 2,
@@ -97,7 +97,7 @@ class _PaymentState extends State<Payment> {
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 GlobalButton(
                   colorOfText: GlobalColors.whiteTextColor,
                   colorOfButton: GlobalColors.buttonColorOrange,

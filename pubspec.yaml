@@ -45,7 +45,7 @@ dependencies:
   get: ^4.6.5
   http: ^0.13.5
   dio: ^5.1.1
-  firebase_auth: ^4.4.2
+  firebase_auth: 4.4.2
 #  cloud_firestore: ^4.1.0
   email_validator: ^2.1.17
 #  get_state_manager: ^3.13.0

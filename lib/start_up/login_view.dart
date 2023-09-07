@@ -93,7 +93,7 @@ class LoginView extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => ForgotPassword()));
+                                  builder: (context) => const ForgotPassword()));
                         },
                         child: Center(
                           child: Text(
@@ -130,7 +130,7 @@ class LoginView extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => SignUpView()));
+                                  builder: (context) => const SignUpView()));
                         },
                         child: Text(
                           'Sign up',

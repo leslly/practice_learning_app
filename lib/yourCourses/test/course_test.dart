@@ -28,16 +28,16 @@ class CourseTest extends StatelessWidget {
                test.testImage,
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               test.quiz,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.deepOrangeAccent,
                 fontSize: 14,
                 fontFamily: 'Rubik-Regular.ttf'
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               test.testTitle,
               style: TextStyle(
@@ -47,7 +47,7 @@ class CourseTest extends StatelessWidget {
                 fontFamily: 'Rubik-Medium.ttf'
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               test.testDescription,
               style: TextStyle(
@@ -57,7 +57,7 @@ class CourseTest extends StatelessWidget {
               ),
               maxLines: 2,
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Center(
               child: InkWell(
                 onTap: () {

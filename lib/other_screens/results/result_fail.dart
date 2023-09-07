@@ -53,8 +53,8 @@ class ResultFail extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
             child: Column(
               children: [
-                SizedBox(height: 127),
-                Container(
+                const SizedBox(height: 127),
+                SizedBox(
                   width: 375,
                   height: 253,
                   child: Image.asset(
@@ -62,7 +62,7 @@ class ResultFail extends StatelessWidget {
                     fit: BoxFit.contain,
                   ),
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 Text(
                   'Better luck next time',
                   style: TextStyle(
@@ -72,7 +72,7 @@ class ResultFail extends StatelessWidget {
                     fontSize: 24,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
                   "You scored below the average mark",
                   maxLines: 2,
@@ -83,7 +83,7 @@ class ResultFail extends StatelessWidget {
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
                   "Don't worry you can retake the test",
                   maxLines: 2,
@@ -94,8 +94,8 @@ class ResultFail extends StatelessWidget {
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(height: 130),
-                SocialLogins(
+                const SizedBox(height: 130),
+                const SocialLogins(
                   text: 'Share your progress',
                 ),
               ],

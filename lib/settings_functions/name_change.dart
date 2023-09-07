@@ -99,7 +99,7 @@ class _NameChangeState extends State<NameChange> {
                      username = _changeName.text;
                    });
              },
-                 child: Text(
+                 child: const Text(
                "Submit",
                style: TextStyle(
                  color: Colors.white,

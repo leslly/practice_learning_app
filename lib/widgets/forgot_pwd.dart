@@ -93,7 +93,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     resetPwd();
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
                     alignment: Alignment.center,
                     height: 56,
                     width: 311,
@@ -146,7 +146,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       // Something is wrong over here cause we've been using auth repo since
       // Utils.showSnackBar('Password reset Email sent');
 
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Email sent!')));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Email sent!')));
       Navigator.of(context).pop();
     } on FirebaseAuthException catch (e) {
       print(e);

@@ -26,7 +26,7 @@ class _IntroState extends State<Intro> {
           onPressed:  () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView() ));
           },
-          child: Align(
+          child: const Align(
             alignment: Alignment.topRight,
             child: Text(
               'skip',
@@ -43,7 +43,7 @@ class _IntroState extends State<Intro> {
         child: PageView(
           scrollDirection: Axis.horizontal,
           reverse: false,
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           pageSnapping: true,
           onPageChanged: (index) {
             setState(() {
@@ -76,7 +76,7 @@ class _IntroState extends State<Intro> {
                     color: Colors.grey,
                   ),
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 row(),
                 const SizedBox(height: 54),
                 GlobalButton(
@@ -117,7 +117,7 @@ class _IntroState extends State<Intro> {
                     color: Colors.grey,
                   ),
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 row(),
                 const SizedBox(height: 54),
                 GlobalButton(
@@ -158,7 +158,7 @@ class _IntroState extends State<Intro> {
                     color: Colors.grey,
                   ),
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 row(),
                 const SizedBox(height: 54),
                 GlobalButton(
@@ -184,9 +184,9 @@ class _IntroState extends State<Intro> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        currentPage==0?Icon(Icons.circle,size: 10,color: Colors.orange,):Icon(Icons.circle_outlined, size: 10, color: Colors.orange,),
-        currentPage==1?Icon(Icons.circle,size: 10,color: Colors.orange,):Icon(Icons.circle_outlined, size: 10, color: Colors.orange,),
-        currentPage==2?Icon(Icons.circle,size: 10,color: Colors.orange,):Icon(Icons.circle_outlined, size: 10, color: Colors.orange,),
+        currentPage==0?const Icon(Icons.circle,size: 10,color: Colors.orange,):const Icon(Icons.circle_outlined, size: 10, color: Colors.orange,),
+        currentPage==1?const Icon(Icons.circle,size: 10,color: Colors.orange,):const Icon(Icons.circle_outlined, size: 10, color: Colors.orange,),
+        currentPage==2?const Icon(Icons.circle,size: 10,color: Colors.orange,):const Icon(Icons.circle_outlined, size: 10, color: Colors.orange,),
       ],
     );
   }

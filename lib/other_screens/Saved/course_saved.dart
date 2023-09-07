@@ -123,7 +123,7 @@ class CourseSaved extends StatelessWidget {
                   const SizedBox(height: 16),
                   InkWell(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
                     },
                     child: Text(
                       'find more courses',

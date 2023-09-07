@@ -8,12 +8,12 @@ import 'login_view.dart';
 import '../utils/global_button.dart';
 
 class SignUpView extends StatelessWidget {
-   SignUpView({Key? key}) : super(key: key);
+   const SignUpView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
 
     final controller = Get.put(SignUpController());
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
 
     return Scaffold(
       backgroundColor: GlobalColors.buttonColorwhite,
@@ -25,7 +25,7 @@ class SignUpView extends StatelessWidget {
               padding: const EdgeInsets.only(top: 58, right: 16,left: 16,bottom: 0),
               child: Center(
                 child: Form(
-                  key: _formKey,
+                  key: formKey,
                   child: Column(
                     children: [
                       InkWell(
@@ -112,7 +112,7 @@ class SignUpView extends StatelessWidget {
                       const SizedBox(height: 16),
                       GlobalButton(
                           nextPage: () {
-                       if(_formKey.currentState!.validate()){
+                       if(formKey.currentState!.validate()){
                          SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
                          // Actually signs up but does not re route to home page
                        }

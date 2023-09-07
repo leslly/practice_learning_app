@@ -53,7 +53,7 @@ class ResultAvg extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 127),
-                Container(
+                SizedBox(
                   width: 375,
                   height: 253,
                   child: Image.asset(
@@ -61,7 +61,7 @@ class ResultAvg extends StatelessWidget {
                     fit: BoxFit.contain,
                   ),
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 Text(
                   'Well Done',
                   style: TextStyle(

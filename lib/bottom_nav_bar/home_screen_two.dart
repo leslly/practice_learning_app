@@ -274,7 +274,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                         const SizedBox(height: 20),
 
                         if(courses.isEmpty)
-                          SearchNotFound()
+                          const SearchNotFound()
                         else
 
                         //LIST OF COURSES

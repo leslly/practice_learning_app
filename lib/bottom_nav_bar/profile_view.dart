@@ -36,7 +36,7 @@ class ProfileView extends StatelessWidget {
                   color: GlobalColors.borderGrey,
                 ),
               ),
-              child: Icon(
+              child: const Icon(
                 CupertinoIcons.back,
                 color: Colors.black,
               ),

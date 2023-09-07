@@ -5,7 +5,7 @@ import '../utils/global_colours.dart';
 ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
 
-  iconTheme: IconThemeData(
+  iconTheme: const IconThemeData(
     color: Colors.grey,
   ),
 
@@ -22,7 +22,7 @@ ThemeData lightTheme = ThemeData(
         color: GlobalColors.bigTextColorBlack,
       ),
       color: GlobalColors.buttonColorwhite,
-      iconTheme: IconThemeData(
+      iconTheme: const IconThemeData(
         color: Colors.black,
       ),
 

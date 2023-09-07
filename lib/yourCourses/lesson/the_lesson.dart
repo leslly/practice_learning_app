@@ -83,7 +83,7 @@ class _TheLessonState extends State<TheLesson> with  TickerProviderStateMixin{
                     fontFamily: 'Inter-Regular.ttf'
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
                 widget.lesson.lessonTitle,
                 style: TextStyle(
@@ -93,7 +93,7 @@ class _TheLessonState extends State<TheLesson> with  TickerProviderStateMixin{
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
                 Container(
                     // width: 114,
                     height: 42,
@@ -118,7 +118,7 @@ class _TheLessonState extends State<TheLesson> with  TickerProviderStateMixin{
                 Expanded(
                   child: TabBarView(
                     controller: _controller,
-                    physics: BouncingScrollPhysics(),
+                    physics: const BouncingScrollPhysics(),
                     children: [
                       ///// FOR COURSE LESSON
                       Column(

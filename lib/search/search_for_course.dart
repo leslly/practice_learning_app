@@ -71,8 +71,8 @@ class SearchForCourse extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 31),
-                Container(
+                const SizedBox(height: 31),
+                SizedBox(
                   width: 370,
                   height: 253,
                   child: Image.asset(
@@ -80,7 +80,7 @@ class SearchForCourse extends StatelessWidget {
                     fit: BoxFit.contain,
                   ),
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 Text(
                   'Search for course',
                   style: TextStyle(
@@ -90,7 +90,7 @@ class SearchForCourse extends StatelessWidget {
                     fontSize: 24,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
                   "A whole library of knowledge",
                   maxLines: 2,
@@ -101,7 +101,7 @@ class SearchForCourse extends StatelessWidget {
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
                   "waiting to be discovered.",
                   maxLines: 2,

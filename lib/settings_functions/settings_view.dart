@@ -108,7 +108,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const SizedBox(width: 110),
+                        const SizedBox(width: 90),
                         notificationSwitch(),
                       ],
                     ),
@@ -221,7 +221,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const SizedBox(width: 200),
+                        const SizedBox(width: 180),
                           Container(
                               height: 40,
                               width: 40,
@@ -281,7 +281,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const SizedBox(width: 203),
+                          const SizedBox(width: 183),
                           Container(
                               height: 40,
                               width: 40,
@@ -341,7 +341,7 @@ class _SettingsPageState extends State<SettingsPage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const SizedBox(width: 164),
+                          const SizedBox(width: 140),
                           Container(
                               height: 40,
                               width: 40,
